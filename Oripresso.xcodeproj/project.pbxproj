@@ -62,10 +62,10 @@
 				B5D706AC2BBA85AF009C32D9 /* SceneDelegate.swift */,
 				B5D706AE2BBA85AF009C32D9 /* ViewController.swift */,
 				B5D706B32BBA85B0009C32D9 /* Assets.xcassets */,
-				B5D706B52BBA85B0009C32D9 /* LaunchScreen.storyboard */,
-				B5D706B82BBA85B0009C32D9 /* Info.plist */,
 				1A31A3862BBA99630097602C /* Main.storyboard */,
+				B5D706B52BBA85B0009C32D9 /* LaunchScreen.storyboard */,
 				B5D706B02BBA85AF009C32D9 /* OrderList.storyboard */,
+				B5D706B82BBA85B0009C32D9 /* Info.plist */,
 			);
 			path = Oripresso;
 			sourceTree = "<group>";
@@ -296,7 +296,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8B78U37C85;
+				DEVELOPMENT_TEAM = FB44T8T3FL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Oripresso/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -324,7 +324,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8B78U37C85;
+				DEVELOPMENT_TEAM = FB44T8T3FL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Oripresso/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
