@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1A31A3872BBA99630097602C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A31A3862BBA99630097602C /* Main.storyboard */; };
+		1A31A3872BBA99630097602C /* OrderList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A31A3862BBA99630097602C /* OrderList.storyboard */; };
 		B5D706AB2BBA85AF009C32D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D706AA2BBA85AF009C32D9 /* AppDelegate.swift */; };
 		B5D706AD2BBA85AF009C32D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D706AC2BBA85AF009C32D9 /* SceneDelegate.swift */; };
 		B5D706AF2BBA85AF009C32D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D706AE2BBA85AF009C32D9 /* ViewController.swift */; };
@@ -17,12 +17,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1A31A3862BBA99630097602C /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		1A31A3862BBA99630097602C /* OrderList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrderList.storyboard; sourceTree = "<group>"; };
 		B5D706A72BBA85AF009C32D9 /* Oripresso.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Oripresso.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5D706AA2BBA85AF009C32D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5D706AC2BBA85AF009C32D9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B5D706AE2BBA85AF009C32D9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B5D706B12BBA85AF009C32D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/OrderList.storyboard; sourceTree = "<group>"; };
+		B5D706B12BBA85AF009C32D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B5D706B32BBA85B0009C32D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B5D706B62BBA85B0009C32D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B5D706B82BBA85B0009C32D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -62,9 +62,9 @@
 				B5D706AC2BBA85AF009C32D9 /* SceneDelegate.swift */,
 				B5D706AE2BBA85AF009C32D9 /* ViewController.swift */,
 				B5D706B32BBA85B0009C32D9 /* Assets.xcassets */,
-				1A31A3862BBA99630097602C /* Main.storyboard */,
+				1A31A3862BBA99630097602C /* OrderList.storyboard */,
 				B5D706B52BBA85B0009C32D9 /* LaunchScreen.storyboard */,
-				B5D706B02BBA85AF009C32D9 /* OrderList.storyboard */,
+				B5D706B02BBA85AF009C32D9 /* Main.storyboard */,
 				B5D706B82BBA85B0009C32D9 /* Info.plist */,
 			);
 			path = Oripresso;
@@ -130,7 +130,7 @@
 			files = (
 				B5D706B42BBA85B0009C32D9 /* Assets.xcassets in Resources */,
 				B5D706B72BBA85B0009C32D9 /* Base in Resources */,
-				1A31A3872BBA99630097602C /* Main.storyboard in Resources */,
+				1A31A3872BBA99630097602C /* OrderList.storyboard in Resources */,
 				B5D706B22BBA85AF009C32D9 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,12 +151,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B5D706B02BBA85AF009C32D9 /* OrderList.storyboard */ = {
+		B5D706B02BBA85AF009C32D9 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B5D706B12BBA85AF009C32D9 /* Base */,
 			);
-			name = OrderList.storyboard;
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		B5D706B52BBA85B0009C32D9 /* LaunchScreen.storyboard */ = {
