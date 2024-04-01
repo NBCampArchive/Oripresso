@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95D512BA2BBAAA2C00ECE2E5 /* Payment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95D512B92BBAAA2C00ECE2E5 /* Payment.storyboard */; };
+		95D512BC2BBAAB4900ECE2E5 /* Payments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D512BB2BBAAB4900ECE2E5 /* Payments.swift */; };
 		B5D706AB2BBA85AF009C32D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D706AA2BBA85AF009C32D9 /* AppDelegate.swift */; };
 		B5D706AD2BBA85AF009C32D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D706AC2BBA85AF009C32D9 /* SceneDelegate.swift */; };
 		B5D706AF2BBA85AF009C32D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D706AE2BBA85AF009C32D9 /* ViewController.swift */; };
@@ -16,6 +18,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		95D512B92BBAAA2C00ECE2E5 /* Payment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Payment.storyboard; sourceTree = "<group>"; };
+		95D512BB2BBAAB4900ECE2E5 /* Payments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payments.swift; sourceTree = "<group>"; };
+		95D512BE2BBAAF0F00ECE2E5 /* NanumSquareRoundB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRoundB.ttf; sourceTree = "<group>"; };
+		95D512BF2BBAAF0F00ECE2E5 /* NanumSquareRoundL.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRoundL.ttf; sourceTree = "<group>"; };
+		95D512C02BBAAF0F00ECE2E5 /* NanumSquareRoundEB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRoundEB.ttf; sourceTree = "<group>"; };
+		95D512C12BBAAF0F00ECE2E5 /* NanumSquareRoundR.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRoundR.ttf; sourceTree = "<group>"; };
 		B5D706A72BBA85AF009C32D9 /* Oripresso.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Oripresso.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5D706AA2BBA85AF009C32D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5D706AC2BBA85AF009C32D9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +45,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		95D512BD2BBAAEB600ECE2E5 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				95D512BE2BBAAF0F00ECE2E5 /* NanumSquareRoundB.ttf */,
+				95D512C02BBAAF0F00ECE2E5 /* NanumSquareRoundEB.ttf */,
+				95D512BF2BBAAF0F00ECE2E5 /* NanumSquareRoundL.ttf */,
+				95D512C12BBAAF0F00ECE2E5 /* NanumSquareRoundR.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		B5D7069E2BBA85AF009C32D9 = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +75,7 @@
 		B5D706A92BBA85AF009C32D9 /* Oripresso */ = {
 			isa = PBXGroup;
 			children = (
+				95D512BD2BBAAEB600ECE2E5 /* Fonts */,
 				B5D706AA2BBA85AF009C32D9 /* AppDelegate.swift */,
 				B5D706AC2BBA85AF009C32D9 /* SceneDelegate.swift */,
 				B5D706AE2BBA85AF009C32D9 /* ViewController.swift */,
@@ -63,6 +83,8 @@
 				B5D706B32BBA85B0009C32D9 /* Assets.xcassets */,
 				B5D706B52BBA85B0009C32D9 /* LaunchScreen.storyboard */,
 				B5D706B82BBA85B0009C32D9 /* Info.plist */,
+				95D512B92BBAAA2C00ECE2E5 /* Payment.storyboard */,
+				95D512BB2BBAAB4900ECE2E5 /* Payments.swift */,
 			);
 			path = Oripresso;
 			sourceTree = "<group>";
@@ -128,6 +150,7 @@
 				B5D706B42BBA85B0009C32D9 /* Assets.xcassets in Resources */,
 				B5D706B72BBA85B0009C32D9 /* Base in Resources */,
 				B5D706B22BBA85AF009C32D9 /* Base in Resources */,
+				95D512BA2BBAAA2C00ECE2E5 /* Payment.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +163,7 @@
 			files = (
 				B5D706AF2BBA85AF009C32D9 /* ViewController.swift in Sources */,
 				B5D706AB2BBA85AF009C32D9 /* AppDelegate.swift in Sources */,
+				95D512BC2BBAAB4900ECE2E5 /* Payments.swift in Sources */,
 				B5D706AD2BBA85AF009C32D9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
