@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="MainViewController" customModule="Oripresso" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title" translatesAutoresizingMaskIntoConstraints="NO" id="FHl-j1-v88">
+                                <rect key="frame" x="0.0" y="52" width="393" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="Jc4-Dn-8x2"/>
+                                    <constraint firstAttribute="width" constant="393" id="W6x-pU-vZ9"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuSelectBottom" translatesAutoresizingMaskIntoConstraints="NO" id="GGp-Tw-JVC">
+                                <rect key="frame" x="0.0" y="748" width="393" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="SSO-4O-XeF"/>
+                                    <constraint firstAttribute="width" constant="393" id="frZ-lB-zRn"/>
+                                </constraints>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="wXf-X8-6Vz">
+                                <rect key="frame" x="0.0" y="122" width="393" height="626"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="393" id="3Rk-WO-2J6"/>
+                                </constraints>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GGp-Tw-JVC" firstAttribute="top" secondItem="wXf-X8-6Vz" secondAttribute="bottom" id="2Ke-nv-R1j"/>
+                            <constraint firstItem="GGp-Tw-JVC" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="314-SG-7T5"/>
+                            <constraint firstItem="FHl-j1-v88" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="52" id="84s-7t-Rth"/>
+                            <constraint firstItem="wXf-X8-6Vz" firstAttribute="top" secondItem="FHl-j1-v88" secondAttribute="bottom" id="IOR-F7-v95"/>
+                            <constraint firstItem="wXf-X8-6Vz" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="UEX-zF-bSa"/>
+                            <constraint firstItem="FHl-j1-v88" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="ZzM-Er-e0C"/>
+                            <constraint firstItem="GGp-Tw-JVC" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="hsb-lT-S3t"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="menuBottom" destination="GGp-Tw-JVC" id="Vqt-z7-jWR"/>
+                        <outlet property="uiTableView" destination="wXf-X8-6Vz" id="Nxd-vh-kYJ"/>
+                        <outlet property="uiTitle" destination="FHl-j1-v88" id="asx-e9-Omt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="57.251908396946561" y="-2.1126760563380285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="menuSelectBottom" width="288" height="50"/>
+        <image name="title" width="182" height="50"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
