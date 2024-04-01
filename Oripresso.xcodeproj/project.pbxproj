@@ -14,6 +14,8 @@
 		B5D706B22BBA85AF009C32D9 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = B5D706B12BBA85AF009C32D9 /* Base */; };
 		B5D706B42BBA85B0009C32D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5D706B32BBA85B0009C32D9 /* Assets.xcassets */; };
 		B5D706B72BBA85B0009C32D9 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = B5D706B62BBA85B0009C32D9 /* Base */; };
+		FF7B359E2BBAA81400CC76F8 /* MainView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF7B359D2BBAA81400CC76F8 /* MainView.storyboard */; };
+		FF7B35A02BBAA83400CC76F8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7B359F2BBAA83400CC76F8 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		B5D706B32BBA85B0009C32D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B5D706B62BBA85B0009C32D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B5D706B82BBA85B0009C32D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF7B359D2BBAA81400CC76F8 /* MainView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainView.storyboard; sourceTree = "<group>"; };
+		FF7B359F2BBAA83400CC76F8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 				B5D706B52BBA85B0009C32D9 /* LaunchScreen.storyboard */,
 				B5D706B02BBA85AF009C32D9 /* Main.storyboard */,
 				B5D706B82BBA85B0009C32D9 /* Info.plist */,
+				FF7B359D2BBAA81400CC76F8 /* MainView.storyboard */,
+				FF7B359F2BBAA83400CC76F8 /* MainViewController.swift */,
 			);
 			path = Oripresso;
 			sourceTree = "<group>";
@@ -130,7 +136,9 @@
 			files = (
 				B5D706B42BBA85B0009C32D9 /* Assets.xcassets in Resources */,
 				B5D706B72BBA85B0009C32D9 /* Base in Resources */,
+
 				1A31A3872BBA99630097602C /* OrderList.storyboard in Resources */,
+				FF7B359E2BBAA81400CC76F8 /* MainView.storyboard in Resources */,
 				B5D706B22BBA85AF009C32D9 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,6 +153,7 @@
 				B5D706AF2BBA85AF009C32D9 /* ViewController.swift in Sources */,
 				B5D706AB2BBA85AF009C32D9 /* AppDelegate.swift in Sources */,
 				B5D706AD2BBA85AF009C32D9 /* SceneDelegate.swift in Sources */,
+				FF7B35A02BBAA83400CC76F8 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
