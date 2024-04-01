@@ -14,6 +14,7 @@ class Payments: ViewController {
         super.viewDidLoad()
         
         let myImage = UIImage(named: "영수증")
+        /*
         myImage?.layer.shadowColor = UIColor.black.cgColor
         myImage?.layer.shadowOpacity = 1
         myImage?.layer.shadowOffset = CGSize.zero
@@ -22,5 +23,6 @@ class Payments: ViewController {
         myImage?.layer.shouldRasterize = false
         myImage?.layer.cornerRadius = 10
         myImage?.clipsToBounds = true
+         */
     }
 }
