@@ -49,43 +49,7 @@ class MainViewController: UIViewController {
     }
 }
 
-extension MainViewController: UITableViewDelegate, UITableViewDataSource {
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier") else {
-            fatalError("셀이 존재 하지 않음")
-        }
-        
-        switch segment.selectedSegmentIndex {
-        case 0:
-            if data[indexPath.row].type == .coffee {
-                cell.textLabel?.text = data[indexPath.row].name
-            }
-            return cell
-        case 1:
-            if data[indexPath.row].type == .nonCoffee {
-                cell.textLabel?.text = data[indexPath.row].name
-            }
-            return cell
-        case 2:
-            if data[indexPath.row].type == .cake {
-                cell.textLabel?.text = data[indexPath.row].name
-            }
-            return cell
-        case 3:
-            if data[indexPath.row].type == .bread {
-                cell.textLabel?.text = data[indexPath.row].name
-            }
-            return cell
-        default:
-            return cell
-        }
-    }
-}
 
 extension UISegmentedControl {
     func removeBorders(andBackground:Bool=false) {
