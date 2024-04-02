@@ -12,7 +12,7 @@
         <!--Title-->
         <scene sceneID="9Nu-E5-b0m">
             <objects>
-                <viewController id="PBo-eF-dzn" customClass="ViewController" customModule="Oripresso" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="PBo-eF-dzn" customClass="OrderListViewController" customModule="Oripresso" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s57-it-T5B">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -30,12 +30,12 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orderListTitleText" translatesAutoresizingMaskIntoConstraints="NO" id="F1M-j4-VQC">
                                 <rect key="frame" x="166" y="124.66666666666669" width="61" height="17"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="oON-EB-EB5" userLabel="주문내역 테이블">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="oON-EB-EB5" userLabel="orderList TableView">
                                 <rect key="frame" x="0.0" y="152" width="393" height="478"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="separatorColor" red="0.8901960784313725" green="0.70196078431372544" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="R3A-Xl-qin">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderListTableViewCell" rowHeight="106" id="R3A-Xl-qin" customClass="OrderListTableViewCell" customModule="Oripresso" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="R3A-Xl-qin" id="rAa-7v-S8R">
@@ -51,8 +51,8 @@
                                                     <color key="textColor" systemColor="systemGray2Color"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kov-hd-bRn">
-                                                    <rect key="frame" x="54" y="18" width="41.333333333333343" height="26"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="item name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kov-hd-bRn">
+                                                    <rect key="frame" x="54.000000000000007" y="18" width="79.666666666666686" height="26"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -118,6 +118,12 @@
                                                 <constraint firstItem="jT2-Xq-WmW" firstAttribute="top" secondItem="kov-hd-bRn" secondAttribute="top" id="zsI-q6-KjD"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="orderItemIndexLabel" destination="a2s-sj-nyt" id="1rU-75-N7k"/>
+                                            <outlet property="orderItemNameLabel" destination="kov-hd-bRn" id="Tyr-Ff-C90"/>
+                                            <outlet property="orderItemPriceLabel" destination="Wjo-io-OAO" id="Wre-AL-VMm"/>
+                                            <outlet property="orderItemQuantityLabel" destination="Ngj-jt-qa5" id="I5X-IR-CfJ"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -227,6 +233,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="tzi-nx-qRZ" userLabel="Back"/>
+                    <connections>
+                        <outlet property="orderListTableView" destination="oON-EB-EB5" id="ycZ-Ua-BQE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x40-TG-Bmn" sceneMemberID="firstResponder"/>
             </objects>
