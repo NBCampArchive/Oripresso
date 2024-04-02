@@ -17,11 +17,9 @@ class OrderListTableViewCell: UITableViewCell {
     var quantityVariance: ((Int) -> Void)?
     @IBAction func tapMinusButton(_ sender: UIButton) {
         quantityVariance?(-1)
-        print("minus tapped")
     }
     @IBAction func tapPlusButton(_ sender: UIButton) {
         quantityVariance?(+1)
-        print("plus tapped")
     }
     
     
@@ -32,8 +30,9 @@ class OrderListTableViewCell: UITableViewCell {
         orderItemPriceLabel.text = String(item.price * item.quantity)
     }
     
-    func changeQuantityLabel(_ item: SelectedMenu) {
+    func updateLabels(_ item: SelectedMenu) {
         orderItemQuantityLabel.text = String(item.quantity)
+        orderItemPriceLabel.text = String(item.price * item.quantity)
     }
     
     override func awakeFromNib() {

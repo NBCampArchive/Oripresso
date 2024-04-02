@@ -41,7 +41,7 @@ extension OrderListViewController: UITableViewDataSource {
         var item = selectedMenu[indexPath.row]
         cell.quantityVariance = { variance in
             item.quantity += variance
-            cell.changeQuantityLabel(item)
+            cell.updateLabels(item)
         }
         cell.configure(item)
         cell.selectionStyle = .none
