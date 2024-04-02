@@ -41,6 +41,9 @@ extension OrderListViewController: UITableViewDataSource {
         var item = selectedMenu[indexPath.row]
         cell.quantityVariance = { variance in
             item.quantity += variance
+            if item.quantity <= 0 {
+                item.quantity = 1   // 수량이 1 이하로 내려가지 않도록 함
+            }
             cell.updateLabels(item)
         }
         cell.configure(item)
