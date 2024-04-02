@@ -10,19 +10,13 @@ import UIKit
 
 class Payments: ViewController {
     
+    @IBOutlet weak var receipt: UIImageView!
+    @IBOutlet weak var moveToMain: UIButton!
+    @IBOutlet weak var underStatus: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let myImage = UIImage(named: "영수증")
-        /*
-        myImage?.layer.shadowColor = UIColor.black.cgColor
-        myImage?.layer.shadowOpacity = 1
-        myImage?.layer.shadowOffset = CGSize.zero
-        myImage?.layer.shadowRadius = 10
-        myImage?.layer.shadowPath = UIBezierPath(rect: myImage?.bounds ?? CGRect.zero).cgPath
-        myImage?.layer.shouldRasterize = false
-        myImage?.layer.cornerRadius = 10
-        myImage?.clipsToBounds = true
-         */
     }
+    
 }

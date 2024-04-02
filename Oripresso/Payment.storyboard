@@ -1,26 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UCS-DA-Ag2">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Payments-->
-        <scene sceneID="s0d-6b-0kx">
+        <scene sceneID="oIC-VR-8JC">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="Payments" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                <viewController id="UCS-DA-Ag2" customClass="Payments" customModule="Oripresso" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pnb-4X-qvY">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="주문완료 하단" translatesAutoresizingMaskIntoConstraints="NO" id="N12-v9-l0v">
+                                <rect key="frame" x="52" y="768" width="288" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="영수증" translatesAutoresizingMaskIntoConstraints="NO" id="aaS-Kj-XaE">
-                                <rect key="frame" x="35" y="95" width="323" height="592"/>
+                                <rect key="frame" x="35" y="102" width="323" height="592"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XNg-cj-vaq">
-                                <rect key="frame" x="82" y="504" width="229" height="70"/>
+                                <rect key="frame" x="82" y="511" width="229" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.8901960784313725" green="0.70196078431372544" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Button"/>
@@ -33,24 +38,26 @@
                                             </attributes>
                                         </fragment>
                                     </attributedString>
+                                    <color key="baseForegroundColor" red="0.96014052630000002" green="0.9727402329" blue="0.94334322209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="주문완료 하단" translatesAutoresizingMaskIntoConstraints="NO" id="N12-v9-l0v">
-                                <rect key="frame" x="52" y="768" width="288" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" red="0.098039215686274508" green="0.25098039215686274" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
+                        <viewLayoutGuide key="safeArea" id="wzY-SL-DtU"/>
+                        <color key="backgroundColor" red="0.098039215690000001" green="0.25098039220000001" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="moveToMain" destination="XNg-cj-vaq" id="pjE-s8-sAL"/>
+                        <outlet property="receipt" destination="aaS-Kj-XaE" id="AGF-wG-IYK"/>
+                        <outlet property="underStatus" destination="N12-v9-l0v" id="5sV-bs-Tf8"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fTQ-Dh-cB0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="-27"/>
+            <point key="canvasLocation" x="831" y="-27"/>
         </scene>
     </scenes>
     <resources>
-        <image name="영수증" width="323" height="592"/>
+        <image name="영수증" width="327" height="604"/>
         <image name="주문완료 하단" width="288" height="50"/>
     </resources>
 </document>
