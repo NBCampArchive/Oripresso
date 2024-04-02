@@ -12,6 +12,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var menuBottom: UIImageView!
     @IBOutlet weak var uiTableView: UITableView!
     @IBOutlet weak var uiTitle: UIImageView!
+    @IBOutlet weak var segment: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
