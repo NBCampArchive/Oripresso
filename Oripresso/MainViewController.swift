@@ -38,7 +38,14 @@ class MainViewController: UIViewController {
     }
 
     @IBAction func floatingButtonTapped(_ sender: Any) {
-        print(selectedMenu)
+        
+        let storyboard = UIStoryboard(name: "OrderList", bundle: nil)
+        if let orderListViewController = storyboard.instantiateViewController(withIdentifier: "OrderList") as? OrderListViewController {
+            orderListViewController.modalPresentationStyle = .fullScreen
+            self.presentFromRight(orderListViewController, animated: true)
+        } else {
+            print(selectedMenu)
+        }
     }
 }
 
@@ -99,5 +106,32 @@ extension UISegmentedControl {
         let image = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         return image!
+    }
+}
+
+extension UIViewController {
+    func presentFromRight(_ viewControllerToPresent: UIViewController, animated: Bool, completion: (() -> Void)? = nil) {
+        if animated {
+            // 새 뷰 컨트롤러의 초기 위치를 화면 오른쪽 바깥으로 설정
+            viewControllerToPresent.view.frame = CGRect(x: self.view.frame.width, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+            
+            // 새 뷰 컨트롤러 뷰를 현재 뷰 위에 추가
+            self.view.addSubview(viewControllerToPresent.view)
+            self.addChild(viewControllerToPresent)
+            
+            // 애니메이션으로 뷰를 왼쪽으로 이동
+            UIView.animate(withDuration: 0.5, animations: {
+                viewControllerToPresent.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+            }, completion: { finished in
+                viewControllerToPresent.didMove(toParent: self)
+                completion?()
+            })
+        } else {
+            // 애니메이션이 없는 경우, 바로 뷰 컨트롤러를 추가
+            self.view.addSubview(viewControllerToPresent.view)
+            self.addChild(viewControllerToPresent)
+            viewControllerToPresent.didMove(toParent: self)
+            completion?()
+        }
     }
 }

@@ -12,7 +12,7 @@
         <!--Title-->
         <scene sceneID="9Nu-E5-b0m">
             <objects>
-                <viewController storyboardIdentifier="OrderList" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PBo-eF-dzn" customClass="ViewController" customModule="Oripresso" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OrderList" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PBo-eF-dzn" customClass="OrderListViewController" customModule="Oripresso" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s57-it-T5B">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
