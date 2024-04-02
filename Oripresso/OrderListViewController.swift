@@ -15,7 +15,7 @@ struct SelectedMenu {
 }
 
 class OrderListViewController: UIViewController {
-    var orderList = [
+    var selectedMenu = [
         SelectedMenu(index: 1, name: "아이스 아메리카노", price: 4500, quantity: 3),
         SelectedMenu(index: 2, name: "쿠키", price: 1000, quantity: 2)
         ]
@@ -30,7 +30,7 @@ class OrderListViewController: UIViewController {
 
 extension OrderListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return orderList.count
+        return selectedMenu.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -38,9 +38,9 @@ extension OrderListViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        return UITableViewCell()
+        let item = selectedMenu[indexPath.row]
+        cell.configure(item)
+        cell.selectionStyle = .none
+        return cell
     }
-    
-    
-    
 }
