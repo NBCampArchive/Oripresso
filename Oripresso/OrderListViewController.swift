@@ -25,7 +25,6 @@ class OrderListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         orderListTableView.dataSource = self
-        orderListTableView.delegate = self
     }
 }
 
@@ -51,19 +50,10 @@ extension OrderListViewController: UITableViewDataSource {
         cell.selectionStyle = .none
         return cell
     }
-}
-
-extension OrderListViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        // 오른쪽에 만들기
-        
-        let delete = UIContextualAction(style: .normal, title: "삭제") { (UIContextualAction, UIView, success: @escaping (Bool) -> Void) in
-                    print("삭제 클릭 됨")
-                    success(true)
-                }
-                delete.backgroundColor = .systemRed
-                
-                //actions배열 인덱스 0이 오른쪽에 붙어서 나옴
-                return UISwipeActionsConfiguration(actions:[delete])
+    
+    // swipe하여 버튼 클릭하면 delete
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        selectedMenu.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
     }
 }
