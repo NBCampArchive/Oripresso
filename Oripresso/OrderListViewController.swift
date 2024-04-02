@@ -38,11 +38,11 @@ extension OrderListViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        let item = selectedMenu[indexPath.row]
+        var item = selectedMenu[indexPath.row]
         cell.quantityVariance = { variance in
-            self.selectedMenu[indexPath.row].quantity += variance
+            item.quantity += variance
+            cell.changeQuantityLabel(item)
         }
-        print(item.quantity)
         cell.configure(item)
         cell.selectionStyle = .none
         return cell

@@ -32,6 +32,9 @@ class OrderListTableViewCell: UITableViewCell {
         orderItemPriceLabel.text = String(item.price * item.quantity)
     }
     
+    func changeQuantityLabel(_ item: SelectedMenu) {
+        orderItemQuantityLabel.text = String(item.quantity)
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
