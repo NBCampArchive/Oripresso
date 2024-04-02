@@ -61,9 +61,8 @@
                                                     <rect key="frame" x="268" y="18" width="94" height="26"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gol-zT-Zal" userLabel="minusButton">
-                                                            <rect key="frame" x="0.0" y="11" width="18" height="4"/>
+                                                            <rect key="frame" x="0.0" y="4" width="18" height="18"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="4" id="GoW-Xc-bEP"/>
                                                                 <constraint firstAttribute="width" constant="18" id="I1b-xq-6GD"/>
                                                             </constraints>
                                                             <state key="normal" title="Button"/>
@@ -92,6 +91,7 @@
                                                         </label>
                                                     </subviews>
                                                     <constraints>
+                                                        <constraint firstItem="Gol-zT-Zal" firstAttribute="height" secondItem="VI3-ox-IB9" secondAttribute="height" multiplier="0.947368" id="5Su-Ua-xUb"/>
                                                         <constraint firstItem="Gol-zT-Zal" firstAttribute="leading" secondItem="jT2-Xq-WmW" secondAttribute="leading" id="5sk-xg-NAH"/>
                                                         <constraint firstItem="Ngj-jt-qa5" firstAttribute="centerX" secondItem="jT2-Xq-WmW" secondAttribute="centerX" id="F8v-tg-frj"/>
                                                         <constraint firstAttribute="trailing" secondItem="VI3-ox-IB9" secondAttribute="trailing" id="Q7t-QW-igv"/>
