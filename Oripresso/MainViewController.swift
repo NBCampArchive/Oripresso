@@ -21,15 +21,6 @@ class MainViewController: UIViewController {
                             MenuData(name: "Bread", type: .bread)]
     var selectedMenu: [MenuData] = []
     
-    func setSegmentedControl() {
-        let clearImage = UIImage()
-
-        segment.setBackgroundImage(clearImage, for: .normal, barMetrics: .default)
-        segment.setDividerImage(clearImage, forLeftSegmentState: .selected, rightSegmentState: .normal, barMetrics: .default)
-        segment.setTitleTextAttributes([.foregroundColor: UIColor.black], for: .selected)
-        segment.setTitleTextAttributes([.foregroundColor: UIColor.gray], for: .normal)
-    }
-    
     func tableViewDelegate() {
         uiTableView.dataSource = self
         uiTableView.delegate = self
@@ -43,7 +34,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setSegmentedControl()
+        segment.removeBorders()
         tableViewDelegate()
         floatingButton.layer.cornerRadius = 66 / 2
     }
@@ -91,23 +82,24 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension UIColor {
-    
-    convenience init(hexCode: String, alpha: CGFloat = 1.0) {
-        var hexFormatted: String = hexCode.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).uppercased()
-        
-        if hexFormatted.hasPrefix("#") {
-            hexFormatted = String(hexFormatted.dropFirst())
-        }
-        
-        assert(hexFormatted.count == 6, "Invalid hex code used.")
-        
-        var rgbValue: UInt64 = 0
-        Scanner(string: hexFormatted).scanHexInt64(&rgbValue)
-        
-        self.init(red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
-                  green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
-                  blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
-                  alpha: alpha)
+extension UISegmentedControl {
+    func removeBorders(andBackground:Bool=false) {
+        setBackgroundImage(imageWithColor(color: backgroundColor ?? .clear), for: .normal, barMetrics: .default)
+        setBackgroundImage(imageWithColor(color: backgroundColor ?? .clear), for: .selected, barMetrics: .default)
+        setDividerImage(imageWithColor(color: UIColor.clear), forLeftSegmentState: .normal, rightSegmentState: .normal, barMetrics: .default)
+        setTitleTextAttributes([.foregroundColor: UIColor.black], for: .selected)
+        setTitleTextAttributes([.foregroundColor: UIColor.gray], for: .normal)
+
+    }
+
+    private func imageWithColor(color: UIColor) -> UIImage {
+        let rect = CGRect(x: 0.0, y: 0.0, width:  1.0, height: 22.0)
+        UIGraphicsBeginImageContext(rect.size)
+        let context = UIGraphicsGetCurrentContext()
+        context!.setFillColor(color.cgColor);
+        context!.fill(rect);
+        let image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        return image!
     }
 }
