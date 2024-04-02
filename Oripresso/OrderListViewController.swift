@@ -39,6 +39,10 @@ extension OrderListViewController: UITableViewDataSource {
         }
         
         let item = selectedMenu[indexPath.row]
+        cell.quantityVariance = { variance in
+            self.selectedMenu[indexPath.row].quantity += variance
+        }
+        print(item.quantity)
         cell.configure(item)
         cell.selectionStyle = .none
         return cell

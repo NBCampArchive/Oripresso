@@ -73,8 +73,8 @@
 				1A31A3862BBA99630097602C /* OrderList.storyboard */,
 				B5D706B52BBA85B0009C32D9 /* LaunchScreen.storyboard */,
 				B5D706B02BBA85AF009C32D9 /* Main.storyboard */,
-				B5D706B82BBA85B0009C32D9 /* Info.plist */,
 				FF7B359D2BBAA81400CC76F8 /* MainView.storyboard */,
+				B5D706B82BBA85B0009C32D9 /* Info.plist */,
 				FF7B359F2BBAA83400CC76F8 /* MainViewController.swift */,
 				1AC6161C2BBBD60900DAFE63 /* OrderListViewController.swift */,
 				1AC6161E2BBBE29E00DAFE63 /* OrderListTableViewCell.swift */,
@@ -317,7 +317,7 @@
 				INFOPLIST_FILE = Oripresso/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = OrderList;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -345,7 +345,7 @@
 				INFOPLIST_FILE = Oripresso/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = OrderList;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -14,11 +14,22 @@ class OrderListTableViewCell: UITableViewCell {
     @IBOutlet weak var orderItemQuantityLabel: UILabel!
     @IBOutlet weak var orderItemPriceLabel: UILabel!
     
+    var quantityVariance: ((Int) -> Void)?
+    @IBAction func tapMinusButton(_ sender: UIButton) {
+        quantityVariance?(-1)
+        print("minus tapped")
+    }
+    @IBAction func tapPlusButton(_ sender: UIButton) {
+        quantityVariance?(+1)
+        print("plus tapped")
+    }
+    
+    
     func configure(_ item: SelectedMenu) {
         orderItemIndexLabel.text = String(item.index)
-        orderItemIndexLabel.text = item.name
+        orderItemNameLabel.text = item.name
         orderItemQuantityLabel.text = String(item.quantity)
-        orderItemPriceLabel.text = String(item.price)
+        orderItemPriceLabel.text = String(item.price * item.quantity)
     }
     
     
