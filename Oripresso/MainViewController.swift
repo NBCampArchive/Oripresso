@@ -13,11 +13,13 @@ class MainViewController: UIViewController {
     @IBOutlet weak var uiTableView: UITableView!
     @IBOutlet weak var uiTitle: UIImageView!
     @IBOutlet weak var segment: UISegmentedControl!
+    @IBOutlet weak var floatingButton: UIButton!
     
     let data: [MenuData] = [MenuData(name: "Americano", type: .coffee),
                             MenuData(name: "Juice", type: .nonCoffee),
                             MenuData(name: "Cake", type: .cake),
                             MenuData(name: "Bread", type: .bread)]
+    var selectedMenu: [MenuData] = []
     
     func setSegmentedControl() {
         let clearImage = UIImage()
@@ -41,38 +43,13 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        setSegmentedControl()
+        setSegmentedControl()
         tableViewDelegate()
-        setupFloatingActionButton()
-    }
-    
-    private let floatingActionButton: UIButton = {
-        let button = UIButton(type: .system)
-        
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = UIColor(hexCode: "E3B334")
-        button.setImage(UIImage(systemName: "cart"), for: .normal)
-        button.tintColor = .white
-        button.addTarget(self, action: #selector(fabTapped), for: .touchUpInside)
-        
-        return button
-    }()
-
-    private func setupFloatingActionButton() {
-        view.addSubview(floatingActionButton)
-            
-        NSLayoutConstraint.activate([
-            floatingActionButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 299),
-            floatingActionButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 635),
-            floatingActionButton.widthAnchor.constraint(equalToConstant: 66),
-            floatingActionButton.heightAnchor.constraint(equalToConstant: 66)
-        ])
-        
-        floatingActionButton.layer.cornerRadius = 66 / 2
+        floatingButton.layer.cornerRadius = 66 / 2
     }
 
-    @objc private func fabTapped() {
-        print("FAB 탭됨")
+    @IBAction func floatingButtonTapped(_ sender: Any) {
+        print(selectedMenu)
     }
 }
 
