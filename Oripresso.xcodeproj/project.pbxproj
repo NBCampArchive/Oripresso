@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1A31A3872BBA99630097602C /* OrderList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A31A3862BBA99630097602C /* OrderList.storyboard */; };
+		2B50C0F42BBBE7A000813768 /* orderButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B50C0F32BBBE7A000813768 /* orderButtonViewController.swift */; };
 		B5D706AB2BBA85AF009C32D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D706AA2BBA85AF009C32D9 /* AppDelegate.swift */; };
 		B5D706AD2BBA85AF009C32D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D706AC2BBA85AF009C32D9 /* SceneDelegate.swift */; };
 		B5D706AF2BBA85AF009C32D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D706AE2BBA85AF009C32D9 /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		1A31A3862BBA99630097602C /* OrderList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrderList.storyboard; sourceTree = "<group>"; };
+		2B50C0F32BBBE7A000813768 /* orderButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = orderButtonViewController.swift; sourceTree = "<group>"; };
 		B5D706A72BBA85AF009C32D9 /* Oripresso.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Oripresso.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5D706AA2BBA85AF009C32D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5D706AC2BBA85AF009C32D9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				B5D706B82BBA85B0009C32D9 /* Info.plist */,
 				FF7B359D2BBAA81400CC76F8 /* MainView.storyboard */,
 				FF7B359F2BBAA83400CC76F8 /* MainViewController.swift */,
+				2B50C0F32BBBE7A000813768 /* orderButtonViewController.swift */,
 			);
 			path = Oripresso;
 			sourceTree = "<group>";
@@ -136,7 +139,6 @@
 			files = (
 				B5D706B42BBA85B0009C32D9 /* Assets.xcassets in Resources */,
 				B5D706B72BBA85B0009C32D9 /* Base in Resources */,
-
 				1A31A3872BBA99630097602C /* OrderList.storyboard in Resources */,
 				FF7B359E2BBAA81400CC76F8 /* MainView.storyboard in Resources */,
 				B5D706B22BBA85AF009C32D9 /* Base in Resources */,
@@ -152,6 +154,7 @@
 			files = (
 				B5D706AF2BBA85AF009C32D9 /* ViewController.swift in Sources */,
 				B5D706AB2BBA85AF009C32D9 /* AppDelegate.swift in Sources */,
+				2B50C0F42BBBE7A000813768 /* orderButtonViewController.swift in Sources */,
 				B5D706AD2BBA85AF009C32D9 /* SceneDelegate.swift in Sources */,
 				FF7B35A02BBAA83400CC76F8 /* MainViewController.swift in Sources */,
 			);
@@ -310,7 +313,7 @@
 				INFOPLIST_FILE = Oripresso/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = OrderList;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -338,7 +341,7 @@
 				INFOPLIST_FILE = Oripresso/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = OrderList;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
