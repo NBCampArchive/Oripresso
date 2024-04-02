@@ -14,8 +14,10 @@ class MainViewTableCell: UITableViewCell {
     
     let mainViewCellImage = UIImageView().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.layer.cornerRadius = 10
+        $0.layer.cornerRadius = 50
         $0.layer.masksToBounds = true
+        $0.contentMode = .scaleAspectFit
+        $0.backgroundColor = UIColor(red: 0.098, green: 0.251, blue: 0.145, alpha: 1)
     }
 
     let mainViewCellTitle = UILabel().then {
@@ -52,7 +54,7 @@ class MainViewTableCell: UITableViewCell {
         mainViewCellImage.snp.makeConstraints {
             $0.centerY.equalToSuperview()
             $0.leading.equalToSuperview().offset(28)
-            $0.width.height.equalTo(80)
+            $0.width.height.equalTo(105)
         }
         
         mainViewCellTitle.snp.makeConstraints {
