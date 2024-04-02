@@ -25,7 +25,6 @@ class MainViewController: UIViewController {
         uiTableView.dataSource = self
         uiTableView.delegate = self
         uiTableView.reloadData()
-        view.addSubview(self.uiTableView)
     }
     
     @IBAction func segmentedControlSelected(_ sender: Any) {
@@ -36,7 +35,6 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         segment.removeBorders()
         tableViewDelegate()
-        floatingButton.layer.cornerRadius = 66 / 2
     }
 
     @IBAction func floatingButtonTapped(_ sender: Any) {

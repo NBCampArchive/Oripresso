@@ -54,14 +54,14 @@
                                 </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kkJ-js-xBF">
-                                <rect key="frame" x="299" y="671" width="66" height="66"/>
+                                <rect key="frame" x="299" y="699" width="66" height="66"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="66" id="Yob-yX-CWf"/>
                                     <constraint firstAttribute="height" constant="66" id="qYo-fc-Iyz"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="cart">
-                                    <backgroundConfiguration key="background" image="orangeCircle" imageContentMode="scaleAspectFit"/>
+                                    <backgroundConfiguration key="background" cornerRadius="33" image="orangeCircle" imageContentMode="scaleAspectFit"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="floatingButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ebD-0N-Rkq"/>
@@ -73,11 +73,11 @@
                         <constraints>
                             <constraint firstItem="GGp-Tw-JVC" firstAttribute="top" secondItem="wXf-X8-6Vz" secondAttribute="bottom" id="2Ke-nv-R1j"/>
                             <constraint firstItem="GGp-Tw-JVC" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="314-SG-7T5"/>
-                            <constraint firstItem="kkJ-js-xBF" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="299" id="9fr-Ya-QiX"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="kkJ-js-xBF" secondAttribute="trailing" constant="28" id="9fr-Ya-QiX"/>
                             <constraint firstItem="wXf-X8-6Vz" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="CYG-aI-XJ1"/>
                             <constraint firstItem="FHl-j1-v88" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="H2W-3B-yd6"/>
                             <constraint firstItem="l5C-rK-YZj" firstAttribute="top" secondItem="FHl-j1-v88" secondAttribute="bottom" constant="29" id="Jbe-4g-ZjZ"/>
-                            <constraint firstItem="kkJ-js-xBF" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="612" id="M0o-IX-W8v"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="kkJ-js-xBF" secondAttribute="bottom" constant="53" id="M0o-IX-W8v"/>
                             <constraint firstItem="wXf-X8-6Vz" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="UEX-zF-bSa"/>
                             <constraint firstItem="l5C-rK-YZj" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="YMb-Eb-260"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="l5C-rK-YZj" secondAttribute="trailing" id="cg8-vh-BsW"/>
