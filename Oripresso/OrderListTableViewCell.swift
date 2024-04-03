@@ -36,7 +36,7 @@ class OrderListTableViewCell: UITableViewCell {
     
     func updateLabels(_ item: SelectedMenu) {
         orderItemQuantityLabel.text = String(item.quantity)
-        orderItemPriceLabel.text = String(item.price * item.quantity)
+        orderItemPriceLabel.text = numberFormatter.string(from: NSNumber(value: item.price * item.quantity))
     }
     
     // MARK: - NumberFormatter
