@@ -9,7 +9,6 @@ import UIKit
 
 
 struct SelectedMenu {
-    let index: Int
     let name: String
     let price: Int
     var quantity: Int
@@ -17,8 +16,8 @@ struct SelectedMenu {
 
 class OrderListViewController: UIViewController {
     var selectedMenu = [
-        SelectedMenu(index: 1, name: "아이스 아메리카노", price: 4500, quantity: 3),
-        SelectedMenu(index: 2, name: "쿠키", price: 1000, quantity: 2)
+        SelectedMenu(name: "아이스 아메리카노", price: 4500, quantity: 3),
+        SelectedMenu(name: "쿠키", price: 1000, quantity: 2)
         ]
     
     @IBOutlet weak var orderListTableView: UITableView!
@@ -47,7 +46,7 @@ extension OrderListViewController: UITableViewDataSource {
             }
             cell.updateLabels(item)
         }
-        cell.configure(item)
+        cell.configure(item, index: indexPath.row + 1)
         cell.selectionStyle = .none
         return cell
     }
@@ -56,6 +55,7 @@ extension OrderListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         selectedMenu.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+        tableView.reloadData()
     }
 }
 

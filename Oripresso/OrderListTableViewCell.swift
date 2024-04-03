@@ -14,6 +14,7 @@ class OrderListTableViewCell: UITableViewCell {
     @IBOutlet weak var orderItemQuantityLabel: UILabel!
     @IBOutlet weak var orderItemPriceLabel: UILabel!
     
+    // MARK: - QuantityChange
     var quantityVariance: ((Int) -> Void)?
     @IBAction func tapMinusButton(_ sender: UIButton) {
         quantityVariance?(-1)
@@ -22,9 +23,12 @@ class OrderListTableViewCell: UITableViewCell {
         quantityVariance?(+1)
     }
     
+    // MARK: - IndexUpdate
+    var indexUpdate: ((Int) -> Void)?
     
-    func configure(_ item: SelectedMenu) {
-        orderItemIndexLabel.text = String(item.index)
+    // MARK: - CellConfiguration
+    func configure(_ item: SelectedMenu, index: Int) {
+        orderItemIndexLabel.text = String(index)
         orderItemNameLabel.text = item.name
         orderItemQuantityLabel.text = String(item.quantity)
         orderItemPriceLabel.text = String(item.price * item.quantity)
@@ -35,10 +39,10 @@ class OrderListTableViewCell: UITableViewCell {
         orderItemPriceLabel.text = String(item.price * item.quantity)
     }
     
+    // MARK: - DefaultCode
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
