@@ -18,9 +18,6 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        uiTableView.dataSource = self
-        uiTableView.delegate = self
     }
 }
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
