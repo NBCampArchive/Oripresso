@@ -22,7 +22,7 @@ class MainViewTableCell: UITableViewCell {
 
     let mainViewCellTitle = UILabel().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.font = UIFont(name: "", size: 17) ?? UIFont.systemFont(ofSize: 25)
+        $0.font = UIFont(name: "", size: 17) ?? UIFont.systemFont(ofSize: 17)
     }
 
     let mainViewCellDescription = UILabel().then {
