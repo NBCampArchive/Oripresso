@@ -67,16 +67,35 @@
                                     <action selector="floatingButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ebD-0N-Rkq"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W8O-wP-jSS">
+                                <rect key="frame" x="344" y="695" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="1v4-md-6dz"/>
+                                    <constraint firstAttribute="height" constant="25" id="hBp-dT-LF7"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="0">
+                                        <attributes>
+                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="W8O-wP-jSS" secondAttribute="bottom" constant="98" id="0p9-dS-I29"/>
                             <constraint firstItem="GGp-Tw-JVC" firstAttribute="top" secondItem="wXf-X8-6Vz" secondAttribute="bottom" id="2Ke-nv-R1j"/>
                             <constraint firstItem="GGp-Tw-JVC" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="314-SG-7T5"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="kkJ-js-xBF" secondAttribute="trailing" constant="28" id="9fr-Ya-QiX"/>
                             <constraint firstItem="wXf-X8-6Vz" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="CYG-aI-XJ1"/>
                             <constraint firstItem="FHl-j1-v88" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="H2W-3B-yd6"/>
                             <constraint firstItem="l5C-rK-YZj" firstAttribute="top" secondItem="FHl-j1-v88" secondAttribute="bottom" constant="29" id="Jbe-4g-ZjZ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="W8O-wP-jSS" secondAttribute="trailing" constant="24" id="LSm-No-pUk"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="kkJ-js-xBF" secondAttribute="bottom" constant="53" id="M0o-IX-W8v"/>
                             <constraint firstItem="wXf-X8-6Vz" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="UEX-zF-bSa"/>
                             <constraint firstItem="l5C-rK-YZj" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="YMb-Eb-260"/>
@@ -93,6 +112,7 @@
                         <outlet property="floatingButton" destination="kkJ-js-xBF" id="oT2-om-Fdb"/>
                         <outlet property="menuBottom" destination="GGp-Tw-JVC" id="Vqt-z7-jWR"/>
                         <outlet property="segment" destination="l5C-rK-YZj" id="cyC-CH-D1G"/>
+                        <outlet property="selectedLabel" destination="W8O-wP-jSS" id="FN4-Lg-Qzg"/>
                         <outlet property="uiTableView" destination="wXf-X8-6Vz" id="Nxd-vh-kYJ"/>
                         <outlet property="uiTitle" destination="FHl-j1-v88" id="asx-e9-Omt"/>
                     </connections>

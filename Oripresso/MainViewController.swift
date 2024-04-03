@@ -16,6 +16,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var uiTitle: UIImageView!
     @IBOutlet weak var segment: UISegmentedControl!
     @IBOutlet weak var floatingButton: UIButton!
+    @IBOutlet weak var selectedLabel: UILabel!
     
     let data: [MenuData] = [MenuData(name: "아메리카노", type: .coffee),
                             MenuData(name: "초코블렌디드", type: .nonCoffee),
@@ -46,6 +47,11 @@ class MainViewController: UIViewController {
         uiTableView.allowsMultipleSelection = true
     }
     
+    func setSelectedLabel() {
+        selectedLabel.layer.cornerRadius = 22 / 2
+        selectedLabel.backgroundColor = UIColor(patternImage: UIImage(named: "selectedLabelImage")!)
+    }
+    
     @IBAction func segmentedControlSelected(_ sender: Any) {
         uiTableView.reloadData()
     }
@@ -54,6 +60,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         segment.removeBorders()
         tableViewDelegate()
+        setSelectedLabel()
     }
 
     @IBAction func floatingButtonTapped(_ sender: Any) {
@@ -157,12 +164,16 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         switch segment.selectedSegmentIndex {
         case 0:
             selectedMenu.append(coffee[indexPath.row])
+            selectedLabel.text = String(selectedMenu.count)
         case 1:
             selectedMenu.append(nonCoffee[indexPath.row])
+            selectedLabel.text = String(selectedMenu.count)
         case 2:
             selectedMenu.append(cake[indexPath.row])
+            selectedLabel.text = String(selectedMenu.count)
         case 3:
             selectedMenu.append(bread[indexPath.row])
+            selectedLabel.text = String(selectedMenu.count)
         default:
             break
         }
@@ -170,13 +181,17 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         switch segment.selectedSegmentIndex {
         case 0:
-            self.selectedMenu = selectedMenu.filter { $0.name != coffee[indexPath.row].name}
+            self.selectedMenu = selectedMenu.filter { $0.name != coffee[indexPath.row].name }
+            selectedLabel.text = String(selectedMenu.count)
         case 1:
-            self.selectedMenu = selectedMenu.filter { $0.name != nonCoffee[indexPath.row].name}
+            self.selectedMenu = selectedMenu.filter { $0.name != nonCoffee[indexPath.row].name }
+            selectedLabel.text = String(selectedMenu.count)
         case 2:
-            self.selectedMenu = selectedMenu.filter { $0.name != cake[indexPath.row].name}
+            self.selectedMenu = selectedMenu.filter { $0.name != cake[indexPath.row].name }
+            selectedLabel.text = String(selectedMenu.count)
         case 3:
-            self.selectedMenu = selectedMenu.filter { $0.name != bread[indexPath.row].name}
+            self.selectedMenu = selectedMenu.filter { $0.name != bread[indexPath.row].name }
+            selectedLabel.text = String(selectedMenu.count)
         default:
             break
         }
