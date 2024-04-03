@@ -24,7 +24,7 @@
                                 <rect key="frame" x="0.0" y="198" width="393" height="570"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="PKo-eg-hmD">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellIdentifier" id="PKo-eg-hmD">
                                         <rect key="frame" x="0.0" y="50" width="393" height="44.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PKo-eg-hmD" id="VFX-X3-w9g">
@@ -49,16 +49,35 @@
                                     <segment title="Cake"/>
                                     <segment title="Bread"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentedControlSelected:" destination="Y6W-OH-hqX" eventType="valueChanged" id="Yca-1E-L76"/>
+                                </connections>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kkJ-js-xBF">
+                                <rect key="frame" x="299" y="699" width="66" height="66"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="66" id="Yob-yX-CWf"/>
+                                    <constraint firstAttribute="height" constant="66" id="qYo-fc-Iyz"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="cart">
+                                    <backgroundConfiguration key="background" cornerRadius="33" image="orangeCircle" imageContentMode="scaleAspectFit"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="floatingButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ebD-0N-Rkq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="GGp-Tw-JVC" firstAttribute="top" secondItem="wXf-X8-6Vz" secondAttribute="bottom" id="2Ke-nv-R1j"/>
                             <constraint firstItem="GGp-Tw-JVC" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="314-SG-7T5"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="kkJ-js-xBF" secondAttribute="trailing" constant="28" id="9fr-Ya-QiX"/>
                             <constraint firstItem="wXf-X8-6Vz" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="CYG-aI-XJ1"/>
                             <constraint firstItem="FHl-j1-v88" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="H2W-3B-yd6"/>
                             <constraint firstItem="l5C-rK-YZj" firstAttribute="top" secondItem="FHl-j1-v88" secondAttribute="bottom" constant="29" id="Jbe-4g-ZjZ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="kkJ-js-xBF" secondAttribute="bottom" constant="53" id="M0o-IX-W8v"/>
                             <constraint firstItem="wXf-X8-6Vz" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="UEX-zF-bSa"/>
                             <constraint firstItem="l5C-rK-YZj" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="YMb-Eb-260"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="l5C-rK-YZj" secondAttribute="trailing" id="cg8-vh-BsW"/>
@@ -70,6 +89,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="floatingButton" destination="kkJ-js-xBF" id="oT2-om-Fdb"/>
                         <outlet property="menuBottom" destination="GGp-Tw-JVC" id="Vqt-z7-jWR"/>
                         <outlet property="segment" destination="l5C-rK-YZj" id="cyC-CH-D1G"/>
                         <outlet property="uiTableView" destination="wXf-X8-6Vz" id="Nxd-vh-kYJ"/>
@@ -82,7 +102,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cart" width="47" height="47"/>
         <image name="menuSelectBottom" width="288" height="50"/>
+        <image name="orangeCircle" width="66" height="66"/>
         <image name="title" width="182" height="50"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
