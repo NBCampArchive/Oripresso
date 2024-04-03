@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1A31A3872BBA99630097602C /* OrderList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A31A3862BBA99630097602C /* OrderList.storyboard */; };
-		1A5849132BBD2825009C364E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1A5849122BBD2825009C364E /* SnapKit */; };
-		1A5849162BBD284A009C364E /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 1A5849152BBD284A009C364E /* Then */; };
+		1A5849192BBD482F009C364E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1A5849182BBD482F009C364E /* SnapKit */; };
+		1A58491C2BBD4842009C364E /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 1A58491B2BBD4842009C364E /* Then */; };
 		1AC6161D2BBBD60900DAFE63 /* OrderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC6161C2BBBD60900DAFE63 /* OrderListViewController.swift */; };
 		1AC6161F2BBBE29E00DAFE63 /* OrderListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC6161E2BBBE29E00DAFE63 /* OrderListTableViewCell.swift */; };
 		2B50C0F42BBBE7A000813768 /* (null) in Sources */ = {isa = PBXBuildFile; };
@@ -50,8 +50,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A5849132BBD2825009C364E /* SnapKit in Frameworks */,
-				1A5849162BBD284A009C364E /* Then in Frameworks */,
+				1A5849192BBD482F009C364E /* SnapKit in Frameworks */,
+				1A58491C2BBD4842009C364E /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,8 +113,8 @@
 			);
 			name = Oripresso;
 			packageProductDependencies = (
-				1A5849122BBD2825009C364E /* SnapKit */,
-				1A5849152BBD284A009C364E /* Then */,
+				1A5849182BBD482F009C364E /* SnapKit */,
+				1A58491B2BBD4842009C364E /* Then */,
 			);
 			productName = Oripresso;
 			productReference = B5D706A72BBA85AF009C32D9 /* Oripresso.app */;
@@ -145,8 +145,8 @@
 			);
 			mainGroup = B5D7069E2BBA85AF009C32D9;
 			packageReferences = (
-				1A5849112BBD2825009C364E /* XCRemoteSwiftPackageReference "SnapKit" */,
-				1A5849142BBD284A009C364E /* XCRemoteSwiftPackageReference "Then" */,
+				1A5849172BBD482F009C364E /* XCRemoteSwiftPackageReference "SnapKit" */,
+				1A58491A2BBD4842009C364E /* XCRemoteSwiftPackageReference "Then" */,
 			);
 			productRefGroup = B5D706A82BBA85AF009C32D9 /* Products */;
 			projectDirPath = "";
@@ -411,7 +411,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		1A5849112BBD2825009C364E /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		1A5849172BBD482F009C364E /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
 			requirement = {
@@ -419,7 +419,7 @@
 				minimumVersion = 5.7.1;
 			};
 		};
-		1A5849142BBD284A009C364E /* XCRemoteSwiftPackageReference "Then" */ = {
+		1A58491A2BBD4842009C364E /* XCRemoteSwiftPackageReference "Then" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/devxoul/Then.git";
 			requirement = {
@@ -430,14 +430,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1A5849122BBD2825009C364E /* SnapKit */ = {
+		1A5849182BBD482F009C364E /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1A5849112BBD2825009C364E /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = 1A5849172BBD482F009C364E /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
-		1A5849152BBD284A009C364E /* Then */ = {
+		1A58491B2BBD4842009C364E /* Then */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1A5849142BBD284A009C364E /* XCRemoteSwiftPackageReference "Then" */;
+			package = 1A58491A2BBD4842009C364E /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
 		};
 /* End XCSwiftPackageProductDependency section */
