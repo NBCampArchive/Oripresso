@@ -78,7 +78,6 @@
 				B5D706AE2BBA85AF009C32D9 /* ViewController.swift */,
 				B5D706B32BBA85B0009C32D9 /* Assets.xcassets */,
 				1A31A3862BBA99630097602C /* OrderList.storyboard */,
-				FFDED83D2BBC4ECA00C7F58E /* OrderListViewController.swift */,
 				B5D706B52BBA85B0009C32D9 /* LaunchScreen.storyboard */,
 				B5D706B02BBA85AF009C32D9 /* Main.storyboard */,
 				FF7B359D2BBAA81400CC76F8 /* MainView.storyboard */,
