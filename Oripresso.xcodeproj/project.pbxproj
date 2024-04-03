@@ -17,6 +17,9 @@
 		B5D706B22BBA85AF009C32D9 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = B5D706B12BBA85AF009C32D9 /* Base */; };
 		B5D706B42BBA85B0009C32D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5D706B32BBA85B0009C32D9 /* Assets.xcassets */; };
 		B5D706B72BBA85B0009C32D9 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = B5D706B62BBA85B0009C32D9 /* Base */; };
+		B5D706BF2BBC0DC1009C32D9 /* MainViewTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D706BE2BBC0DC1009C32D9 /* MainViewTableCell.swift */; };
+		B5D706C22BBC0EC5009C32D9 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = B5D706C12BBC0EC5009C32D9 /* Then */; };
+		B5D706C52BBC0ED2009C32D9 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B5D706C42BBC0ED2009C32D9 /* SnapKit */; };
 		FF0E6C962BBBF13900C2AEF0 /* MenuData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0E6C952BBBF13900C2AEF0 /* MenuData.swift */; };
 		FF0E6C982BBBF1A400C2AEF0 /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0E6C972BBBF1A400C2AEF0 /* Type.swift */; };
 		FF7B359E2BBAA81400CC76F8 /* MainView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF7B359D2BBAA81400CC76F8 /* MainView.storyboard */; };
@@ -36,6 +39,7 @@
 		B5D706B32BBA85B0009C32D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B5D706B62BBA85B0009C32D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B5D706B82BBA85B0009C32D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5D706BE2BBC0DC1009C32D9 /* MainViewTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewTableCell.swift; sourceTree = "<group>"; };
 		FF0E6C952BBBF13900C2AEF0 /* MenuData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuData.swift; sourceTree = "<group>"; };
 		FF0E6C972BBBF1A400C2AEF0 /* Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
 		FF7B359D2BBAA81400CC76F8 /* MainView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainView.storyboard; sourceTree = "<group>"; };
@@ -48,6 +52,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5D706C22BBC0EC5009C32D9 /* Then in Frameworks */,
+				B5D706C52BBC0ED2009C32D9 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +89,7 @@
 				FF7B359D2BBAA81400CC76F8 /* MainView.storyboard */,
 				B5D706B82BBA85B0009C32D9 /* Info.plist */,
 				FF7B359F2BBAA83400CC76F8 /* MainViewController.swift */,
+				B5D706BE2BBC0DC1009C32D9 /* MainViewTableCell.swift */,
 				FF0E6C952BBBF13900C2AEF0 /* MenuData.swift */,
 				FF0E6C972BBBF1A400C2AEF0 /* Type.swift */,
 				1AC6161C2BBBD60900DAFE63 /* OrderListViewController.swift */,
@@ -107,6 +114,10 @@
 			dependencies = (
 			);
 			name = Oripresso;
+			packageProductDependencies = (
+				B5D706C12BBC0EC5009C32D9 /* Then */,
+				B5D706C42BBC0ED2009C32D9 /* SnapKit */,
+			);
 			productName = Oripresso;
 			productReference = B5D706A72BBA85AF009C32D9 /* Oripresso.app */;
 			productType = "com.apple.product-type.application";
@@ -135,6 +146,10 @@
 				Base,
 			);
 			mainGroup = B5D7069E2BBA85AF009C32D9;
+			packageReferences = (
+				B5D706C02BBC0EC5009C32D9 /* XCRemoteSwiftPackageReference "Then" */,
+				B5D706C32BBC0ED2009C32D9 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = B5D706A82BBA85AF009C32D9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -167,6 +182,7 @@
 				1AC6161F2BBBE29E00DAFE63 /* OrderListTableViewCell.swift in Sources */,
 				1AC6161D2BBBD60900DAFE63 /* OrderListViewController.swift in Sources */,
 				B5D706AF2BBA85AF009C32D9 /* ViewController.swift in Sources */,
+				B5D706BF2BBC0DC1009C32D9 /* MainViewTableCell.swift in Sources */,
 				B5D706AB2BBA85AF009C32D9 /* AppDelegate.swift in Sources */,
 				FF0E6C962BBBF13900C2AEF0 /* MenuData.swift in Sources */,
 				2B50C0F42BBBE7A000813768 /* orderButtonViewController.swift in Sources */,
@@ -324,7 +340,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = FB44T8T3FL;
+				DEVELOPMENT_TEAM = 8B78U37C85;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Oripresso/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -352,7 +368,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = FB44T8T3FL;
+				DEVELOPMENT_TEAM = 8B78U37C85;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Oripresso/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -395,6 +411,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B5D706C02BBC0EC5009C32D9 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		B5D706C32BBC0ED2009C32D9 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B5D706C12BBC0EC5009C32D9 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B5D706C02BBC0EC5009C32D9 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+		B5D706C42BBC0ED2009C32D9 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B5D706C32BBC0ED2009C32D9 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B5D7069F2BBA85AF009C32D9 /* Project object */;
 }
