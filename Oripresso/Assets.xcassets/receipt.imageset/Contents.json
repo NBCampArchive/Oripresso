@@ -1,12 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "하단상태창.svg",
+      "filename" : "receipt.pdf",
       "idiom" : "universal"
     }
   ],
   "info" : {
     "author" : "xcode",
     "version" : 1
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
   }
 }

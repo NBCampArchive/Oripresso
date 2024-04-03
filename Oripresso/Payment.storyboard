@@ -16,11 +16,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="주문완료 하단" translatesAutoresizingMaskIntoConstraints="NO" id="N12-v9-l0v">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="underBar" translatesAutoresizingMaskIntoConstraints="NO" id="N12-v9-l0v">
                                 <rect key="frame" x="52" y="768" width="288" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="영수증" translatesAutoresizingMaskIntoConstraints="NO" id="aaS-Kj-XaE">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="receipt" translatesAutoresizingMaskIntoConstraints="NO" id="aaS-Kj-XaE">
                                 <rect key="frame" x="35" y="102" width="323" height="592"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -50,7 +50,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="영수증" width="327" height="604"/>
-        <image name="주문완료 하단" width="288" height="50"/>
+        <image name="receipt" width="327" height="604"/>
+        <image name="underBar" width="288" height="50"/>
     </resources>
 </document>

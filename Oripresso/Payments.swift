@@ -29,7 +29,7 @@ class Payments: ViewController {
         // 애니메이션 적용
         // 애니메이션 처리: receipt 이미지뷰를 원래 위치로 이동하면서 opacity를 1로 변경. 속도는 1.6, 딜레이 0.7, ease-out 애니메이션(점점 느려지기) 사용
         // 애니메이션 끝나면 이후 동작 없음
-        UIView.animate(withDuration: 1.6, delay: 0.7, options: [.curveEaseOut], animations: {
+        UIView.animate(withDuration: 1.55, delay: 0.7, options: [.curveEaseOut], animations: {
             self.receipt.transform = .identity
             self.receipt.alpha = 1
         }, completion: nil)
@@ -40,7 +40,7 @@ class Payments: ViewController {
         moveToMain.transform = CGAffineTransform(translationX: 0, y: -self.receipt.frame.height/10)
         moveToMain.alpha = 0
         
-        UIView.animate(withDuration: 1.6, delay: 0.7, options: [.curveEaseOut], animations: {
+        UIView.animate(withDuration: 1.55, delay: 0.7, options: [.curveEaseOut], animations: {
             self.moveToMain.transform = .identity
             self.moveToMain.alpha = 1
         }, completion: nil)
