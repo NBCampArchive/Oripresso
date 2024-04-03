@@ -17,7 +17,8 @@ struct SelectedMenu {
 class OrderListViewController: UIViewController {
     var selectedMenu = [
         SelectedMenu(name: "아이스 아메리카노", price: 4500, quantity: 3),
-        SelectedMenu(name: "쿠키", price: 1000, quantity: 2)
+        SelectedMenu(name: "쿠키", price: 1000, quantity: 2),
+        SelectedMenu(name: "녹차라떼", price: 5000, quantity: 5)
         ]
     
     @IBOutlet weak var orderListTableView: UITableView!
@@ -54,8 +55,7 @@ extension OrderListViewController: UITableViewDataSource {
     // swipe하여 버튼 클릭하면 delete
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         selectedMenu.remove(at: indexPath.row)
-        tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
-        tableView.reloadData()
+        tableView.reloadData() // 모든 셀의 index label을 업데이트해야해서 reloadData 사용함
     }
 }
 
