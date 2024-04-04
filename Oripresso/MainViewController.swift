@@ -10,7 +10,7 @@ import SnapKit
 import Then
 
 class MainViewController: UIViewController {
-    
+
     @IBOutlet weak var menuBottom: UIImageView!
     @IBOutlet weak var uiTableView: UITableView!
     @IBOutlet weak var uiTitle: UIImageView!
@@ -21,8 +21,9 @@ class MainViewController: UIViewController {
                             MenuData(name: "Juice", type: .nonCoffee),
                             MenuData(name: "Cake", type: .cake),
                             MenuData(name: "Bread", type: .bread)]
-    var selectedMenu: [MenuData] = []
-    
+    var cafeMenu: CafeMenu?
+    var selectedCategory: String = "Coffee"
+    var selectedMenu: SelectedMenu?
     func tableViewDelegate() {
         uiTableView.dataSource = self
         uiTableView.delegate = self
@@ -30,6 +31,7 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func segmentedControlSelected(_ sender: Any) {
+        selectedCategory = (sender as AnyObject).titleForSegment(at: (sender as AnyObject).selectedSegmentIndex) ?? "Coffee"
         uiTableView.reloadData()
     }
     
@@ -37,10 +39,12 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         segment.removeBorders()
         tableViewDelegate()
+        uiTableView.separatorColor =  UIColor(red: 0.89, green: 0.702, blue: 0.204, alpha: 1)
+        // JSON 파일에서 데이터 읽어오기
+        cafeMenu = readJSONFromFile()
     }
 
     @IBAction func floatingButtonTapped(_ sender: Any) {
-        
         let storyboard = UIStoryboard(name: "OrderList", bundle: nil)
         if let orderListViewController = storyboard.instantiateViewController(withIdentifier: "OrderList") as? OrderListViewController {
             orderListViewController.modalPresentationStyle = .fullScreen
@@ -112,9 +116,43 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MainViewTableCell", for: indexPath) as! MainViewTableCell
-        // setCell 메서드를 호출하여 셀의 데이터를 설정합니다.
-        cell.setCell(image: "americano", title: "title", description: "description", price: "4500")
-        
+        /// SegementIndex 별 MenuData 변경
+        if let cafeMenu = cafeMenu {
+            var menu: Menu?
+            
+            switch selectedCategory {
+            case "Coffee":
+                menu = cafeMenu.coffee.menus[indexPath.row]
+            case "Non-Coffee":
+                menu = cafeMenu.nonCoffee.menus[indexPath.row]
+            case "Desert":
+                menu = cafeMenu.desert.menus[indexPath.row]
+            case "Bread":
+                menu = cafeMenu.bread.menus[indexPath.row]
+            default:
+                break
+            }
+            
+            if let menu = menu {
+                cell.setCell(image: "placeholder", title: menu.name, description: menu.description, price: "\(menu.price) ₩")
+            }
+        }
         return cell
     }
+}
+// MARK: - JSON 파일을 읽어오는 함수
+
+func readJSONFromFile() -> CafeMenu? {
+    if let path = Bundle.main.path(forResource: "CoffeeJson", ofType: "json") {
+        do {
+            let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+            let decoder = JSONDecoder()
+            let cafeMenu = try decoder.decode(CafeMenu.self, from: data)
+            return cafeMenu
+        } catch {
+            print("Error reading JSON file: \(error)")
+            return nil
+        }
+    }
+    return nil
 }
