@@ -9,6 +9,7 @@ import UIKit
 
 class PosterViewCell: UICollectionViewCell {
     
+    //이것도 넣으려면 테이블뷰도 2개를 해야하나??? 단일 테이블뷰셀로 해서 2가지로 해야하나
     @IBOutlet weak var posters: UIImageView!
     
     static let identifier = "PosterViewCell"

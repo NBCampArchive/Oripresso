@@ -24,7 +24,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         table.register(TableViewCell.nib(), forCellReuseIdentifier: TableViewCell.identifier)
         table.delegate = self
         table.dataSource = self
-        table.backgroundColor = view.backgroundColor
+        table.backgroundColor = (UIColor(red: 236, green: 213, blue: 146, alpha: 1))
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

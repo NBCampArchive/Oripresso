@@ -11,7 +11,7 @@ class CollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var emoji: UILabel!
-    @IBOutlet weak var Background: UIView!
+    @IBOutlet weak var Background: UIImageView!
     
     static let identifier = "CollectionViewCell"
     
@@ -24,8 +24,10 @@ class CollectionViewCell: UICollectionViewCell {
         // Initialization code
         
         //이모지 뒤에 원 만들어주기
-        Background.frame = CGRect(x: 0, y: 0, width: 77, height: 77)
-        Background.layer.cornerRadius = 50
+        Background.backgroundColor = UIColor(red: 245, green: 245, blue: 245, alpha: 1)
+        Background.layer.masksToBounds = true
+        Background.layer.cornerRadius = Background.frame.height / 2
+        
     }
 
     public func configure(with model: Model) {

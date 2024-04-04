@@ -19,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="yAc-VD-jYn">
-                        <rect key="frame" x="20" y="11" width="353" height="150"/>
+                        <rect key="frame" x="25" y="34" width="342" height="105"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7H9-bL-fcf">
                             <size key="itemSize" width="128" height="128"/>
@@ -30,13 +30,14 @@
                     </collectionView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="yAc-VD-jYn" secondAttribute="trailing" constant="20" id="8RT-De-9HK"/>
-                    <constraint firstAttribute="bottom" secondItem="yAc-VD-jYn" secondAttribute="bottom" constant="12" id="NDE-oF-ONg"/>
-                    <constraint firstItem="yAc-VD-jYn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="OG4-PE-7Qh"/>
-                    <constraint firstItem="yAc-VD-jYn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="lWK-4o-y0H"/>
+                    <constraint firstItem="yAc-VD-jYn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="25" id="BOV-Lx-ljU"/>
+                    <constraint firstItem="yAc-VD-jYn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="34" id="MUB-ZO-jUF"/>
+                    <constraint firstAttribute="trailing" secondItem="yAc-VD-jYn" secondAttribute="trailing" constant="26" id="NVp-XC-JXw"/>
+                    <constraint firstAttribute="bottom" secondItem="yAc-VD-jYn" secondAttribute="bottom" constant="34" id="lUC-9w-cBP"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" red="0.92549019607843142" green="0.83529411764705885" blue="0.5725490196078431" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="collectionView" destination="yAc-VD-jYn" id="auB-yP-qfr"/>
             </connections>
