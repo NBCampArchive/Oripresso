@@ -129,36 +129,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         // setCell 메서드를 호출하여 셀의 데이터를 설정합니다.
         cell.setCell(image: "americano", title: "title", description: "description", price: "4500")
         
-        divideType(datas: data)
-        switch segment.selectedSegmentIndex {
-        case 0:
-            cell.setCell(image: "americano", title: coffee[indexPath.row].name, description: "desciption", price: "4500")
-            if selectedMenu.contains(where: { $0.name.contains(coffee[indexPath.row].name) } ) {
-                tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
-            }
-            return cell
-        case 1:
-            cell.setCell(image: "americano", title: nonCoffee[indexPath.row].name, description: "desciption", price: "4500")
-            if selectedMenu.contains(where: { $0.name.contains(nonCoffee[indexPath.row].name) } ) {
-                tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
-            }
-            return cell
-        case 2:
-            cell.setCell(image: "americano", title: cake[indexPath.row].name, description: "desciption", price: "4500")
-            if selectedMenu.contains(where: { $0.name.contains(cake[indexPath.row].name) } ) {
-                tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
-            }
-            return cell
-        case 3:
-            cell.setCell(image: "americano", title: bread[indexPath.row].name, description: "desciption", price: "4500")
-            if selectedMenu.contains(where: { $0.name.contains(bread[indexPath.row].name) } ) {
-                tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
-            }
-            return cell
-        default:
-            return cell
-            
-        }
+        return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch segment.selectedSegmentIndex {
