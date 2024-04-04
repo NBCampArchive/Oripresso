@@ -16,17 +16,40 @@ class MainViewController: UIViewController {
     @IBOutlet weak var uiTitle: UIImageView!
     @IBOutlet weak var segment: UISegmentedControl!
     @IBOutlet weak var floatingButton: UIButton!
+    @IBOutlet weak var selectedLabel: UILabel!
     
-    let data: [MenuData] = [MenuData(name: "Americano", type: .coffee),
-                            MenuData(name: "Juice", type: .nonCoffee),
-                            MenuData(name: "Cake", type: .cake),
-                            MenuData(name: "Bread", type: .bread)]
+    let data: [MenuData] = [MenuData(name: "아메리카노", type: .coffee),
+                            MenuData(name: "초코블렌디드", type: .nonCoffee),
+                            MenuData(name: "당근케이크", type: .cake),
+                            MenuData(name: "소금빵", type: .bread),
+                            MenuData(name: "에스프레소", type: .coffee),
+                            MenuData(name: "레몬에이드", type: .nonCoffee),
+                            MenuData(name: "레드벨벳케이크", type: .cake),
+                            MenuData(name: "식빵", type: .bread),
+                            MenuData(name: "아이스아메리카노", type: .coffee),
+                            MenuData(name: "민트초코블렌디드", type: .nonCoffee),
+                            MenuData(name: "티라미수", type: .cake),
+                            MenuData(name: "크루와상", type: .bread),
+                            MenuData(name: "카페라떼", type: .coffee),
+                            MenuData(name: "자몽에이드", type: .nonCoffee),
+                            MenuData(name: "초코케이크", type: .cake),
+                            MenuData(name: "빵", type: .bread)]
+    var coffee: [MenuData] = []
+    var nonCoffee: [MenuData] = []
+    var cake: [MenuData] = []
+    var bread: [MenuData] = []
     var selectedMenu: [MenuData] = []
     
     func tableViewDelegate() {
         uiTableView.dataSource = self
         uiTableView.delegate = self
         uiTableView.reloadData()
+        uiTableView.allowsMultipleSelection = true
+    }
+    
+    func setSelectedLabel() {
+        selectedLabel.layer.cornerRadius = 22 / 2
+        selectedLabel.backgroundColor = UIColor(patternImage: UIImage(named: "selectedLabelImage")!)
     }
     
     @IBAction func segmentedControlSelected(_ sender: Any) {
@@ -37,16 +60,33 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         segment.removeBorders()
         tableViewDelegate()
+        setSelectedLabel()
     }
 
     @IBAction func floatingButtonTapped(_ sender: Any) {
         
         let storyboard = UIStoryboard(name: "OrderList", bundle: nil)
-        if let orderListViewController = storyboard.instantiateViewController(withIdentifier: "OrderList") as? OrderListViewController {
-            orderListViewController.modalPresentationStyle = .fullScreen
-            self.presentFromRight(orderListViewController, animated: true)
+        
+        if let pushVC = storyboard.instantiateViewController(withIdentifier: "OrderList") as? OrderListViewController {
+            self.navigationController?.pushViewController(pushVC, animated: true)
+            print(selectedMenu)
         } else {
             print(selectedMenu)
+        }
+    }
+    
+    func divideType(datas: [MenuData]) {
+        for data in datas {
+            switch data.type {
+            case .coffee:
+                coffee.append(data)
+            case .nonCoffee:
+                nonCoffee.append(data)
+            case .cake:
+                cake.append(data)
+            case .bread:
+                bread.append(data)
+            }
         }
     }
 }
@@ -54,7 +94,7 @@ class MainViewController: UIViewController {
 
 
 extension UISegmentedControl {
-    func removeBorders(andBackground:Bool=false) {
+    func removeBorders(andBackground: Bool = false) {
         setBackgroundImage(imageWithColor(color: backgroundColor ?? .clear), for: .normal, barMetrics: .default)
         setBackgroundImage(imageWithColor(color: backgroundColor ?? .clear), for: .selected, barMetrics: .default)
         setDividerImage(imageWithColor(color: UIColor.clear), forLeftSegmentState: .normal, rightSegmentState: .normal, barMetrics: .default)
@@ -75,32 +115,6 @@ extension UISegmentedControl {
     }
 }
 
-extension UIViewController {
-    func presentFromRight(_ viewControllerToPresent: UIViewController, animated: Bool, completion: (() -> Void)? = nil) {
-        if animated {
-            // 새 뷰 컨트롤러의 초기 위치를 화면 오른쪽 바깥으로 설정
-            viewControllerToPresent.view.frame = CGRect(x: self.view.frame.width, y: 0, width: self.view.frame.width, height: self.view.frame.height)
-            
-            // 새 뷰 컨트롤러 뷰를 현재 뷰 위에 추가
-            self.view.addSubview(viewControllerToPresent.view)
-            self.addChild(viewControllerToPresent)
-            
-            // 애니메이션으로 뷰를 왼쪽으로 이동
-            UIView.animate(withDuration: 0.5, animations: {
-                viewControllerToPresent.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
-            }, completion: { finished in
-                viewControllerToPresent.didMove(toParent: self)
-                completion?()
-            })
-        } else {
-            // 애니메이션이 없는 경우, 바로 뷰 컨트롤러를 추가
-            self.view.addSubview(viewControllerToPresent.view)
-            self.addChild(viewControllerToPresent)
-            viewControllerToPresent.didMove(toParent: self)
-            completion?()
-        }
-    }
-}
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4
@@ -116,5 +130,41 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         cell.setCell(image: "americano", title: "title", description: "description", price: "4500")
         
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch segment.selectedSegmentIndex {
+        case 0:
+            selectedMenu.append(coffee[indexPath.row])
+            selectedLabel.text = String(selectedMenu.count)
+        case 1:
+            selectedMenu.append(nonCoffee[indexPath.row])
+            selectedLabel.text = String(selectedMenu.count)
+        case 2:
+            selectedMenu.append(cake[indexPath.row])
+            selectedLabel.text = String(selectedMenu.count)
+        case 3:
+            selectedMenu.append(bread[indexPath.row])
+            selectedLabel.text = String(selectedMenu.count)
+        default:
+            break
+        }
+    }
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        switch segment.selectedSegmentIndex {
+        case 0:
+            self.selectedMenu = selectedMenu.filter { $0.name != coffee[indexPath.row].name }
+            selectedLabel.text = String(selectedMenu.count)
+        case 1:
+            self.selectedMenu = selectedMenu.filter { $0.name != nonCoffee[indexPath.row].name }
+            selectedLabel.text = String(selectedMenu.count)
+        case 2:
+            self.selectedMenu = selectedMenu.filter { $0.name != cake[indexPath.row].name }
+            selectedLabel.text = String(selectedMenu.count)
+        case 3:
+            self.selectedMenu = selectedMenu.filter { $0.name != bread[indexPath.row].name }
+            selectedLabel.text = String(selectedMenu.count)
+        default:
+            break
+        }
     }
 }
