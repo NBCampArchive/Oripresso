@@ -37,7 +37,6 @@ class OrderListViewController: UIViewController {
         self.totalPriceLabel.text = "\(numberFormatter.string(from: NSNumber(value: totalPrice)) ?? "0") ₩"
     }
     
-    
     // MARK: - NumberFormatter
     let numberFormatter = {
         let formatter = NumberFormatter()
