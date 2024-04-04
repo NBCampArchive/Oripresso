@@ -24,7 +24,7 @@ class MainViewController: UIViewController {
                             MenuData(name: "Bread", type: .bread)]
     var cafeMenu: CafeMenu?
     var selectedCategory: String = "Coffee"
-    var selectedMenu: SelectedMenu?
+    var selectedMenus: [SelectedMenu] = []
 
     var coffee: [MenuData] = []
     var nonCoffee: [MenuData] = []
@@ -63,10 +63,12 @@ class MainViewController: UIViewController {
         let storyboard = UIStoryboard(name: "OrderList", bundle: nil)
         
         if let pushVC = storyboard.instantiateViewController(withIdentifier: "OrderList") as? OrderListViewController {
+            pushVC.selectedMenu = selectedMenus
+            
             self.navigationController?.pushViewController(pushVC, animated: true)
-            print(selectedMenu)
+            print(selectedMenus)
         } else {
-            print(selectedMenu)
+            print(selectedMenus)
         }
     }
     
@@ -110,6 +112,7 @@ extension UISegmentedControl {
     }
 }
 
+// MARK: - TableView
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4
@@ -140,44 +143,78 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             
             if let menu = menu {
                 cell.setCell(image: "placeholder", title: menu.name, description: menu.description, price: "\(menu.price) ₩")
+                if selectedMenus.contains(where: { $0.name == menu.name }) {
+                    cell.backgroundColor = UIColor(red: 0.89, green: 0.702, blue: 0.204, alpha: 0.5) // 선택된 셀의 배경색 변경
+                } else {
+                    cell.backgroundColor = .white // 선택되지 않은 셀의 배경색 변경
+                }
             }
         }
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch segment.selectedSegmentIndex {
-        case 0:
-            selectedMenu.append(coffee[indexPath.row])
-            selectedLabel.text = String(selectedMenu.count)
-        case 1:
-            selectedMenu.append(nonCoffee[indexPath.row])
-            selectedLabel.text = String(selectedMenu.count)
-        case 2:
-            selectedMenu.append(cake[indexPath.row])
-            selectedLabel.text = String(selectedMenu.count)
-        case 3:
-            selectedMenu.append(bread[indexPath.row])
-            selectedLabel.text = String(selectedMenu.count)
-        default:
-            break
+        // 선택된 셀의 배경색 변경
+        if let cell = tableView.cellForRow(at: indexPath) {
+            let bgColorView = UIView()
+            bgColorView.backgroundColor = UIColor(red: 0.89, green: 0.702, blue: 0.204, alpha: 0.5)
+            cell.selectedBackgroundView = bgColorView
+        }
+        if let cafeMenu = cafeMenu {
+            var menu: Menu?
+            
+            switch selectedCategory {
+            case "Coffee":
+                menu = cafeMenu.coffee.menus[indexPath.row]
+            case "Non-Coffee":
+                menu = cafeMenu.nonCoffee.menus[indexPath.row]
+            case "Desert":
+                menu = cafeMenu.desert.menus[indexPath.row]
+            case "Bread":
+                menu = cafeMenu.bread.menus[indexPath.row]
+            default:
+                break
+            }
+            
+            if let selectedMenu = menu {
+                if let index = selectedMenus.firstIndex(where: { $0.name == selectedMenu.name }) {
+                    // 이미 선택된 메뉴인 경우 배열에서 제거
+                    selectedMenus.remove(at: index)
+                    
+                    // 해당 셀만 갱신
+                    tableView.reloadRows(at: [indexPath], with: .automatic)
+                } else {
+                    let newSelectedMenu = SelectedMenu(name: selectedMenu.name, price: selectedMenu.price, quantity: 1)
+                    selectedMenus.append(newSelectedMenu)
+                }
+                
+                print("Selected Menus: \(selectedMenus)")
+                selectedLabel.text = String(selectedMenus.count)
+            }
         }
     }
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        switch segment.selectedSegmentIndex {
-        case 0:
-            self.selectedMenu = selectedMenu.filter { $0.name != coffee[indexPath.row].name }
-            selectedLabel.text = String(selectedMenu.count)
-        case 1:
-            self.selectedMenu = selectedMenu.filter { $0.name != nonCoffee[indexPath.row].name }
-            selectedLabel.text = String(selectedMenu.count)
-        case 2:
-            self.selectedMenu = selectedMenu.filter { $0.name != cake[indexPath.row].name }
-            selectedLabel.text = String(selectedMenu.count)
-        case 3:
-            self.selectedMenu = selectedMenu.filter { $0.name != bread[indexPath.row].name }
-            selectedLabel.text = String(selectedMenu.count)
-        default:
-            break
+        if let cafeMenu = cafeMenu {
+            var menu: Menu?
+
+            switch selectedCategory {
+            case "Coffee":
+                menu = cafeMenu.coffee.menus[indexPath.row]
+            case "Non-Coffee":
+                menu = cafeMenu.nonCoffee.menus[indexPath.row]
+            case "Desert":
+                menu = cafeMenu.desert.menus[indexPath.row]
+            case "Bread":
+                menu = cafeMenu.bread.menus[indexPath.row]
+            default:
+                break
+            }
+
+            if let deselectedMenu = menu {
+                selectedMenus = selectedMenus.filter { $0.name != deselectedMenu.name }
+                print("Deselected Menu: \(deselectedMenu.name)")
+            }
+            print("Selected Menu: \(selectedMenus)")
+            selectedLabel.text = String(selectedMenus.count)
         }
     }
 }
