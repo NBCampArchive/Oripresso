@@ -16,17 +16,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="underBar" translatesAutoresizingMaskIntoConstraints="NO" id="N12-v9-l0v">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="underBar" translatesAutoresizingMaskIntoConstraints="NO" id="N12-v9-l0v">
                                 <rect key="frame" x="52" y="768" width="288" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="receipt" translatesAutoresizingMaskIntoConstraints="NO" id="aaS-Kj-XaE">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="receipt" translatesAutoresizingMaskIntoConstraints="NO" id="aaS-Kj-XaE">
                                 <rect key="frame" x="35" y="102" width="323" height="592"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XNg-cj-vaq">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XNg-cj-vaq">
                                 <rect key="frame" x="82" y="511" width="229" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.8901960784313725" green="0.70196078431372544" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="MAIN" cornerStyle="capsule">
@@ -37,6 +34,20 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wzY-SL-DtU"/>
                         <color key="backgroundColor" red="0.098039215690000001" green="0.25098039220000001" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="N12-v9-l0v" firstAttribute="bottom" secondItem="wzY-SL-DtU" secondAttribute="bottom" id="INE-sh-ER7"/>
+                            <constraint firstItem="XNg-cj-vaq" firstAttribute="leading" secondItem="wzY-SL-DtU" secondAttribute="leading" constant="82" id="Jxk-K3-lmk"/>
+                            <constraint firstItem="N12-v9-l0v" firstAttribute="leading" secondItem="wzY-SL-DtU" secondAttribute="leading" constant="52" id="K9S-m3-PGg"/>
+                            <constraint firstItem="aaS-Kj-XaE" firstAttribute="top" secondItem="wzY-SL-DtU" secondAttribute="top" constant="43" id="PIT-yr-pgP"/>
+                            <constraint firstItem="wzY-SL-DtU" firstAttribute="bottom" secondItem="XNg-cj-vaq" secondAttribute="bottom" constant="237" id="SOo-Oy-IHU"/>
+                            <constraint firstItem="XNg-cj-vaq" firstAttribute="top" secondItem="wzY-SL-DtU" secondAttribute="top" constant="452" id="Vk3-mE-nAW"/>
+                            <constraint firstItem="aaS-Kj-XaE" firstAttribute="leading" secondItem="wzY-SL-DtU" secondAttribute="leading" constant="35" id="WIZ-KJ-cfh"/>
+                            <constraint firstItem="wzY-SL-DtU" firstAttribute="trailing" secondItem="aaS-Kj-XaE" secondAttribute="trailing" constant="35" id="aoQ-1y-Azz"/>
+                            <constraint firstItem="wzY-SL-DtU" firstAttribute="bottom" secondItem="aaS-Kj-XaE" secondAttribute="bottom" constant="124" id="g2r-pe-TNq"/>
+                            <constraint firstItem="N12-v9-l0v" firstAttribute="bottom" secondItem="wzY-SL-DtU" secondAttribute="bottom" id="mea-1z-oF3"/>
+                            <constraint firstItem="wzY-SL-DtU" firstAttribute="trailing" secondItem="XNg-cj-vaq" secondAttribute="trailing" constant="82" id="uEi-zs-L0V"/>
+                            <constraint firstItem="wzY-SL-DtU" firstAttribute="trailing" secondItem="N12-v9-l0v" secondAttribute="trailing" constant="53" id="xAu-wZ-3Cf"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="moveToMain" destination="XNg-cj-vaq" id="pjE-s8-sAL"/>
