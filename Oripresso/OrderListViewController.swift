@@ -26,8 +26,12 @@ class OrderListViewController: UIViewController {
     @IBOutlet weak var totalPriceLabel: UILabel!
     
     // MARK: - Total
-    var totalQuantity: Int = self.selectedMen
-    self.totalQuantityLabel.text = String()
+    func updateTotal() {
+        var totalQuantity: Int = selectedMenu.reduce(0) { partialResult, selectedMenu in
+            return partialResult + selectedMenu.quantity
+        }
+        self.totalQuantityLabel.text = String(totalQuantity)
+    }
     
     // MARK: - Cancel
     @IBAction func tapCancelButton(_ sender: UIButton) {
@@ -70,15 +74,15 @@ extension OrderListViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        var item = selectedMenu[indexPath.row]
         cell.quantityVariance = { variance in
-            item.quantity += variance
-            if item.quantity <= 0 {
-                item.quantity = 1   // 수량이 1 이하로 내려가지 않도록 함
+            self.selectedMenu[indexPath.row].quantity += variance
+            if self.selectedMenu[indexPath.row].quantity <= 0 {
+                self.selectedMenu[indexPath.row].quantity = 1   // 수량이 1 이하로 내려가지 않도록 함
             }
-            cell.updateLabels(item)
+            cell.updateLabels(self.selectedMenu[indexPath.row])
+            self.updateTotal()
         }
-        cell.configure(item, index: indexPath.row + 1)
+        cell.configure(selectedMenu[indexPath.row], index: indexPath.row + 1)
         cell.selectionStyle = .none
         return cell
     }
