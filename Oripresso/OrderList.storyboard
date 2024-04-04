@@ -185,6 +185,9 @@
                                         <buttonConfiguration key="configuration" style="filled" title="주문하기">
                                             <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="20"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="tapOrderButton:" destination="PBo-eF-dzn" eventType="touchUpInside" id="E6L-fK-tky"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tnB-nw-vxr">
                                         <rect key="frame" x="158" y="15" width="83.666666666666686" height="62"/>
@@ -193,6 +196,9 @@
                                         <buttonConfiguration key="configuration" style="filled" title="주문취소">
                                             <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="14"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="tapCancelButton:" destination="PBo-eF-dzn" eventType="touchUpInside" id="40x-Yo-SdQ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.92549019607843142" green="0.83529411764705885" blue="0.5725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -242,6 +248,8 @@
                     <navigationItem key="navigationItem" title="Title" id="tzi-nx-qRZ" userLabel="Back"/>
                     <connections>
                         <outlet property="orderListTableView" destination="oON-EB-EB5" id="ycZ-Ua-BQE"/>
+                        <outlet property="totalPriceLabel" destination="YSR-qo-fKI" id="hlB-3A-7Fz"/>
+                        <outlet property="totalQuantityLabel" destination="5SF-je-ETF" id="4Fg-f0-nvu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x40-TG-Bmn" sceneMemberID="firstResponder"/>
