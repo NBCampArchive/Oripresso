@@ -1,7 +1,102 @@
-/* 
-  CoffeeJson.json
-  Oripresso
-
-  Created by 박현렬 on 4/3/24.
-  
-*/
+{
+  "Coffee": {
+    "totalPages": 2,
+    "menus": [
+      {
+        "name": "아메리카노",
+        "price": 3000,
+        "description": "Freshly brewed coffee"
+      },
+      {
+        "name": "라떼",
+        "price": 4000,
+        "description": "Espresso with steamed milk"
+      },
+      {
+        "name": "모카",
+        "price": 4000,
+        "description": "Espresso with steamed milk"
+      },
+      {
+        "name": "카푸치노",
+        "price": 4000,
+        "description": "Espresso with steamed milk"
+      }
+    ]
+  },
+  "Non-Coffee": {
+    "totalPages": 1,
+    "menus": [
+      {
+        "name": "Green Tea Latte",
+        "price": 4500,
+        "description": "Green tea with steamed milk"
+      },
+      {
+        "name": "Smoothie",
+        "price": 5000,
+        "description": "Blended fruit and yogurt"
+      },
+      {
+        "name": "Green Tea Latte",
+        "price": 4500,
+        "description": "Green tea with steamed milk"
+      },
+      {
+        "name": "Smoothie",
+        "price": 5000,
+        "description": "Blended fruit and yogurt"
+      }
+    ]
+  },
+  "Desert": {
+    "totalPages": 3,
+    "menus": [
+      {
+        "name": "Cheesecake",
+        "price": 6000,
+        "description": "Creamy cheesecake with graham cracker crust"
+      },
+      {
+        "name": "Chocolate Brownie",
+        "price": 5500,
+        "description": "Rich chocolate brownie"
+      },
+      {
+        "name": "Cheesecake",
+        "price": 6000,
+        "description": "Creamy cheesecake with graham cracker crust"
+      },
+      {
+        "name": "Chocolate Brownie",
+        "price": 5500,
+        "description": "Rich chocolate brownie"
+      }
+    ]
+  },
+  "Bread": {
+    "totalPages": 2,
+    "menus": [
+      {
+        "name": "Croissant",
+        "price": 3500,
+        "description": "Buttery and flaky croissant"
+      },
+      {
+        "name": "Bagel",
+        "price": 4000,
+        "description": "Freshly baked bagel with cream cheese"
+      },
+      {
+        "name": "Croissant",
+        "price": 3500,
+        "description": "Buttery and flaky croissant"
+      },
+      {
+        "name": "Bagel",
+        "price": 4000,
+        "description": "Freshly baked bagel with cream cheese"
+      }
+    ]
+  }
+}
