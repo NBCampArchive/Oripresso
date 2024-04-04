@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1A31A3872BBA99630097602C /* OrderList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A31A3862BBA99630097602C /* OrderList.storyboard */; };
-		1A5849192BBD482F009C364E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1A5849182BBD482F009C364E /* SnapKit */; };
-		1A58491C2BBD4842009C364E /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 1A58491B2BBD4842009C364E /* Then */; };
 		1AC6161D2BBBD60900DAFE63 /* OrderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC6161C2BBBD60900DAFE63 /* OrderListViewController.swift */; };
 		1AC6161F2BBBE29E00DAFE63 /* OrderListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC6161E2BBBE29E00DAFE63 /* OrderListTableViewCell.swift */; };
 		2B50C0F42BBBE7A000813768 /* (null) in Sources */ = {isa = PBXBuildFile; };
@@ -20,6 +18,10 @@
 		B5D706B42BBA85B0009C32D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5D706B32BBA85B0009C32D9 /* Assets.xcassets */; };
 		B5D706B72BBA85B0009C32D9 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = B5D706B62BBA85B0009C32D9 /* Base */; };
 		B5D706BF2BBC0DC1009C32D9 /* MainViewTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D706BE2BBC0DC1009C32D9 /* MainViewTableCell.swift */; };
+		B5D706C22BBC0EC5009C32D9 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = B5D706C12BBC0EC5009C32D9 /* Then */; };
+		B5D706C52BBC0ED2009C32D9 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B5D706C42BBC0ED2009C32D9 /* SnapKit */; };
+		B5D706CE2BBD60A3009C32D9 /* CoffeeJson.json in Resources */ = {isa = PBXBuildFile; fileRef = B5D706CC2BBD60A3009C32D9 /* CoffeeJson.json */; };
+		B5D706D02BBD6136009C32D9 /* CoffeeMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D706CF2BBD6136009C32D9 /* CoffeeMenu.swift */; };
 		FF0E6C962BBBF13900C2AEF0 /* MenuData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0E6C952BBBF13900C2AEF0 /* MenuData.swift */; };
 		FF0E6C982BBBF1A400C2AEF0 /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0E6C972BBBF1A400C2AEF0 /* Type.swift */; };
 		FF7B359E2BBAA81400CC76F8 /* MainView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF7B359D2BBAA81400CC76F8 /* MainView.storyboard */; };
@@ -39,6 +41,8 @@
 		B5D706B62BBA85B0009C32D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B5D706B82BBA85B0009C32D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5D706BE2BBC0DC1009C32D9 /* MainViewTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewTableCell.swift; sourceTree = "<group>"; };
+		B5D706CD2BBD60A3009C32D9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/CoffeeJson.json; sourceTree = "<group>"; };
+		B5D706CF2BBD6136009C32D9 /* CoffeeMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeMenu.swift; sourceTree = "<group>"; };
 		FF0E6C952BBBF13900C2AEF0 /* MenuData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuData.swift; sourceTree = "<group>"; };
 		FF0E6C972BBBF1A400C2AEF0 /* Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
 		FF7B359D2BBAA81400CC76F8 /* MainView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainView.storyboard; sourceTree = "<group>"; };
@@ -92,6 +96,8 @@
 				FF0E6C972BBBF1A400C2AEF0 /* Type.swift */,
 				1AC6161C2BBBD60900DAFE63 /* OrderListViewController.swift */,
 				1AC6161E2BBBE29E00DAFE63 /* OrderListTableViewCell.swift */,
+				B5D706CC2BBD60A3009C32D9 /* CoffeeJson.json */,
+				B5D706CF2BBD6136009C32D9 /* CoffeeMenu.swift */,
 			);
 			path = Oripresso;
 			sourceTree = "<group>";
@@ -165,6 +171,7 @@
 				B5D706B42BBA85B0009C32D9 /* Assets.xcassets in Resources */,
 				B5D706B72BBA85B0009C32D9 /* Base in Resources */,
 				1A31A3872BBA99630097602C /* OrderList.storyboard in Resources */,
+				B5D706CE2BBD60A3009C32D9 /* CoffeeJson.json in Resources */,
 				FF7B359E2BBAA81400CC76F8 /* MainView.storyboard in Resources */,
 				B5D706B22BBA85AF009C32D9 /* Base in Resources */,
 			);
@@ -182,6 +189,7 @@
 				B5D706AF2BBA85AF009C32D9 /* ViewController.swift in Sources */,
 				B5D706BF2BBC0DC1009C32D9 /* MainViewTableCell.swift in Sources */,
 				B5D706AB2BBA85AF009C32D9 /* AppDelegate.swift in Sources */,
+				B5D706D02BBD6136009C32D9 /* CoffeeMenu.swift in Sources */,
 				FF0E6C962BBBF13900C2AEF0 /* MenuData.swift in Sources */,
 				2B50C0F42BBBE7A000813768 /* (null) in Sources */,
 				B5D706AD2BBA85AF009C32D9 /* SceneDelegate.swift in Sources */,
@@ -207,6 +215,14 @@
 				B5D706B62BBA85B0009C32D9 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B5D706CC2BBD60A3009C32D9 /* CoffeeJson.json */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5D706CD2BBD60A3009C32D9 /* en */,
+			);
+			name = CoffeeJson.json;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

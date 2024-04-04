@@ -10,7 +10,7 @@ import SnapKit
 import Then
 
 class MainViewController: UIViewController {
-    
+
     @IBOutlet weak var menuBottom: UIImageView!
     @IBOutlet weak var uiTableView: UITableView!
     @IBOutlet weak var uiTitle: UIImageView!
@@ -18,28 +18,19 @@ class MainViewController: UIViewController {
     @IBOutlet weak var floatingButton: UIButton!
     @IBOutlet weak var selectedLabel: UILabel!
     
-    let data: [MenuData] = [MenuData(name: "아메리카노", type: .coffee),
-                            MenuData(name: "초코블렌디드", type: .nonCoffee),
-                            MenuData(name: "당근케이크", type: .cake),
-                            MenuData(name: "소금빵", type: .bread),
-                            MenuData(name: "에스프레소", type: .coffee),
-                            MenuData(name: "레몬에이드", type: .nonCoffee),
-                            MenuData(name: "레드벨벳케이크", type: .cake),
-                            MenuData(name: "식빵", type: .bread),
-                            MenuData(name: "아이스아메리카노", type: .coffee),
-                            MenuData(name: "민트초코블렌디드", type: .nonCoffee),
-                            MenuData(name: "티라미수", type: .cake),
-                            MenuData(name: "크루와상", type: .bread),
-                            MenuData(name: "카페라떼", type: .coffee),
-                            MenuData(name: "자몽에이드", type: .nonCoffee),
-                            MenuData(name: "초코케이크", type: .cake),
-                            MenuData(name: "빵", type: .bread)]
+    let data: [MenuData] = [MenuData(name: "Americano", type: .coffee),
+                            MenuData(name: "Juice", type: .nonCoffee),
+                            MenuData(name: "Cake", type: .cake),
+                            MenuData(name: "Bread", type: .bread)]
+    var cafeMenu: CafeMenu?
+    var selectedCategory: String = "Coffee"
+    var selectedMenu: SelectedMenu?
+
     var coffee: [MenuData] = []
     var nonCoffee: [MenuData] = []
     var cake: [MenuData] = []
     var bread: [MenuData] = []
-    var selectedMenu: [MenuData] = []
-    
+   
     func tableViewDelegate() {
         uiTableView.dataSource = self
         uiTableView.delegate = self
@@ -53,6 +44,7 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func segmentedControlSelected(_ sender: Any) {
+        selectedCategory = (sender as AnyObject).titleForSegment(at: (sender as AnyObject).selectedSegmentIndex) ?? "Coffee"
         uiTableView.reloadData()
     }
     
@@ -60,11 +52,14 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         segment.removeBorders()
         tableViewDelegate()
+        uiTableView.separatorColor =  UIColor(red: 0.89, green: 0.702, blue: 0.204, alpha: 1)
+        // JSON 파일에서 데이터 읽어오기
+        cafeMenu = readJSONFromFile()
         setSelectedLabel()
+
     }
 
     @IBAction func floatingButtonTapped(_ sender: Any) {
-        
         let storyboard = UIStoryboard(name: "OrderList", bundle: nil)
         
         if let pushVC = storyboard.instantiateViewController(withIdentifier: "OrderList") as? OrderListViewController {
@@ -126,9 +121,27 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MainViewTableCell", for: indexPath) as! MainViewTableCell
-        // setCell 메서드를 호출하여 셀의 데이터를 설정합니다.
-        cell.setCell(image: "americano", title: "title", description: "description", price: "4500")
-        
+        /// SegementIndex 별 MenuData 변경
+        if let cafeMenu = cafeMenu {
+            var menu: Menu?
+            
+            switch selectedCategory {
+            case "Coffee":
+                menu = cafeMenu.coffee.menus[indexPath.row]
+            case "Non-Coffee":
+                menu = cafeMenu.nonCoffee.menus[indexPath.row]
+            case "Desert":
+                menu = cafeMenu.desert.menus[indexPath.row]
+            case "Bread":
+                menu = cafeMenu.bread.menus[indexPath.row]
+            default:
+                break
+            }
+            
+            if let menu = menu {
+                cell.setCell(image: "placeholder", title: menu.name, description: menu.description, price: "\(menu.price) ₩")
+            }
+        }
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -167,4 +180,20 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             break
         }
     }
+}
+// MARK: - JSON 파일을 읽어오는 함수
+
+func readJSONFromFile() -> CafeMenu? {
+    if let path = Bundle.main.path(forResource: "CoffeeJson", ofType: "json") {
+        do {
+            let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+            let decoder = JSONDecoder()
+            let cafeMenu = try decoder.decode(CafeMenu.self, from: data)
+            return cafeMenu
+        } catch {
+            print("Error reading JSON file: \(error)")
+            return nil
+        }
+    }
+    return nil
 }

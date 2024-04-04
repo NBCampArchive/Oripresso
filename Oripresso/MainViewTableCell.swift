@@ -39,6 +39,7 @@ class MainViewTableCell: UITableViewCell {
         super.awakeFromNib()
         setUI()
         setLayout()
+        separatorInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
     }
     
     // MARK: - SetUI
@@ -58,7 +59,7 @@ class MainViewTableCell: UITableViewCell {
         }
         
         mainViewCellTitle.snp.makeConstraints {
-            $0.top.equalTo(mainViewCellImage.snp.top)
+            $0.top.equalTo(mainViewCellImage.snp.top).offset(13)
             $0.leading.equalTo(mainViewCellImage.snp.trailing).offset(20)
             $0.trailing.equalToSuperview().offset(-10)
         }
