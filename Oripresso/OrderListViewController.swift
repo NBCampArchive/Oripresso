@@ -27,10 +27,14 @@ class OrderListViewController: UIViewController {
     
     // MARK: - Total
     func updateTotal() {
-        var totalQuantity: Int = selectedMenu.reduce(0) { partialResult, selectedMenu in
-            return partialResult + selectedMenu.quantity
+        let totalQuantity: Int = selectedMenu.reduce(0) { partialResult, item in
+            return partialResult + item.quantity
+        }
+        let totalPrice: Int = selectedMenu.reduce(0) { partialResult, item in
+            return partialResult + (item.price * item.quantity)
         }
         self.totalQuantityLabel.text = String(totalQuantity)
+        self.totalPriceLabel.text = String(totalPrice)
     }
     
     // MARK: - Cancel
@@ -60,6 +64,7 @@ class OrderListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateTotal()
         orderListTableView.dataSource = self
     }
 }
