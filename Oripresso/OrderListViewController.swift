@@ -34,8 +34,16 @@ class OrderListViewController: UIViewController {
             return partialResult + (item.price * item.quantity)
         }
         self.totalQuantityLabel.text = String(totalQuantity)
-        self.totalPriceLabel.text = String(totalPrice)
+        self.totalPriceLabel.text = "\(numberFormatter.string(from: NSNumber(value: totalPrice)) ?? "0") ₩"
     }
+    
+    
+    // MARK: - NumberFormatter
+    let numberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        return formatter
+    }()
     
     // MARK: - Cancel
     @IBAction func tapCancelButton(_ sender: UIButton) {
