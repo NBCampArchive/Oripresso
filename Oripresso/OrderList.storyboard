@@ -17,21 +17,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OripressoTitle" translatesAutoresizingMaskIntoConstraints="NO" id="k7H-QJ-qT2">
-                                <rect key="frame" x="105.66666666666669" y="59" width="182" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="182" id="Ev7-GN-8Ux"/>
-                                    <constraint firstAttribute="height" constant="50" id="uhI-sz-Zuf"/>
-                                </constraints>
-                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="titleBar" translatesAutoresizingMaskIntoConstraints="NO" id="PqD-I2-xHt">
-                                <rect key="frame" x="0.0" y="114" width="393" height="38"/>
+                                <rect key="frame" x="0.0" y="79" width="393" height="38"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orderListTitleText" translatesAutoresizingMaskIntoConstraints="NO" id="F1M-j4-VQC">
-                                <rect key="frame" x="166" y="124.66666666666669" width="61" height="17"/>
+                                <rect key="frame" x="166" y="89.666666666666671" width="61" height="17"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="oON-EB-EB5" userLabel="orderList TableView">
-                                <rect key="frame" x="0.0" y="152" width="393" height="478"/>
+                                <rect key="frame" x="0.0" y="137" width="393" height="493"/>
                                 <color key="backgroundColor" red="0.96078431372549022" green="0.97254901960784312" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" red="0.8901960784313725" green="0.70196078431372544" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
@@ -234,21 +227,19 @@
                         <color key="backgroundColor" red="0.96078431369999995" green="0.97254901959999995" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="YEM-UZ-vAF" firstAttribute="trailing" secondItem="PqD-I2-xHt" secondAttribute="trailing" id="29x-kO-tvV"/>
-                            <constraint firstItem="oON-EB-EB5" firstAttribute="top" secondItem="PqD-I2-xHt" secondAttribute="bottom" id="3an-32-tnt"/>
                             <constraint firstItem="PqD-I2-xHt" firstAttribute="leading" secondItem="YEM-UZ-vAF" secondAttribute="leading" id="6kX-SI-Enm"/>
-                            <constraint firstItem="k7H-QJ-qT2" firstAttribute="centerX" secondItem="YEM-UZ-vAF" secondAttribute="centerX" id="9sf-NQ-5hZ"/>
                             <constraint firstItem="F1M-j4-VQC" firstAttribute="centerX" secondItem="PqD-I2-xHt" secondAttribute="centerX" id="C6T-Cw-4se"/>
                             <constraint firstItem="ZRz-yv-cpG" firstAttribute="top" secondItem="oON-EB-EB5" secondAttribute="bottom" constant="10" id="EqS-Ha-sgw"/>
                             <constraint firstItem="YEM-UZ-vAF" firstAttribute="trailing" secondItem="ZRz-yv-cpG" secondAttribute="trailing" constant="8" id="L7l-cf-znK"/>
-                            <constraint firstItem="PqD-I2-xHt" firstAttribute="top" secondItem="k7H-QJ-qT2" secondAttribute="bottom" constant="5" id="LzZ-mv-Ewe"/>
-                            <constraint firstItem="k7H-QJ-qT2" firstAttribute="top" secondItem="YEM-UZ-vAF" secondAttribute="top" id="Tmj-zd-Fk9"/>
                             <constraint firstItem="oON-EB-EB5" firstAttribute="leading" secondItem="YEM-UZ-vAF" secondAttribute="leading" id="TvU-vy-zkH"/>
                             <constraint firstItem="F1M-j4-VQC" firstAttribute="centerY" secondItem="PqD-I2-xHt" secondAttribute="centerY" id="WtQ-dE-ffG"/>
+                            <constraint firstItem="oON-EB-EB5" firstAttribute="top" secondItem="PqD-I2-xHt" secondAttribute="bottom" constant="20" id="XBq-6c-0gh"/>
                             <constraint firstItem="YEM-UZ-vAF" firstAttribute="bottom" secondItem="qwN-xD-Gu9" secondAttribute="bottom" id="XwI-9r-OIX"/>
                             <constraint firstItem="ZRz-yv-cpG" firstAttribute="leading" secondItem="YEM-UZ-vAF" secondAttribute="leading" constant="8" id="ZwO-dz-3d1"/>
                             <constraint firstItem="qwN-xD-Gu9" firstAttribute="centerX" secondItem="YEM-UZ-vAF" secondAttribute="centerX" id="aXg-ez-yzm"/>
                             <constraint firstItem="qwN-xD-Gu9" firstAttribute="top" secondItem="ZRz-yv-cpG" secondAttribute="bottom" constant="36" id="c0k-KH-x8j"/>
                             <constraint firstItem="YEM-UZ-vAF" firstAttribute="trailing" secondItem="oON-EB-EB5" secondAttribute="trailing" id="eyV-DE-PnM"/>
+                            <constraint firstItem="PqD-I2-xHt" firstAttribute="top" secondItem="YEM-UZ-vAF" secondAttribute="top" constant="20" id="hto-i0-F3I"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="tzi-nx-qRZ" userLabel="Back"/>
@@ -264,7 +255,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="OripressoTitle" width="182" height="50"/>
         <image name="location_pay" width="288" height="50"/>
         <image name="minus" width="18" height="4"/>
         <image name="orderListTitleText" width="61" height="17"/>
