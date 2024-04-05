@@ -42,6 +42,8 @@ class OrderListViewController: UIViewController {
             self.selectedMenu = []               // selectedMenu 초기화
             self.orderListTableView.reloadData() // 테이블뷰 업데이트
             self.updateTotal()                   // total bar 업데이트
+            // 메인화면으로 돌아가기
+            self.navigationController?.popToRootViewController(animated: true)
         }
         alert.addAction(orderCancelAction)
         alert.addAction(orderDidTapButton)
@@ -65,6 +67,10 @@ class OrderListViewController: UIViewController {
         super.viewDidLoad()
         updateTotal()
         orderListTableView.dataSource = self
+        let titleImage = UIImage(named: "title")
+        navigationItem.titleView = UIImageView(image: titleImage)
+        self.navigationController?.navigationBar.topItem?.backButtonTitle = ""
+        self.navigationController?.navigationBar.tintColor = UIColor(red: 0.098, green: 0.251, blue: 0.145, alpha: 1)
     }
 }
 

@@ -28,6 +28,7 @@ class MainViewTableCell: UITableViewCell {
     let mainViewCellDescription = UILabel().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.font = UIFont(name: "", size: 14) ?? UIFont.systemFont(ofSize: 14)
+        $0.textColor = UIColor(red: 0.69, green: 0.67, blue: 0.71, alpha: 1.00)
     }
 
     let mainViewCellPrice = UILabel().then {

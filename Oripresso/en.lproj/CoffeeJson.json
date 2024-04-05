@@ -1,6 +1,5 @@
 {
   "Coffee": {
-    "totalPages": 2,
     "menus": [
       {
         "image": "hotAmericano",
@@ -33,13 +32,13 @@
         "description": "Hot White Chocolate Mocha"
       },
       {
-        "image": "IcedWhiteChocolateMocha",
+        "image": "icedWhiteChocolateMocha",
         "name": "아이스 화이트 초콜릿 모카",
         "price": 5000,
         "description": "Iced White Chocolate Mocha"
       },
       {
-        "image": "HotCafeMocha",
+        "image": "hotCafeMocha",
         "name": "핫 카페 모카",
         "price": 4500,
         "description": "Hot Cafe Mocha"
@@ -53,7 +52,6 @@
     ]
   },
   "Non-Coffee": {
-    "totalPages": 1,
     "menus": [
       {
         "image": "iceTea",
@@ -106,7 +104,6 @@
     ]
   },
   "Desert": {
-    "totalPages": 3,
     "menus": [
       {
         "image": "ganacheCake",
@@ -159,7 +156,6 @@
     ]
   },
   "Bread": {
-    "totalPages": 2,
     "menus": [
       {
         "image": "hamCheeseSaltedBread",

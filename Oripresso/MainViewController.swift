@@ -26,6 +26,39 @@ class MainViewController: UIViewController {
     var displayedMenus: [Menu] = []
     var isLoading: Bool = false
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        segment.removeBorders()
+        tableViewDelegate()
+        uiTableView.separatorColor =  UIColor(named: "seperatorColor")
+        // JSON 파일에서 데이터 읽어오기
+        cafeMenu = readJSONFromFile()
+        setSelectedLabel()
+        loadInitialData()
+        setActivityIndicator()
+        view.addSubview(activityIndicator)
+        let titleImage = UIImage(named: "title")
+        navigationItem.titleView = UIImageView(image: titleImage)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        resetDisplayedMenus()
+    }
+    
+    func resetDisplayedMenus() {
+        selectedMenus.removeAll()
+        selectedLabel.text = "0"
+        loadInitialData()
+        uiTableView.reloadData()
+    }
+    func setActivityIndicator(){
+        activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.color = UIColor(red: 0.098, green: 0.251, blue: 0.145, alpha: 1)
+        activityIndicator.center = view.center
+        activityIndicator.hidesWhenStopped = true
+    }
+    
     func tableViewDelegate() {
         uiTableView.dataSource = self
         uiTableView.delegate = self
@@ -46,21 +79,6 @@ class MainViewController: UIViewController {
         loadInitialData()
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        segment.removeBorders()
-        tableViewDelegate()
-        uiTableView.separatorColor =  UIColor(red: 0.89, green: 0.702, blue: 0.204, alpha: 1)
-        // JSON 파일에서 데이터 읽어오기
-        cafeMenu = readJSONFromFile()
-        setSelectedLabel()
-        loadInitialData()
-        activityIndicator = UIActivityIndicatorView(style: .large)
-        activityIndicator.color = UIColor(red: 0.098, green: 0.251, blue: 0.145, alpha: 1)
-        activityIndicator.center = view.center
-        activityIndicator.hidesWhenStopped = true
-        view.addSubview(activityIndicator)
-    }
     // MARK: - Infinite Scroll
     func loadInitialData() {
         var category: Category?
@@ -70,7 +88,7 @@ class MainViewController: UIViewController {
             category = cafeMenu?.coffee
         case "Non-Coffee":
             category = cafeMenu?.nonCoffee
-        case "Cake":
+        case "Desert":
             category = cafeMenu?.desert
         case "Bread":
             category = cafeMenu?.bread
@@ -92,7 +110,7 @@ class MainViewController: UIViewController {
             category = cafeMenu?.coffee
         case "Non-Coffee":
             category = cafeMenu?.nonCoffee
-        case "Cake":
+        case "Desert":
             category = cafeMenu?.desert
         case "Bread":
             category = cafeMenu?.bread
@@ -138,6 +156,7 @@ class MainViewController: UIViewController {
         
         if let pushVC = storyboard.instantiateViewController(withIdentifier: "OrderList") as? OrderListViewController {
             pushVC.selectedMenu = selectedMenus
+            pushVC.navigationItem.title = ""
             
             self.navigationController?.pushViewController(pushVC, animated: true)
             print(selectedMenus)
@@ -153,9 +172,8 @@ extension UISegmentedControl {
         setBackgroundImage(imageWithColor(color: backgroundColor ?? .clear), for: .normal, barMetrics: .default)
         setBackgroundImage(imageWithColor(color: backgroundColor ?? .clear), for: .selected, barMetrics: .default)
         setDividerImage(imageWithColor(color: UIColor.clear), forLeftSegmentState: .normal, rightSegmentState: .normal, barMetrics: .default)
-        setTitleTextAttributes([.foregroundColor: UIColor.black], for: .selected)
-        setTitleTextAttributes([.foregroundColor: UIColor.gray], for: .normal)
-
+        setTitleTextAttributes([.foregroundColor: UIColor(named: "segementSelectedTextColor") ?? .black, .font: UIFont.systemFont(ofSize: 17, weight: .bold)], for: .selected)
+        setTitleTextAttributes([.foregroundColor: UIColor(named: "segementNoneTextColor") ?? .gray,.font: UIFont.systemFont(ofSize: 15, weight: .semibold)], for: .normal)
     }
 
     private func imageWithColor(color: UIColor) -> UIImage {
@@ -189,7 +207,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         if selectedMenus.contains(where: { $0.name == menu.name }) {
             cell.backgroundColor = UIColor(red: 0.89, green: 0.702, blue: 0.204, alpha: 0.5) // 선택된 셀의 배경색 변경
         } else {
-            cell.backgroundColor = .white // 선택되지 않은 셀의 배경색 변경
+            cell.backgroundColor = UIColor(named: "backgroundColor") // 선택되지 않은 셀의 배경색 변경
         }
         return cell
     }
@@ -208,7 +226,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 menu = cafeMenu.coffee.menus[indexPath.row]
             case "Non-Coffee":
                 menu = cafeMenu.nonCoffee.menus[indexPath.row]
-            case "Cake":
+            case "Desert":
                 menu = cafeMenu.desert.menus[indexPath.row]
             case "Bread":
                 menu = cafeMenu.bread.menus[indexPath.row]
@@ -242,7 +260,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 menu = cafeMenu.coffee.menus[indexPath.row]
             case "Non-Coffee":
                 menu = cafeMenu.nonCoffee.menus[indexPath.row]
-            case "Cake":
+            case "Desert":
                 menu = cafeMenu.desert.menus[indexPath.row]
             case "Bread":
                 menu = cafeMenu.bread.menus[indexPath.row]

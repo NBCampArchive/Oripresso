@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,23 +18,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OripressoTitle" translatesAutoresizingMaskIntoConstraints="NO" id="k7H-QJ-qT2">
-                                <rect key="frame" x="105.66666666666669" y="59" width="182" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="182" id="Ev7-GN-8Ux"/>
-                                    <constraint firstAttribute="height" constant="50" id="uhI-sz-Zuf"/>
-                                </constraints>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="titleBar" translatesAutoresizingMaskIntoConstraints="NO" id="PqD-I2-xHt">
-                                <rect key="frame" x="0.0" y="114" width="393" height="38"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orderListTitleText" translatesAutoresizingMaskIntoConstraints="NO" id="F1M-j4-VQC">
-                                <rect key="frame" x="166" y="124.66666666666669" width="61" height="17"/>
-                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="oON-EB-EB5" userLabel="orderList TableView">
-                                <rect key="frame" x="0.0" y="152" width="393" height="478"/>
-                                <color key="backgroundColor" red="0.96078431372549022" green="0.97254901960784312" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="separatorColor" red="0.8901960784313725" green="0.70196078431372544" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="0.0" y="137" width="393" height="493"/>
+                                <color key="backgroundColor" name="backGroundColor"/>
+                                <color key="separatorColor" name="seperatorColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderListTableViewCell" rowHeight="106" id="R3A-Xl-qin" customClass="OrderListTableViewCell" customModule="Oripresso" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="106"/>
@@ -124,7 +112,7 @@
                                                 <constraint firstItem="jT2-Xq-WmW" firstAttribute="top" secondItem="kov-hd-bRn" secondAttribute="top" id="zsI-q6-KjD"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.96078431369999995" green="0.97254901959999995" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" name="backGroundColor"/>
                                         <connections>
                                             <outlet property="orderItemIndexLabel" destination="a2s-sj-nyt" id="1rU-75-N7k"/>
                                             <outlet property="orderItemNameLabel" destination="kov-hd-bRn" id="Tyr-Ff-C90"/>
@@ -134,6 +122,19 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TO1-Us-HSl">
+                                <rect key="frame" x="0.0" y="79" width="393" height="38"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="orderListTitleText" translatesAutoresizingMaskIntoConstraints="NO" id="F1M-j4-VQC">
+                                        <rect key="frame" x="166" y="10" width="61" height="17"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" name="containerColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="yI4-iZ-yeq"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZRz-yv-cpG" userLabel="주문하기 바">
                                 <rect key="frame" x="8" y="640" width="377" height="92"/>
                                 <subviews>
@@ -207,7 +208,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.92549019607843142" green="0.83529411764705885" blue="0.5725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="containerColor"/>
                                 <constraints>
                                     <constraint firstItem="tnB-nw-vxr" firstAttribute="leading" secondItem="6vG-Ac-PU0" secondAttribute="trailing" constant="34" id="1nR-8S-1eJ"/>
                                     <constraint firstItem="tnB-nw-vxr" firstAttribute="top" secondItem="ZRz-yv-cpG" secondAttribute="top" constant="15" id="6gW-PJ-d5p"/>
@@ -225,30 +226,32 @@
                                     <constraint firstItem="6vG-Ac-PU0" firstAttribute="centerY" secondItem="ZRz-yv-cpG" secondAttribute="centerY" id="l49-YM-cZz"/>
                                     <constraint firstItem="9rk-gD-0DJ" firstAttribute="top" secondItem="tnB-nw-vxr" secondAttribute="top" id="uwP-Cr-eo2"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location_pay" translatesAutoresizingMaskIntoConstraints="NO" id="qwN-xD-Gu9">
                                 <rect key="frame" x="52.666666666666657" y="768" width="288" height="50"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="YEM-UZ-vAF"/>
-                        <color key="backgroundColor" red="0.96078431369999995" green="0.97254901959999995" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="backGroundColor"/>
                         <constraints>
-                            <constraint firstItem="YEM-UZ-vAF" firstAttribute="trailing" secondItem="PqD-I2-xHt" secondAttribute="trailing" id="29x-kO-tvV"/>
-                            <constraint firstItem="oON-EB-EB5" firstAttribute="top" secondItem="PqD-I2-xHt" secondAttribute="bottom" id="3an-32-tnt"/>
-                            <constraint firstItem="PqD-I2-xHt" firstAttribute="leading" secondItem="YEM-UZ-vAF" secondAttribute="leading" id="6kX-SI-Enm"/>
-                            <constraint firstItem="k7H-QJ-qT2" firstAttribute="centerX" secondItem="YEM-UZ-vAF" secondAttribute="centerX" id="9sf-NQ-5hZ"/>
-                            <constraint firstItem="F1M-j4-VQC" firstAttribute="centerX" secondItem="PqD-I2-xHt" secondAttribute="centerX" id="C6T-Cw-4se"/>
-                            <constraint firstItem="ZRz-yv-cpG" firstAttribute="top" secondItem="oON-EB-EB5" secondAttribute="bottom" constant="10" id="EqS-Ha-sgw"/>
+                            <constraint firstItem="TO1-Us-HSl" firstAttribute="top" secondItem="YEM-UZ-vAF" secondAttribute="top" constant="20" id="1h1-DQ-4Hd"/>
                             <constraint firstItem="YEM-UZ-vAF" firstAttribute="trailing" secondItem="ZRz-yv-cpG" secondAttribute="trailing" constant="8" id="L7l-cf-znK"/>
-                            <constraint firstItem="PqD-I2-xHt" firstAttribute="top" secondItem="k7H-QJ-qT2" secondAttribute="bottom" constant="5" id="LzZ-mv-Ewe"/>
-                            <constraint firstItem="k7H-QJ-qT2" firstAttribute="top" secondItem="YEM-UZ-vAF" secondAttribute="top" id="Tmj-zd-Fk9"/>
                             <constraint firstItem="oON-EB-EB5" firstAttribute="leading" secondItem="YEM-UZ-vAF" secondAttribute="leading" id="TvU-vy-zkH"/>
-                            <constraint firstItem="F1M-j4-VQC" firstAttribute="centerY" secondItem="PqD-I2-xHt" secondAttribute="centerY" id="WtQ-dE-ffG"/>
                             <constraint firstItem="YEM-UZ-vAF" firstAttribute="bottom" secondItem="qwN-xD-Gu9" secondAttribute="bottom" id="XwI-9r-OIX"/>
                             <constraint firstItem="ZRz-yv-cpG" firstAttribute="leading" secondItem="YEM-UZ-vAF" secondAttribute="leading" constant="8" id="ZwO-dz-3d1"/>
                             <constraint firstItem="qwN-xD-Gu9" firstAttribute="centerX" secondItem="YEM-UZ-vAF" secondAttribute="centerX" id="aXg-ez-yzm"/>
                             <constraint firstItem="qwN-xD-Gu9" firstAttribute="top" secondItem="ZRz-yv-cpG" secondAttribute="bottom" constant="36" id="c0k-KH-x8j"/>
+                            <constraint firstItem="oON-EB-EB5" firstAttribute="top" secondItem="TO1-Us-HSl" secondAttribute="bottom" constant="20" id="cv2-iE-20M"/>
                             <constraint firstItem="YEM-UZ-vAF" firstAttribute="trailing" secondItem="oON-EB-EB5" secondAttribute="trailing" id="eyV-DE-PnM"/>
+                            <constraint firstItem="YEM-UZ-vAF" firstAttribute="trailing" secondItem="TO1-Us-HSl" secondAttribute="trailing" id="kiv-pE-2K3"/>
+                            <constraint firstItem="TO1-Us-HSl" firstAttribute="leading" secondItem="YEM-UZ-vAF" secondAttribute="leading" id="raC-c1-KvB"/>
+                            <constraint firstItem="ZRz-yv-cpG" firstAttribute="top" secondItem="oON-EB-EB5" secondAttribute="bottom" constant="10" id="uD0-Hs-mCx"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="tzi-nx-qRZ" userLabel="Back"/>
@@ -264,12 +267,19 @@
         </scene>
     </scenes>
     <resources>
-        <image name="OripressoTitle" width="182" height="50"/>
         <image name="location_pay" width="288" height="50"/>
         <image name="minus" width="18" height="4"/>
         <image name="orderListTitleText" width="61" height="17"/>
         <image name="plus" width="18" height="19"/>
-        <image name="titleBar" width="393" height="38"/>
+        <namedColor name="backGroundColor">
+            <color red="0.96078431372549022" green="0.97254901960784312" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="containerColor">
+            <color red="0.92549019607843142" green="0.83529411764705885" blue="0.5725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="seperatorColor">
+            <color red="0.8901960784313725" green="0.70196078431372544" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
