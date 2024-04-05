@@ -77,7 +77,7 @@ class MainViewController: UIViewController {
             category = cafeMenu?.coffee
         case "Non-Coffee":
             category = cafeMenu?.nonCoffee
-        case "Cake":
+        case "Desert":
             category = cafeMenu?.desert
         case "Bread":
             category = cafeMenu?.bread
@@ -99,7 +99,7 @@ class MainViewController: UIViewController {
             category = cafeMenu?.coffee
         case "Non-Coffee":
             category = cafeMenu?.nonCoffee
-        case "Cake":
+        case "Desert":
             category = cafeMenu?.desert
         case "Bread":
             category = cafeMenu?.bread
@@ -215,7 +215,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 menu = cafeMenu.coffee.menus[indexPath.row]
             case "Non-Coffee":
                 menu = cafeMenu.nonCoffee.menus[indexPath.row]
-            case "Cake":
+            case "Desert":
                 menu = cafeMenu.desert.menus[indexPath.row]
             case "Bread":
                 menu = cafeMenu.bread.menus[indexPath.row]
@@ -249,7 +249,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 menu = cafeMenu.coffee.menus[indexPath.row]
             case "Non-Coffee":
                 menu = cafeMenu.nonCoffee.menus[indexPath.row]
-            case "Cake":
+            case "Desert":
                 menu = cafeMenu.desert.menus[indexPath.row]
             case "Bread":
                 menu = cafeMenu.bread.menus[indexPath.row]
