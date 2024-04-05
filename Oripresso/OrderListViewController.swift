@@ -7,19 +7,8 @@
 
 import UIKit
 
-
-struct SelectedMenu {
-    let name: String
-    let price: Int
-    var quantity: Int
-}
-
 class OrderListViewController: UIViewController {
-    var selectedMenu = [
-        SelectedMenu(name: "아이스 아메리카노", price: 4500, quantity: 3),
-        SelectedMenu(name: "쿠키", price: 1000, quantity: 2),
-        SelectedMenu(name: "녹차라떼", price: 5000, quantity: 5)
-        ]
+    var selectedMenu = [SelectedMenu]()
     
     @IBOutlet weak var orderListTableView: UITableView!
     @IBOutlet weak var totalQuantityLabel: UILabel!
