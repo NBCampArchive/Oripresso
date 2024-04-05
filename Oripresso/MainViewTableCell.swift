@@ -75,6 +75,7 @@ class MainViewTableCell: UITableViewCell {
             $0.leading.equalTo(mainViewCellImage.snp.trailing).offset(20)
             $0.trailing.equalToSuperview().offset(-10)
         }
+        contentView.backgroundColor = .systemBackground
     }
     
     // MARK: - CellConfigurations
