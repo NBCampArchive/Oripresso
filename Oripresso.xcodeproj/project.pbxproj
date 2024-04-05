@@ -13,6 +13,10 @@
 		2B50C0F42BBBE7A000813768 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		95D512BA2BBAAA2C00ECE2E5 /* Payment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95D512B92BBAAA2C00ECE2E5 /* Payment.storyboard */; };
 		95D512BC2BBAAB4900ECE2E5 /* PaymentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D512BB2BBAAB4900ECE2E5 /* PaymentsViewController.swift */; };
+		B54CFCE02BC02C7F00997D8E /* NanumSquareRoundB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95D512BE2BBAAF0F00ECE2E5 /* NanumSquareRoundB.ttf */; };
+		B54CFCE12BC02C8200997D8E /* NanumSquareRoundEB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95D512C02BBAAF0F00ECE2E5 /* NanumSquareRoundEB.ttf */; };
+		B54CFCE22BC02C8400997D8E /* NanumSquareRoundL.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95D512BF2BBAAF0F00ECE2E5 /* NanumSquareRoundL.ttf */; };
+		B54CFCE32BC02C8700997D8E /* NanumSquareRoundR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95D512C12BBAAF0F00ECE2E5 /* NanumSquareRoundR.ttf */; };
 		B5D706AB2BBA85AF009C32D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D706AA2BBA85AF009C32D9 /* AppDelegate.swift */; };
 		B5D706AD2BBA85AF009C32D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D706AC2BBA85AF009C32D9 /* SceneDelegate.swift */; };
 		B5D706AF2BBA85AF009C32D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D706AE2BBA85AF009C32D9 /* ViewController.swift */; };
@@ -198,10 +202,14 @@
 				B5D706B42BBA85B0009C32D9 /* Assets.xcassets in Resources */,
 				B5D706B72BBA85B0009C32D9 /* Base in Resources */,
 				1A31A3872BBA99630097602C /* OrderList.storyboard in Resources */,
+				B54CFCE02BC02C7F00997D8E /* NanumSquareRoundB.ttf in Resources */,
+				B54CFCE32BC02C8700997D8E /* NanumSquareRoundR.ttf in Resources */,
+				B54CFCE12BC02C8200997D8E /* NanumSquareRoundEB.ttf in Resources */,
 				B5D706CE2BBD60A3009C32D9 /* CoffeeJson.json in Resources */,
 				FF7B359E2BBAA81400CC76F8 /* MainView.storyboard in Resources */,
 				B5D706B22BBA85AF009C32D9 /* Base in Resources */,
 				95D512BA2BBAAA2C00ECE2E5 /* Payment.storyboard in Resources */,
+				B54CFCE22BC02C8400997D8E /* NanumSquareRoundL.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -22,18 +22,18 @@ class MainViewTableCell: UITableViewCell {
 
     let mainViewCellTitle = UILabel().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.font = UIFont(name: "", size: 17) ?? UIFont.systemFont(ofSize: 17)
+        $0.font = UIFont(name: "NanumSquareRoundB", size: 17) ?? UIFont.systemFont(ofSize: 13)
     }
 
     let mainViewCellDescription = UILabel().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.font = UIFont(name: "", size: 14) ?? UIFont.systemFont(ofSize: 14)
+        $0.font = UIFont(name: "NanumSquareRoundR", size: 14) ?? UIFont.systemFont(ofSize: 14)
         $0.textColor = UIColor(red: 0.69, green: 0.67, blue: 0.71, alpha: 1.00)
     }
 
     let mainViewCellPrice = UILabel().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.font = UIFont(name: "", size: 14) ?? UIFont.systemFont(ofSize: 14)
+        $0.font = UIFont(name: "NanumSquareRoundEB", size: 14) ?? UIFont.systemFont(ofSize: 14)
     }
     
     override func awakeFromNib() {

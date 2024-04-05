@@ -31,12 +31,12 @@ class OrderListTableViewCell: UITableViewCell {
         orderItemIndexLabel.text = String(index)
         orderItemNameLabel.text = item.name
         orderItemQuantityLabel.text = String(item.quantity)
-        orderItemPriceLabel.text = numberFormatter.string(from: NSNumber(value: item.price * item.quantity))
+        orderItemPriceLabel.text = "\(numberFormatter.string(from: NSNumber(value: item.price * item.quantity)) ?? "0") ₩"
     }
     
     func updateLabels(_ item: SelectedMenu) {
         orderItemQuantityLabel.text = String(item.quantity)
-        orderItemPriceLabel.text = numberFormatter.string(from: NSNumber(value: item.price * item.quantity))
+        orderItemPriceLabel.text = "\(numberFormatter.string(from: NSNumber(value: item.price * item.quantity)) ?? "0") ₩"
     }
     
     // MARK: - NumberFormatter
@@ -51,9 +51,15 @@ class OrderListTableViewCell: UITableViewCell {
     // MARK: - DefaultCode
     override func awakeFromNib() {
         super.awakeFromNib()
+        setLayout()
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    func setLayout(){
+        orderItemNameLabel.font = UIFont(name: "NanumSquareRoundB", size: 17)
+        orderItemIndexLabel.font = UIFont(name: "NanumSquareRoundR", size: 14)
+        orderItemPriceLabel.font = UIFont(name: "NanumSquareRoundEB", size: 17)
     }
 
 }
