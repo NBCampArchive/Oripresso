@@ -26,22 +26,40 @@ class OrderListViewController: UIViewController {
     @IBOutlet weak var totalPriceLabel: UILabel!
     
     // MARK: - Total
-    var totalQuantity: Int = self.selectedMen
-    self.totalQuantityLabel.text = String()
+    func updateTotal() {
+        let totalQuantity: Int = selectedMenu.reduce(0) { partialResult, item in
+            return partialResult + item.quantity
+        }
+        let totalPrice: Int = selectedMenu.reduce(0) { partialResult, item in
+            return partialResult + (item.price * item.quantity)
+        }
+        self.totalQuantityLabel.text = String(totalQuantity)
+        self.totalPriceLabel.text = "\(numberFormatter.string(from: NSNumber(value: totalPrice)) ?? "0") ₩"
+    }
     
-    // MARK: - Cancel
+    // MARK: - NumberFormatter
+    let numberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        return formatter
+    }()
+    
+    // MARK: - CancelOrder
     @IBAction func tapCancelButton(_ sender: UIButton) {
         let alert = UIAlertController(title: "주문을 취소하시겠습니까?", message: "담긴 주문은 전체 삭제 되고 메인화면으로 돌아갑니다", preferredStyle: .alert)
         let orderCancelAction = UIAlertAction(title: "아니요", style: .destructive) { action in
         }
         let orderDidTapButton = UIAlertAction(title: "예", style: .default) { action in
+            self.selectedMenu = []               // selectedMenu 초기화
+            self.orderListTableView.reloadData() // 테이블뷰 업데이트
+            self.updateTotal()                   // total bar 업데이트
         }
         alert.addAction(orderCancelAction)
         alert.addAction(orderDidTapButton)
         
         self.present(alert, animated: true)
     }
-    // MARK: - Order
+    // MARK: - ConductOrder
     @IBAction func tapOrderButton(_ sender: UIButton) {
         let alert = UIAlertController(title: "주문하시겠습니까?", message: nil, preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "아니요", style: .destructive) { action in
@@ -56,6 +74,7 @@ class OrderListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateTotal()
         orderListTableView.dataSource = self
     }
 }
@@ -70,15 +89,15 @@ extension OrderListViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        var item = selectedMenu[indexPath.row]
         cell.quantityVariance = { variance in
-            item.quantity += variance
-            if item.quantity <= 0 {
-                item.quantity = 1   // 수량이 1 이하로 내려가지 않도록 함
+            self.selectedMenu[indexPath.row].quantity += variance
+            if self.selectedMenu[indexPath.row].quantity <= 0 {
+                self.selectedMenu[indexPath.row].quantity = 1   // 수량이 1 이하로 내려가지 않도록 함
             }
-            cell.updateLabels(item)
+            cell.updateLabels(self.selectedMenu[indexPath.row])
+            self.updateTotal()
         }
-        cell.configure(item, index: indexPath.row + 1)
+        cell.configure(selectedMenu[indexPath.row], index: indexPath.row + 1)
         cell.selectionStyle = .none
         return cell
     }
