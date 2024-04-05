@@ -52,6 +52,9 @@ class MainViewController: UIViewController {
     
     func resetDisplayedMenus() {
         selectedMenus.removeAll()
+        displayedMenus.removeAll()
+        selectedCategory = "Coffee"
+        segment.selectedSegmentIndex = 0
         selectedLabel.text = "0"
         loadInitialData()
         uiTableView.reloadData()
