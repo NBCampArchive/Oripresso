@@ -5,10 +5,9 @@
 //  Created by 이시안 on 4/1/24.
 //
 
-import Foundation
 import UIKit
 
-class Payments: ViewController {
+class PaymentsViewController: UIViewController {
     
     @IBOutlet weak var receipt: UIImageView!
     @IBOutlet weak var moveToMain: UIButton!
