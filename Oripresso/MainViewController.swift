@@ -25,6 +25,7 @@ class MainViewController: UIViewController {
     var selectedMenus: [SelectedMenu] = []
     var displayedMenus: [Menu] = []
     var isLoading: Bool = false
+    var shouldResetDisplayedMenus: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +44,10 @@ class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        resetDisplayedMenus()
+        if shouldResetDisplayedMenus {
+            resetDisplayedMenus()
+            shouldResetDisplayedMenus = false
+        }
     }
     
     func resetDisplayedMenus() {
