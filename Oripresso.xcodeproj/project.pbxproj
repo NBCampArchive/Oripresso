@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95D512BA2BBAAA2C00ECE2E5 /* Payment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95D512B92BBAAA2C00ECE2E5 /* Payment.storyboard */; };
+		95D512BC2BBAAB4900ECE2E5 /* Payments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D512BB2BBAAB4900ECE2E5 /* Payments.swift */; };
 		1A31A3872BBA99630097602C /* OrderList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A31A3862BBA99630097602C /* OrderList.storyboard */; };
 		1AC6161D2BBBD60900DAFE63 /* OrderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC6161C2BBBD60900DAFE63 /* OrderListViewController.swift */; };
 		1AC6161F2BBBE29E00DAFE63 /* OrderListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC6161E2BBBE29E00DAFE63 /* OrderListTableViewCell.swift */; };
@@ -28,6 +30,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		95D512B92BBAAA2C00ECE2E5 /* Payment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Payment.storyboard; sourceTree = "<group>"; };
+		95D512BB2BBAAB4900ECE2E5 /* Payments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payments.swift; sourceTree = "<group>"; };
+		95D512BE2BBAAF0F00ECE2E5 /* NanumSquareRoundB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRoundB.ttf; sourceTree = "<group>"; };
+		95D512BF2BBAAF0F00ECE2E5 /* NanumSquareRoundL.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRoundL.ttf; sourceTree = "<group>"; };
+		95D512C02BBAAF0F00ECE2E5 /* NanumSquareRoundEB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRoundEB.ttf; sourceTree = "<group>"; };
+		95D512C12BBAAF0F00ECE2E5 /* NanumSquareRoundR.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRoundR.ttf; sourceTree = "<group>"; };
 		1A31A3862BBA99630097602C /* OrderList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrderList.storyboard; sourceTree = "<group>"; };
 		1AC6161C2BBBD60900DAFE63 /* OrderListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListViewController.swift; sourceTree = "<group>"; };
 		1AC6161E2BBBE29E00DAFE63 /* OrderListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListTableViewCell.swift; sourceTree = "<group>"; };
@@ -60,6 +68,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		95D512BD2BBAAEB600ECE2E5 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				95D512BE2BBAAF0F00ECE2E5 /* NanumSquareRoundB.ttf */,
+				95D512C02BBAAF0F00ECE2E5 /* NanumSquareRoundEB.ttf */,
+				95D512BF2BBAAF0F00ECE2E5 /* NanumSquareRoundL.ttf */,
+				95D512C12BBAAF0F00ECE2E5 /* NanumSquareRoundR.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		B5D7069E2BBA85AF009C32D9 = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +99,7 @@
 		B5D706A92BBA85AF009C32D9 /* Oripresso */ = {
 			isa = PBXGroup;
 			children = (
+				95D512BD2BBAAEB600ECE2E5 /* Fonts */,
 				B5D706AA2BBA85AF009C32D9 /* AppDelegate.swift */,
 				B5D706AC2BBA85AF009C32D9 /* SceneDelegate.swift */,
 				B5D706AE2BBA85AF009C32D9 /* ViewController.swift */,
@@ -89,6 +109,8 @@
 				B5D706B02BBA85AF009C32D9 /* Main.storyboard */,
 				FF7B359D2BBAA81400CC76F8 /* MainView.storyboard */,
 				B5D706B82BBA85B0009C32D9 /* Info.plist */,
+				95D512B92BBAAA2C00ECE2E5 /* Payment.storyboard */,
+				95D512BB2BBAAB4900ECE2E5 /* Payments.swift */,
 				FF7B359F2BBAA83400CC76F8 /* MainViewController.swift */,
 				B5D706BE2BBC0DC1009C32D9 /* MainViewTableCell.swift */,
 				1AC6161C2BBBD60900DAFE63 /* OrderListViewController.swift */,
@@ -179,6 +201,7 @@
 				B5D706CE2BBD60A3009C32D9 /* CoffeeJson.json in Resources */,
 				FF7B359E2BBAA81400CC76F8 /* MainView.storyboard in Resources */,
 				B5D706B22BBA85AF009C32D9 /* Base in Resources */,
+				95D512BA2BBAAA2C00ECE2E5 /* Payment.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +217,7 @@
 				B5D706AF2BBA85AF009C32D9 /* ViewController.swift in Sources */,
 				B5D706BF2BBC0DC1009C32D9 /* MainViewTableCell.swift in Sources */,
 				B5D706AB2BBA85AF009C32D9 /* AppDelegate.swift in Sources */,
+				95D512BC2BBAAB4900ECE2E5 /* Payments.swift in Sources */,
 				B5D706D02BBD6136009C32D9 /* CoffeeMenu.swift in Sources */,
 				2B50C0F42BBBE7A000813768 /* (null) in Sources */,
 				B5D706AD2BBA85AF009C32D9 /* SceneDelegate.swift in Sources */,
@@ -366,6 +390,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -394,6 +419,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
