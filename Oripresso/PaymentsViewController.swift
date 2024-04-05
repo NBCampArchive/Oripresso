@@ -18,7 +18,9 @@ class PaymentsViewController: UIViewController {
         animateReceipt()
         animatebutton()
     }
-    
+    @IBAction func moveToMainButtonTapped(_ sender: UIButton) {
+        navigationController?.popToRootViewController(animated: true)
+    }
     //중간쯤부터 보이기 시작하면서 내려오는 애니메이션 의도
     func animateReceipt() {
         // 초기 상태 설정: receipt 이미지뷰의 위치를 이동시킴. 원래 높이에서 1/10 만큼 위로 이동 , opacity는 0.
