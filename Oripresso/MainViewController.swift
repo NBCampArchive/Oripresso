@@ -18,6 +18,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var floatingButton: UIButton!
     @IBOutlet weak var selectedLabel: UILabel!
     
+    var activityIndicator: UIActivityIndicatorView!
 
     var cafeMenu: CafeMenu?
     var selectedCategory: String = "Coffee"
@@ -41,8 +42,8 @@ class MainViewController: UIViewController {
         selectedCategory = (sender as AnyObject).titleForSegment(at: (sender as AnyObject).selectedSegmentIndex) ?? "Coffee"
         print("selectedCategory: \(selectedCategory)")
         displayedMenus.removeAll()
+        uiTableView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
         loadInitialData()
-        uiTableView.reloadData()
     }
     
     override func viewDidLoad() {
@@ -54,6 +55,11 @@ class MainViewController: UIViewController {
         cafeMenu = readJSONFromFile()
         setSelectedLabel()
         loadInitialData()
+        activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.color = UIColor(red: 0.098, green: 0.251, blue: 0.145, alpha: 1)
+        activityIndicator.center = view.center
+        activityIndicator.hidesWhenStopped = true
+        view.addSubview(activityIndicator)
     }
     // MARK: - Infinite Scroll
     func loadInitialData() {
@@ -101,6 +107,7 @@ class MainViewController: UIViewController {
         }
         
         isLoading = true
+        activityIndicator.startAnimating() // 인디케이터 표시
         
         // 1초 지연 후에 데이터 로드
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
@@ -111,6 +118,7 @@ class MainViewController: UIViewController {
             self.uiTableView.reloadData()
             
             self.isLoading = false
+            self.activityIndicator.stopAnimating() // 인디케이터 숨김
         }
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView){
@@ -200,7 +208,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 menu = cafeMenu.coffee.menus[indexPath.row]
             case "Non-Coffee":
                 menu = cafeMenu.nonCoffee.menus[indexPath.row]
-            case "Desert":
+            case "Cake":
                 menu = cafeMenu.desert.menus[indexPath.row]
             case "Bread":
                 menu = cafeMenu.bread.menus[indexPath.row]
@@ -234,7 +242,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 menu = cafeMenu.coffee.menus[indexPath.row]
             case "Non-Coffee":
                 menu = cafeMenu.nonCoffee.menus[indexPath.row]
-            case "Desert":
+            case "Cake":
                 menu = cafeMenu.desert.menus[indexPath.row]
             case "Bread":
                 menu = cafeMenu.bread.menus[indexPath.row]
