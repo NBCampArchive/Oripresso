@@ -55,6 +55,7 @@ class MainViewController: UIViewController {
         setSelectedLabel()
         loadInitialData()
     }
+    // MARK: - Infinite Scroll
     func loadInitialData() {
         var category: Category?
         
@@ -122,7 +123,8 @@ class MainViewController: UIViewController {
             loadMoreData()
         }
     }
-
+    
+    // MARK: - Floating Button
     @IBAction func floatingButtonTapped(_ sender: Any) {
         let storyboard = UIStoryboard(name: "OrderList", bundle: nil)
         
@@ -137,6 +139,7 @@ class MainViewController: UIViewController {
     }
 }
 
+// MARK: - UISegmentedControl Extension
 extension UISegmentedControl {
     func removeBorders(andBackground: Bool = false) {
         setBackgroundImage(imageWithColor(color: backgroundColor ?? .clear), for: .normal, barMetrics: .default)
