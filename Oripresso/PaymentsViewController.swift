@@ -19,6 +19,9 @@ class PaymentsViewController: UIViewController {
         animatebutton()
     }
     @IBAction func moveToMainButtonTapped(_ sender: UIButton) {
+        if let mainViewController = self.navigationController?.viewControllers.first as? MainViewController {
+            mainViewController.shouldResetDisplayedMenus = true
+        }
         navigationController?.popToRootViewController(animated: true)
     }
     //중간쯤부터 보이기 시작하면서 내려오는 애니메이션 의도
