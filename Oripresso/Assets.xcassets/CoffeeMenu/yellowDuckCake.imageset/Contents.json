@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "yellowDuckCake.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
