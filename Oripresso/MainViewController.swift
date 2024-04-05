@@ -30,7 +30,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         segment.removeBorders()
         tableViewDelegate()
-        uiTableView.separatorColor =  UIColor(red: 0.89, green: 0.702, blue: 0.204, alpha: 1)
+        uiTableView.separatorColor =  UIColor(named: "seperatorColor")
         // JSON 파일에서 데이터 읽어오기
         cafeMenu = readJSONFromFile()
         setSelectedLabel()
@@ -196,7 +196,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         if selectedMenus.contains(where: { $0.name == menu.name }) {
             cell.backgroundColor = UIColor(red: 0.89, green: 0.702, blue: 0.204, alpha: 0.5) // 선택된 셀의 배경색 변경
         } else {
-            cell.backgroundColor = .systemBackground // 선택되지 않은 셀의 배경색 변경
+            cell.backgroundColor = UIColor(named: "backgroundColor") // 선택되지 않은 셀의 배경색 변경
         }
         return cell
     }

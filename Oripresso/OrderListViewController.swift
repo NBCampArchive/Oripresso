@@ -42,6 +42,7 @@ class OrderListViewController: UIViewController {
             self.selectedMenu = []               // selectedMenu 초기화
             self.orderListTableView.reloadData() // 테이블뷰 업데이트
             self.updateTotal()                   // total bar 업데이트
+            self.navigationController?.popToRootViewController(animated: true)
         }
         alert.addAction(orderCancelAction)
         alert.addAction(orderDidTapButton)
