@@ -40,7 +40,18 @@ class MainViewController: UIViewController {
         let titleImage = UIImage(named: "title")
         navigationItem.titleView = UIImageView(image: titleImage)
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        resetDisplayedMenus()
+    }
     
+    func resetDisplayedMenus() {
+        selectedMenus.removeAll()
+        selectedLabel.text = "0"
+        loadInitialData()
+        uiTableView.reloadData()
+    }
     func setActivityIndicator(){
         activityIndicator = UIActivityIndicatorView(style: .large)
         activityIndicator.color = UIColor(red: 0.098, green: 0.251, blue: 0.145, alpha: 1)
