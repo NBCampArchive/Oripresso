@@ -26,6 +26,7 @@ struct Category: Codable {
 }
 
 struct Menu: Codable {
+    let image: String
     let name: String
     let price: Int
     let description: String

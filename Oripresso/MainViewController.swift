@@ -18,19 +18,14 @@ class MainViewController: UIViewController {
     @IBOutlet weak var floatingButton: UIButton!
     @IBOutlet weak var selectedLabel: UILabel!
     
-    let data: [MenuData] = [MenuData(name: "Americano", type: .coffee),
-                            MenuData(name: "Juice", type: .nonCoffee),
-                            MenuData(name: "Cake", type: .cake),
-                            MenuData(name: "Bread", type: .bread)]
+    var activityIndicator: UIActivityIndicatorView!
+
     var cafeMenu: CafeMenu?
     var selectedCategory: String = "Coffee"
     var selectedMenus: [SelectedMenu] = []
-
-    var coffee: [MenuData] = []
-    var nonCoffee: [MenuData] = []
-    var cake: [MenuData] = []
-    var bread: [MenuData] = []
-   
+    var displayedMenus: [Menu] = []
+    var isLoading: Bool = false
+    
     func tableViewDelegate() {
         uiTableView.dataSource = self
         uiTableView.delegate = self
@@ -45,7 +40,10 @@ class MainViewController: UIViewController {
     
     @IBAction func segmentedControlSelected(_ sender: Any) {
         selectedCategory = (sender as AnyObject).titleForSegment(at: (sender as AnyObject).selectedSegmentIndex) ?? "Coffee"
-        uiTableView.reloadData()
+        print("selectedCategory: \(selectedCategory)")
+        displayedMenus.removeAll()
+        uiTableView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
+        loadInitialData()
     }
     
     override func viewDidLoad() {
@@ -56,9 +54,85 @@ class MainViewController: UIViewController {
         // JSON 파일에서 데이터 읽어오기
         cafeMenu = readJSONFromFile()
         setSelectedLabel()
-
+        loadInitialData()
+        activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.color = UIColor(red: 0.098, green: 0.251, blue: 0.145, alpha: 1)
+        activityIndicator.center = view.center
+        activityIndicator.hidesWhenStopped = true
+        view.addSubview(activityIndicator)
     }
-
+    // MARK: - Infinite Scroll
+    func loadInitialData() {
+        var category: Category?
+        
+        switch selectedCategory {
+        case "Coffee":
+            category = cafeMenu?.coffee
+        case "Non-Coffee":
+            category = cafeMenu?.nonCoffee
+        case "Cake":
+            category = cafeMenu?.desert
+        case "Bread":
+            category = cafeMenu?.bread
+        default:
+            break
+        }
+        
+        if let category = category {
+            let initialMenus = Array(category.menus.prefix(4))
+            displayedMenus.append(contentsOf: initialMenus)
+            uiTableView.reloadData()
+        }
+    }
+    func loadMoreData() {
+        var category: Category?
+        
+        switch selectedCategory {
+        case "Coffee":
+            category = cafeMenu?.coffee
+        case "Non-Coffee":
+            category = cafeMenu?.nonCoffee
+        case "Cake":
+            category = cafeMenu?.desert
+        case "Bread":
+            category = cafeMenu?.bread
+        default:
+            break
+        }
+        
+        guard let category = category,
+              !isLoading,
+              displayedMenus.count < category.menus.count else {
+            return
+        }
+        
+        isLoading = true
+        activityIndicator.startAnimating() // 인디케이터 표시
+        
+        // 1초 지연 후에 데이터 로드
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            let currentCount = self.displayedMenus.count
+            let nextCount = min(currentCount + 4, category.menus.count)
+            let newMenus = Array(category.menus[currentCount..<nextCount])
+            self.displayedMenus.append(contentsOf: newMenus)
+            self.uiTableView.reloadData()
+            
+            self.isLoading = false
+            self.activityIndicator.stopAnimating() // 인디케이터 숨김
+        }
+    }
+    func scrollViewDidScroll(_ scrollView: UIScrollView){
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        
+        if offsetY > contentHeight - scrollView.frame.height
+        {
+           print("Scroll")
+            loadMoreData()
+        }
+    }
+    
+    // MARK: - Floating Button
     @IBAction func floatingButtonTapped(_ sender: Any) {
         let storyboard = UIStoryboard(name: "OrderList", bundle: nil)
         
@@ -71,25 +145,9 @@ class MainViewController: UIViewController {
             print(selectedMenus)
         }
     }
-    
-    func divideType(datas: [MenuData]) {
-        for data in datas {
-            switch data.type {
-            case .coffee:
-                coffee.append(data)
-            case .nonCoffee:
-                nonCoffee.append(data)
-            case .cake:
-                cake.append(data)
-            case .bread:
-                bread.append(data)
-            }
-        }
-    }
 }
 
-
-
+// MARK: - UISegmentedControl Extension
 extension UISegmentedControl {
     func removeBorders(andBackground: Bool = false) {
         setBackgroundImage(imageWithColor(color: backgroundColor ?? .clear), for: .normal, barMetrics: .default)
@@ -115,7 +173,7 @@ extension UISegmentedControl {
 // MARK: - TableView
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return displayedMenus.count
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let tableViewHeight = tableView.bounds.height
@@ -124,31 +182,14 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MainViewTableCell", for: indexPath) as! MainViewTableCell
-        /// SegementIndex 별 MenuData 변경
-        if let cafeMenu = cafeMenu {
-            var menu: Menu?
-            
-            switch selectedCategory {
-            case "Coffee":
-                menu = cafeMenu.coffee.menus[indexPath.row]
-            case "Non-Coffee":
-                menu = cafeMenu.nonCoffee.menus[indexPath.row]
-            case "Desert":
-                menu = cafeMenu.desert.menus[indexPath.row]
-            case "Bread":
-                menu = cafeMenu.bread.menus[indexPath.row]
-            default:
-                break
-            }
-            
-            if let menu = menu {
-                cell.setCell(image: "placeholder", title: menu.name, description: menu.description, price: "\(menu.price) ₩")
-                if selectedMenus.contains(where: { $0.name == menu.name }) {
-                    cell.backgroundColor = UIColor(red: 0.89, green: 0.702, blue: 0.204, alpha: 0.5) // 선택된 셀의 배경색 변경
-                } else {
-                    cell.backgroundColor = .white // 선택되지 않은 셀의 배경색 변경
-                }
-            }
+        
+        let menu = displayedMenus[indexPath.row]
+        cell.setCell(image: menu.image, title: menu.name, description: menu.description, price: "\(menu.price) ₩")
+        
+        if selectedMenus.contains(where: { $0.name == menu.name }) {
+            cell.backgroundColor = UIColor(red: 0.89, green: 0.702, blue: 0.204, alpha: 0.5) // 선택된 셀의 배경색 변경
+        } else {
+            cell.backgroundColor = .white // 선택되지 않은 셀의 배경색 변경
         }
         return cell
     }
@@ -167,7 +208,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 menu = cafeMenu.coffee.menus[indexPath.row]
             case "Non-Coffee":
                 menu = cafeMenu.nonCoffee.menus[indexPath.row]
-            case "Desert":
+            case "Cake":
                 menu = cafeMenu.desert.menus[indexPath.row]
             case "Bread":
                 menu = cafeMenu.bread.menus[indexPath.row]
@@ -201,7 +242,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 menu = cafeMenu.coffee.menus[indexPath.row]
             case "Non-Coffee":
                 menu = cafeMenu.nonCoffee.menus[indexPath.row]
-            case "Desert":
+            case "Cake":
                 menu = cafeMenu.desert.menus[indexPath.row]
             case "Bread":
                 menu = cafeMenu.bread.menus[indexPath.row]
