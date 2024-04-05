@@ -1,6 +1,5 @@
 {
   "Coffee": {
-    "totalPages": 2,
     "menus": [
       {
         "image": "hotAmericano",
@@ -53,7 +52,6 @@
     ]
   },
   "Non-Coffee": {
-    "totalPages": 1,
     "menus": [
       {
         "image": "iceTea",
@@ -106,7 +104,6 @@
     ]
   },
   "Desert": {
-    "totalPages": 3,
     "menus": [
       {
         "image": "ganacheCake",
@@ -159,7 +156,6 @@
     ]
   },
   "Bread": {
-    "totalPages": 2,
     "menus": [
       {
         "image": "hamCheeseSaltedBread",

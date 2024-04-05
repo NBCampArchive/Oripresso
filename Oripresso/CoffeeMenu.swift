@@ -21,7 +21,6 @@ struct CafeMenu: Codable {
 }
 
 struct Category: Codable {
-    let totalPages: Int
     let menus: [Menu]
 }
 
