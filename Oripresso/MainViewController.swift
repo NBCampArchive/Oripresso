@@ -43,7 +43,7 @@ class MainViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        viewDidLoad()
         if shouldResetDisplayedMenus {
             resetDisplayedMenus()
             shouldResetDisplayedMenus = false
@@ -171,6 +171,7 @@ class MainViewController: UIViewController {
             print(selectedMenus)
         }
     }
+    
 }
 
 // MARK: - UISegmentedControl Extension
