@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "financier.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

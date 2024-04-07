@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "humbleicons_cart.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

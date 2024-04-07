@@ -1,0 +1,210 @@
+{
+  "Coffee": {
+    "menus": [
+      {
+        "image": "hotAmericano",
+        "name": "핫 아메리카노",
+        "price": 3000,
+        "description": "Hot Americano"
+      },
+      {
+        "image": "icedAmericano",
+        "name": "아이스 아메리카노",
+        "price": 3000,
+        "description": "Iced Americano"
+      },
+      {
+        "image": "hotCappuccino",
+        "name": "핫 카푸치노",
+        "price": 4000,
+        "description": "Hot Cappuccino"
+      },
+      {
+        "image": "icedCafeLatte",
+        "name": "아이스 카페라떼",
+        "price": 4000,
+        "description": "Iced Cafe Latte"
+      },
+      {
+        "image": "hotWhiteChocolateMocha",
+        "name": "핫 화이트 초콜릿 모카",
+        "price": 5000,
+        "description": "Hot White Chocolate Mocha"
+      },
+      {
+        "image": "icedWhiteChocolateMocha",
+        "name": "아이스 화이트 초콜릿 모카",
+        "price": 5000,
+        "description": "Iced White Chocolate Mocha"
+      },
+      {
+        "image": "hotCafeMocha",
+        "name": "핫 카페 모카",
+        "price": 4500,
+        "description": "Hot Cafe Mocha"
+      },
+      {
+        "image": "icedCafeMocha",
+        "name": "아이스 카페 모카",
+        "price": 4500,
+        "description": "Iced Cafe Mocha"
+      }
+    ]
+  },
+  "Non-Coffee": {
+    "menus": [
+      {
+        "image": "iceTea",
+        "name": "아이스티",
+        "price": 4500,
+        "description": "Ice Tea"
+      },
+      {
+        "image": "grapefruitAde",
+        "name": "자몽에이드",
+        "price": 5000,
+        "description": "Grape Fruit Ade"
+      },
+      {
+        "image": "greenGrapeAde",
+        "name": "청포도 에이드",
+        "price": 4500,
+        "description": "Green Grape Ade"
+      },
+      {
+        "image": "chocoShake",
+        "name": "초코쉐이크",
+        "price": 5000,
+        "description": "Choco Shake"
+      },
+      {
+        "image": "lemonAde",
+        "name": "레몬 에이드",
+        "price": 5000,
+        "description": "Lemon Ade"
+      },
+      {
+        "image": "orangeAde",
+        "name": "오렌지 에이드",
+        "price": 5000,
+        "description": "Orange Ade"
+      },
+      {
+        "image": "strawberryShake",
+        "name": "딸기쉐이크",
+        "price": 5000,
+        "description": "Strawberry Shake"
+      },
+      {
+        "image": "vanillaShake",
+        "name": "바닐라쉐이크",
+        "price": 5000,
+        "description": "Vanilla Shake"
+      }
+    ]
+  },
+  "Dessert": {
+    "menus": [
+      {
+        "image": "ganacheCake",
+        "name": "가나슈 조각케이크",
+        "price": 6000,
+        "description": "Ganache Piece Cake"
+      },
+      {
+        "image": "yellowDuckCake",
+        "name": "노란 오리 케이크",
+        "price": 10000,
+        "description": "Yellow Duck whole Cake"
+      },
+      {
+        "image": "financier",
+        "name": "피낭시에",
+        "price": 3000,
+        "description": "Cheese Financier"
+      },
+      {
+        "image": "cookie",
+        "name": "쿠키",
+        "price": 5500,
+        "description": "Cookie"
+      },
+      {
+        "image": "whiteDuckCake",
+        "name": "하얀 오리 케이크",
+        "price": 9500,
+        "description": "White Duck Whole Cake"
+      },
+      {
+        "image": "christmasDuckCake",
+        "name": "크리스마스 오리 케이크",
+        "price": 12000,
+        "description": "Christmas Duck Whole Cake"
+      },
+      {
+        "image": "carrotPieceCake",
+        "name": "당근 조각 케이크",
+        "price": 6000,
+        "description": "Carrot Piece Cake"
+      },
+      {
+        "image": "macaron",
+        "name": "마카롱",
+        "price": 1500,
+        "description": "Macaron"
+      }
+    ]
+  },
+  "Bread": {
+    "menus": [
+      {
+        "image": "hamCheeseSaltedBread",
+        "name": "햄 & 딥 치즈 소금빵",
+        "price": 5400,
+        "description": "Ham & Cheese Salted Bread"
+      },
+      {
+        "image": "ricottaSaltedBreadSandwich",
+        "name": "리코타 소금빵 샌드위치",
+        "price": 6800,
+        "description": "Ricotta Salted Bread Sandwich"
+      },
+      {
+        "image": "meltingCheeseBaconSandwich",
+        "name": "멜팅 치즈 베이컨 샌드위치",
+        "price": 6900,
+        "description": "Melting Cheese Bacon Sandwich"
+      },
+      {
+        "image": "chickenBaconWrap",
+        "name": "치킨 베이컨 랩",
+        "price": 6500,
+        "description": "Chicken Bacon Wrap"
+      },
+      {
+        "image": "chickenClassicSandwich",
+        "name": "치킨 클래식 샌드위치",
+        "price": 6900,
+        "description": "Chicken Classic Sandwich"
+      },
+      {
+        "image": "cheesePorkCutletSandwich",
+        "name": "치즈 포크 커틀릿 샌드위치",
+        "price": 6200,
+        "description": "Cheese Pork Cutlet Sandwich"
+      },
+      {
+        "image": "eggEggSandwich",
+        "name": "에그에그 샌드위치",
+        "price": 4400,
+        "description": "Egg Egg Sandwich"
+      },
+      {
+        "image": "sweetPumpkinEggSaladSandwich",
+        "name": "단호박 에그 샐러드 샌드위치",
+        "price": 5500,
+        "description": "Sweet Pumpkin Egg Salad Sandwich"
+      }
+    ]
+  }
+}

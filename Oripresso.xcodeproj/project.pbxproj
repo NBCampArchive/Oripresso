@@ -7,15 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A31A3872BBA99630097602C /* OrderList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A31A3862BBA99630097602C /* OrderList.storyboard */; };
+		1AC6161D2BBBD60900DAFE63 /* OrderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC6161C2BBBD60900DAFE63 /* OrderListViewController.swift */; };
+		1AC6161F2BBBE29E00DAFE63 /* OrderListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC6161E2BBBE29E00DAFE63 /* OrderListTableViewCell.swift */; };
+		2B50C0F42BBBE7A000813768 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		95D512BA2BBAAA2C00ECE2E5 /* Payment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95D512B92BBAAA2C00ECE2E5 /* Payment.storyboard */; };
+		95D512BC2BBAAB4900ECE2E5 /* PaymentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D512BB2BBAAB4900ECE2E5 /* PaymentsViewController.swift */; };
+		B54CFCE02BC02C7F00997D8E /* NanumSquareRoundB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95D512BE2BBAAF0F00ECE2E5 /* NanumSquareRoundB.ttf */; };
+		B54CFCE12BC02C8200997D8E /* NanumSquareRoundEB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95D512C02BBAAF0F00ECE2E5 /* NanumSquareRoundEB.ttf */; };
+		B54CFCE22BC02C8400997D8E /* NanumSquareRoundL.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95D512BF2BBAAF0F00ECE2E5 /* NanumSquareRoundL.ttf */; };
+		B54CFCE32BC02C8700997D8E /* NanumSquareRoundR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95D512C12BBAAF0F00ECE2E5 /* NanumSquareRoundR.ttf */; };
 		B5D706AB2BBA85AF009C32D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D706AA2BBA85AF009C32D9 /* AppDelegate.swift */; };
 		B5D706AD2BBA85AF009C32D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D706AC2BBA85AF009C32D9 /* SceneDelegate.swift */; };
 		B5D706AF2BBA85AF009C32D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D706AE2BBA85AF009C32D9 /* ViewController.swift */; };
 		B5D706B22BBA85AF009C32D9 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = B5D706B12BBA85AF009C32D9 /* Base */; };
 		B5D706B42BBA85B0009C32D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5D706B32BBA85B0009C32D9 /* Assets.xcassets */; };
 		B5D706B72BBA85B0009C32D9 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = B5D706B62BBA85B0009C32D9 /* Base */; };
+		B5D706BF2BBC0DC1009C32D9 /* MainViewTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D706BE2BBC0DC1009C32D9 /* MainViewTableCell.swift */; };
+		B5D706CE2BBD60A3009C32D9 /* CoffeeJson.json in Resources */ = {isa = PBXBuildFile; fileRef = B5D706CC2BBD60A3009C32D9 /* CoffeeJson.json */; };
+		B5D706D02BBD6136009C32D9 /* CoffeeMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D706CF2BBD6136009C32D9 /* CoffeeMenu.swift */; };
+		B5D706DB2BBFAD87009C32D9 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B5D706DA2BBFAD87009C32D9 /* SnapKit */; };
+		B5D706DD2BBFAD8F009C32D9 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = B5D706DC2BBFAD8F009C32D9 /* Then */; };
+		B5D706DF2BBFBD90009C32D9 /* SelectedMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D706DE2BBFBD90009C32D9 /* SelectedMenu.swift */; };
+		FF7B359E2BBAA81400CC76F8 /* MainView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF7B359D2BBAA81400CC76F8 /* MainView.storyboard */; };
+		FF7B35A02BBAA83400CC76F8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7B359F2BBAA83400CC76F8 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A31A3862BBA99630097602C /* OrderList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrderList.storyboard; sourceTree = "<group>"; };
+		1AC6161C2BBBD60900DAFE63 /* OrderListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListViewController.swift; sourceTree = "<group>"; };
+		1AC6161E2BBBE29E00DAFE63 /* OrderListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListTableViewCell.swift; sourceTree = "<group>"; };
+		95D512B92BBAAA2C00ECE2E5 /* Payment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Payment.storyboard; sourceTree = "<group>"; };
+		95D512BB2BBAAB4900ECE2E5 /* PaymentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsViewController.swift; sourceTree = "<group>"; };
+		95D512BE2BBAAF0F00ECE2E5 /* NanumSquareRoundB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRoundB.ttf; sourceTree = "<group>"; };
+		95D512BF2BBAAF0F00ECE2E5 /* NanumSquareRoundL.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRoundL.ttf; sourceTree = "<group>"; };
+		95D512C02BBAAF0F00ECE2E5 /* NanumSquareRoundEB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRoundEB.ttf; sourceTree = "<group>"; };
+		95D512C12BBAAF0F00ECE2E5 /* NanumSquareRoundR.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRoundR.ttf; sourceTree = "<group>"; };
 		B5D706A72BBA85AF009C32D9 /* Oripresso.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Oripresso.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5D706AA2BBA85AF009C32D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5D706AC2BBA85AF009C32D9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +51,12 @@
 		B5D706B32BBA85B0009C32D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B5D706B62BBA85B0009C32D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B5D706B82BBA85B0009C32D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5D706BE2BBC0DC1009C32D9 /* MainViewTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewTableCell.swift; sourceTree = "<group>"; };
+		B5D706CD2BBD60A3009C32D9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/CoffeeJson.json; sourceTree = "<group>"; };
+		B5D706CF2BBD6136009C32D9 /* CoffeeMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeMenu.swift; sourceTree = "<group>"; };
+		B5D706DE2BBFBD90009C32D9 /* SelectedMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedMenu.swift; sourceTree = "<group>"; };
+		FF7B359D2BBAA81400CC76F8 /* MainView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainView.storyboard; sourceTree = "<group>"; };
+		FF7B359F2BBAA83400CC76F8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +64,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5D706DB2BBFAD87009C32D9 /* SnapKit in Frameworks */,
+				B5D706DD2BBFAD8F009C32D9 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		95D512BD2BBAAEB600ECE2E5 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				95D512BE2BBAAF0F00ECE2E5 /* NanumSquareRoundB.ttf */,
+				95D512C02BBAAF0F00ECE2E5 /* NanumSquareRoundEB.ttf */,
+				95D512BF2BBAAF0F00ECE2E5 /* NanumSquareRoundL.ttf */,
+				95D512C12BBAAF0F00ECE2E5 /* NanumSquareRoundR.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		B5D7069E2BBA85AF009C32D9 = {
 			isa = PBXGroup;
 			children = (
 				B5D706A92BBA85AF009C32D9 /* Oripresso */,
 				B5D706A82BBA85AF009C32D9 /* Products */,
+				B5D706D32BBEB138009C32D9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +103,34 @@
 		B5D706A92BBA85AF009C32D9 /* Oripresso */ = {
 			isa = PBXGroup;
 			children = (
+				95D512BD2BBAAEB600ECE2E5 /* Fonts */,
 				B5D706AA2BBA85AF009C32D9 /* AppDelegate.swift */,
 				B5D706AC2BBA85AF009C32D9 /* SceneDelegate.swift */,
 				B5D706AE2BBA85AF009C32D9 /* ViewController.swift */,
-				B5D706B02BBA85AF009C32D9 /* Main.storyboard */,
 				B5D706B32BBA85B0009C32D9 /* Assets.xcassets */,
+				1A31A3862BBA99630097602C /* OrderList.storyboard */,
 				B5D706B52BBA85B0009C32D9 /* LaunchScreen.storyboard */,
+				B5D706B02BBA85AF009C32D9 /* Main.storyboard */,
+				FF7B359D2BBAA81400CC76F8 /* MainView.storyboard */,
 				B5D706B82BBA85B0009C32D9 /* Info.plist */,
+				95D512B92BBAAA2C00ECE2E5 /* Payment.storyboard */,
+				95D512BB2BBAAB4900ECE2E5 /* PaymentsViewController.swift */,
+				FF7B359F2BBAA83400CC76F8 /* MainViewController.swift */,
+				B5D706BE2BBC0DC1009C32D9 /* MainViewTableCell.swift */,
+				1AC6161C2BBBD60900DAFE63 /* OrderListViewController.swift */,
+				1AC6161E2BBBE29E00DAFE63 /* OrderListTableViewCell.swift */,
+				B5D706CC2BBD60A3009C32D9 /* CoffeeJson.json */,
+				B5D706CF2BBD6136009C32D9 /* CoffeeMenu.swift */,
+				B5D706DE2BBFBD90009C32D9 /* SelectedMenu.swift */,
 			);
 			path = Oripresso;
+			sourceTree = "<group>";
+		};
+		B5D706D32BBEB138009C32D9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +149,10 @@
 			dependencies = (
 			);
 			name = Oripresso;
+			packageProductDependencies = (
+				B5D706DA2BBFAD87009C32D9 /* SnapKit */,
+				B5D706DC2BBFAD8F009C32D9 /* Then */,
+			);
 			productName = Oripresso;
 			productReference = B5D706A72BBA85AF009C32D9 /* Oripresso.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +181,10 @@
 				Base,
 			);
 			mainGroup = B5D7069E2BBA85AF009C32D9;
+			packageReferences = (
+				1A5849172BBD482F009C364E /* XCRemoteSwiftPackageReference "SnapKit" */,
+				1A58491A2BBD4842009C364E /* XCRemoteSwiftPackageReference "Then" */,
+			);
 			productRefGroup = B5D706A82BBA85AF009C32D9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,7 +201,15 @@
 			files = (
 				B5D706B42BBA85B0009C32D9 /* Assets.xcassets in Resources */,
 				B5D706B72BBA85B0009C32D9 /* Base in Resources */,
+				1A31A3872BBA99630097602C /* OrderList.storyboard in Resources */,
+				B54CFCE02BC02C7F00997D8E /* NanumSquareRoundB.ttf in Resources */,
+				B54CFCE32BC02C8700997D8E /* NanumSquareRoundR.ttf in Resources */,
+				B54CFCE12BC02C8200997D8E /* NanumSquareRoundEB.ttf in Resources */,
+				B5D706CE2BBD60A3009C32D9 /* CoffeeJson.json in Resources */,
+				FF7B359E2BBAA81400CC76F8 /* MainView.storyboard in Resources */,
 				B5D706B22BBA85AF009C32D9 /* Base in Resources */,
+				95D512BA2BBAAA2C00ECE2E5 /* Payment.storyboard in Resources */,
+				B54CFCE22BC02C8400997D8E /* NanumSquareRoundL.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,9 +220,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AC6161F2BBBE29E00DAFE63 /* OrderListTableViewCell.swift in Sources */,
+				1AC6161D2BBBD60900DAFE63 /* OrderListViewController.swift in Sources */,
 				B5D706AF2BBA85AF009C32D9 /* ViewController.swift in Sources */,
+				B5D706BF2BBC0DC1009C32D9 /* MainViewTableCell.swift in Sources */,
 				B5D706AB2BBA85AF009C32D9 /* AppDelegate.swift in Sources */,
+				95D512BC2BBAAB4900ECE2E5 /* PaymentsViewController.swift in Sources */,
+				B5D706D02BBD6136009C32D9 /* CoffeeMenu.swift in Sources */,
+				2B50C0F42BBBE7A000813768 /* (null) in Sources */,
 				B5D706AD2BBA85AF009C32D9 /* SceneDelegate.swift in Sources */,
+				FF7B35A02BBAA83400CC76F8 /* MainViewController.swift in Sources */,
+				B5D706DF2BBFBD90009C32D9 /* SelectedMenu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,6 +251,14 @@
 				B5D706B62BBA85B0009C32D9 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B5D706CC2BBD60A3009C32D9 /* CoffeeJson.json */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5D706CD2BBD60A3009C32D9 /* en */,
+			);
+			name = CoffeeJson.json;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -218,7 +316,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -275,7 +373,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -300,12 +398,13 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = pudin435.Oripresso;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Oripresso;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -328,12 +427,13 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = pudin435.Oripresso;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Oripresso;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -363,6 +463,36 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1A5849172BBD482F009C364E /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		1A58491A2BBD4842009C364E /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B5D706DA2BBFAD87009C32D9 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SnapKit;
+		};
+		B5D706DC2BBFAD8F009C32D9 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Then;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B5D7069F2BBA85AF009C32D9 /* Project object */;
 }
