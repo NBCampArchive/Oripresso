@@ -44,6 +44,7 @@ class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewDidLoad()
+        selectedLabel.text = String(selectedMenus.count)
         if shouldResetDisplayedMenus {
             resetDisplayedMenus()
             shouldResetDisplayedMenus = false
