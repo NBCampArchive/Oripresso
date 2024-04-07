@@ -40,6 +40,8 @@ class MainViewController: UIViewController {
         view.addSubview(activityIndicator)
         let titleImage = UIImage(named: "title")
         navigationItem.titleView = UIImageView(image: titleImage)
+        self.navigationController?.navigationBar.topItem?.backButtonTitle = ""
+        self.navigationController?.navigationBar.tintColor = UIColor(red: 0.098, green: 0.251, blue: 0.145, alpha: 1)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
