@@ -43,7 +43,7 @@ class MainViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        viewDidLoad()
         if shouldResetDisplayedMenus {
             resetDisplayedMenus()
             shouldResetDisplayedMenus = false
@@ -95,8 +95,8 @@ class MainViewController: UIViewController {
             category = cafeMenu?.coffee
         case "Non-Coffee":
             category = cafeMenu?.nonCoffee
-        case "Desert":
-            category = cafeMenu?.desert
+        case "Dessert":
+            category = cafeMenu?.dessert
         case "Bread":
             category = cafeMenu?.bread
         default:
@@ -117,8 +117,8 @@ class MainViewController: UIViewController {
             category = cafeMenu?.coffee
         case "Non-Coffee":
             category = cafeMenu?.nonCoffee
-        case "Desert":
-            category = cafeMenu?.desert
+        case "Dessert":
+            category = cafeMenu?.dessert
         case "Bread":
             category = cafeMenu?.bread
         default:
@@ -171,6 +171,7 @@ class MainViewController: UIViewController {
             print(selectedMenus)
         }
     }
+    
 }
 
 // MARK: - UISegmentedControl Extension
@@ -233,8 +234,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 menu = cafeMenu.coffee.menus[indexPath.row]
             case "Non-Coffee":
                 menu = cafeMenu.nonCoffee.menus[indexPath.row]
-            case "Desert":
-                menu = cafeMenu.desert.menus[indexPath.row]
+            case "Dessert":
+                menu = cafeMenu.dessert.menus[indexPath.row]
             case "Bread":
                 menu = cafeMenu.bread.menus[indexPath.row]
             default:
@@ -267,8 +268,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 menu = cafeMenu.coffee.menus[indexPath.row]
             case "Non-Coffee":
                 menu = cafeMenu.nonCoffee.menus[indexPath.row]
-            case "Desert":
-                menu = cafeMenu.desert.menus[indexPath.row]
+            case "Dessert":
+                menu = cafeMenu.dessert.menus[indexPath.row]
             case "Bread":
                 menu = cafeMenu.bread.menus[indexPath.row]
             default:

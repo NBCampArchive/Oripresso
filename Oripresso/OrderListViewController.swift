@@ -86,6 +86,13 @@ class OrderListViewController: UIViewController {
         self.navigationController?.navigationBar.topItem?.backButtonTitle = ""
         self.navigationController?.navigationBar.tintColor = UIColor(red: 0.098, green: 0.251, blue: 0.145, alpha: 1)
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        // MainViewController로 메뉴 데이터 보내기
+        if let mainViewController = self.navigationController?.viewControllers.first as? MainViewController {
+            mainViewController.selectedMenus = self.selectedMenu
+        }
+    }
 }
 
 extension OrderListViewController: UITableViewDataSource {
