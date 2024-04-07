@@ -83,6 +83,40 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		B54CFCE42BC3041F00997D8E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B5D706CC2BBD60A3009C32D9 /* CoffeeJson.json */,
+				B5D706CF2BBD6136009C32D9 /* CoffeeMenu.swift */,
+				B5D706DE2BBFBD90009C32D9 /* SelectedMenu.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B54CFCE52BC3042700997D8E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1AC6161E2BBBE29E00DAFE63 /* OrderListTableViewCell.swift */,
+				1A31A3862BBA99630097602C /* OrderList.storyboard */,
+				B5D706B52BBA85B0009C32D9 /* LaunchScreen.storyboard */,
+				B5D706B02BBA85AF009C32D9 /* Main.storyboard */,
+				FF7B359D2BBAA81400CC76F8 /* MainView.storyboard */,
+				95D512B92BBAAA2C00ECE2E5 /* Payment.storyboard */,
+				B5D706BE2BBC0DC1009C32D9 /* MainViewTableCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B54CFCE62BC3042F00997D8E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				95D512BB2BBAAB4900ECE2E5 /* PaymentsViewController.swift */,
+				1AC6161C2BBBD60900DAFE63 /* OrderListViewController.swift */,
+				FF7B359F2BBAA83400CC76F8 /* MainViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		B5D7069E2BBA85AF009C32D9 = {
 			isa = PBXGroup;
 			children = (
@@ -103,25 +137,15 @@
 		B5D706A92BBA85AF009C32D9 /* Oripresso */ = {
 			isa = PBXGroup;
 			children = (
+				B54CFCE62BC3042F00997D8E /* Controllers */,
+				B54CFCE52BC3042700997D8E /* Views */,
+				B54CFCE42BC3041F00997D8E /* Models */,
 				95D512BD2BBAAEB600ECE2E5 /* Fonts */,
 				B5D706AA2BBA85AF009C32D9 /* AppDelegate.swift */,
 				B5D706AC2BBA85AF009C32D9 /* SceneDelegate.swift */,
 				B5D706AE2BBA85AF009C32D9 /* ViewController.swift */,
 				B5D706B32BBA85B0009C32D9 /* Assets.xcassets */,
-				1A31A3862BBA99630097602C /* OrderList.storyboard */,
-				B5D706B52BBA85B0009C32D9 /* LaunchScreen.storyboard */,
-				B5D706B02BBA85AF009C32D9 /* Main.storyboard */,
-				FF7B359D2BBAA81400CC76F8 /* MainView.storyboard */,
 				B5D706B82BBA85B0009C32D9 /* Info.plist */,
-				95D512B92BBAAA2C00ECE2E5 /* Payment.storyboard */,
-				95D512BB2BBAAB4900ECE2E5 /* PaymentsViewController.swift */,
-				FF7B359F2BBAA83400CC76F8 /* MainViewController.swift */,
-				B5D706BE2BBC0DC1009C32D9 /* MainViewTableCell.swift */,
-				1AC6161C2BBBD60900DAFE63 /* OrderListViewController.swift */,
-				1AC6161E2BBBE29E00DAFE63 /* OrderListTableViewCell.swift */,
-				B5D706CC2BBD60A3009C32D9 /* CoffeeJson.json */,
-				B5D706CF2BBD6136009C32D9 /* CoffeeMenu.swift */,
-				B5D706DE2BBFBD90009C32D9 /* SelectedMenu.swift */,
 			);
 			path = Oripresso;
 			sourceTree = "<group>";
