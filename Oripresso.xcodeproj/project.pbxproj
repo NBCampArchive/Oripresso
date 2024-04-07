@@ -17,6 +17,11 @@
 		B54CFCE12BC02C8200997D8E /* NanumSquareRoundEB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95D512C02BBAAF0F00ECE2E5 /* NanumSquareRoundEB.ttf */; };
 		B54CFCE22BC02C8400997D8E /* NanumSquareRoundL.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95D512BF2BBAAF0F00ECE2E5 /* NanumSquareRoundL.ttf */; };
 		B54CFCE32BC02C8700997D8E /* NanumSquareRoundR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95D512C12BBAAF0F00ECE2E5 /* NanumSquareRoundR.ttf */; };
+		B55AFBB62BC3070900866ECA /* Onboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B55AFBB52BC3070900866ECA /* Onboard.storyboard */; };
+		B55AFBB82BC3078600866ECA /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55AFBB72BC3078600866ECA /* OnboardViewController.swift */; };
+		B55AFBBC2BC311FF00866ECA /* CrewCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55AFBBB2BC311FF00866ECA /* CrewCollectionCell.swift */; };
+		B55AFBBE2BC3125500866ECA /* PostCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55AFBBD2BC3125500866ECA /* PostCollectionCell.swift */; };
+		B55AFBC02BC31D9000866ECA /* CrewMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55AFBBF2BC31D9000866ECA /* CrewMember.swift */; };
 		B5D706AB2BBA85AF009C32D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D706AA2BBA85AF009C32D9 /* AppDelegate.swift */; };
 		B5D706AD2BBA85AF009C32D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D706AC2BBA85AF009C32D9 /* SceneDelegate.swift */; };
 		B5D706AF2BBA85AF009C32D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D706AE2BBA85AF009C32D9 /* ViewController.swift */; };
@@ -43,6 +48,11 @@
 		95D512BF2BBAAF0F00ECE2E5 /* NanumSquareRoundL.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRoundL.ttf; sourceTree = "<group>"; };
 		95D512C02BBAAF0F00ECE2E5 /* NanumSquareRoundEB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRoundEB.ttf; sourceTree = "<group>"; };
 		95D512C12BBAAF0F00ECE2E5 /* NanumSquareRoundR.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRoundR.ttf; sourceTree = "<group>"; };
+		B55AFBB52BC3070900866ECA /* Onboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboard.storyboard; sourceTree = "<group>"; };
+		B55AFBB72BC3078600866ECA /* OnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewController.swift; sourceTree = "<group>"; };
+		B55AFBBB2BC311FF00866ECA /* CrewCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewCollectionCell.swift; sourceTree = "<group>"; };
+		B55AFBBD2BC3125500866ECA /* PostCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionCell.swift; sourceTree = "<group>"; };
+		B55AFBBF2BC31D9000866ECA /* CrewMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewMember.swift; sourceTree = "<group>"; };
 		B5D706A72BBA85AF009C32D9 /* Oripresso.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Oripresso.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5D706AA2BBA85AF009C32D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5D706AC2BBA85AF009C32D9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +99,7 @@
 				B5D706CC2BBD60A3009C32D9 /* CoffeeJson.json */,
 				B5D706CF2BBD6136009C32D9 /* CoffeeMenu.swift */,
 				B5D706DE2BBFBD90009C32D9 /* SelectedMenu.swift */,
+				B55AFBBF2BC31D9000866ECA /* CrewMember.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -103,6 +114,9 @@
 				FF7B359D2BBAA81400CC76F8 /* MainView.storyboard */,
 				95D512B92BBAAA2C00ECE2E5 /* Payment.storyboard */,
 				B5D706BE2BBC0DC1009C32D9 /* MainViewTableCell.swift */,
+				B55AFBB52BC3070900866ECA /* Onboard.storyboard */,
+				B55AFBBB2BC311FF00866ECA /* CrewCollectionCell.swift */,
+				B55AFBBD2BC3125500866ECA /* PostCollectionCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -113,6 +127,7 @@
 				95D512BB2BBAAB4900ECE2E5 /* PaymentsViewController.swift */,
 				1AC6161C2BBBD60900DAFE63 /* OrderListViewController.swift */,
 				FF7B359F2BBAA83400CC76F8 /* MainViewController.swift */,
+				B55AFBB72BC3078600866ECA /* OnboardViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -233,6 +248,7 @@
 				FF7B359E2BBAA81400CC76F8 /* MainView.storyboard in Resources */,
 				B5D706B22BBA85AF009C32D9 /* Base in Resources */,
 				95D512BA2BBAAA2C00ECE2E5 /* Payment.storyboard in Resources */,
+				B55AFBB62BC3070900866ECA /* Onboard.storyboard in Resources */,
 				B54CFCE22BC02C8400997D8E /* NanumSquareRoundL.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -246,8 +262,11 @@
 			files = (
 				1AC6161F2BBBE29E00DAFE63 /* OrderListTableViewCell.swift in Sources */,
 				1AC6161D2BBBD60900DAFE63 /* OrderListViewController.swift in Sources */,
+				B55AFBB82BC3078600866ECA /* OnboardViewController.swift in Sources */,
 				B5D706AF2BBA85AF009C32D9 /* ViewController.swift in Sources */,
+				B55AFBC02BC31D9000866ECA /* CrewMember.swift in Sources */,
 				B5D706BF2BBC0DC1009C32D9 /* MainViewTableCell.swift in Sources */,
+				B55AFBBE2BC3125500866ECA /* PostCollectionCell.swift in Sources */,
 				B5D706AB2BBA85AF009C32D9 /* AppDelegate.swift in Sources */,
 				95D512BC2BBAAB4900ECE2E5 /* PaymentsViewController.swift in Sources */,
 				B5D706D02BBD6136009C32D9 /* CoffeeMenu.swift in Sources */,
@@ -255,6 +274,7 @@
 				B5D706AD2BBA85AF009C32D9 /* SceneDelegate.swift in Sources */,
 				FF7B35A02BBAA83400CC76F8 /* MainViewController.swift in Sources */,
 				B5D706DF2BBFBD90009C32D9 /* SelectedMenu.swift in Sources */,
+				B55AFBBC2BC311FF00866ECA /* CrewCollectionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
