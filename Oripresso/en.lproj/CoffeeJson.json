@@ -60,8 +60,8 @@
         "description": "Ice Tea"
       },
       {
-        "image": "grapeFruitAde",
-        "name": "포도 에이드",
+        "image": "grapefruitAde",
+        "name": "자몽에이드",
         "price": 5000,
         "description": "Grape Fruit Ade"
       },
