@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Payments-->
+        <!--Payments View Controller-->
         <scene sceneID="oIC-VR-8JC">
             <objects>
-                <viewController id="UCS-DA-Ag2" customClass="Payments" customModule="Oripresso" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Payment" id="UCS-DA-Ag2" customClass="PaymentsViewController" customModule="Oripresso" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pnb-4X-qvY">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -33,6 +33,9 @@
                                     <fontDescription key="titleFontDescription" name="NanumSquareRoundEB" family="NanumSquareRound" pointSize="24"/>
                                     <color key="baseForegroundColor" red="0.96014052630000002" green="0.9727402329" blue="0.94334322209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="moveToMainButtonTapped:" destination="UCS-DA-Ag2" eventType="touchUpInside" id="OyJ-MO-rbc"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wzY-SL-DtU"/>
