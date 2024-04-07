@@ -43,7 +43,7 @@ class MainViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        viewDidLoad()
+        uiTableView.reloadData()
         selectedLabel.text = String(selectedMenus.count)
         if shouldResetDisplayedMenus {
             resetDisplayedMenus()
