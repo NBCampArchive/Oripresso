@@ -44,11 +44,11 @@ class OrderListViewController: UIViewController {
             self.updateTotal()                   // total bar 업데이트
             
             // 메인화면으로 돌아가기
-            if let mainViewController = self.navigationController?.viewControllers.first as? MainViewController {
+            if let mainViewController = self.navigationController?.viewControllers[1] as? MainViewController {
                 mainViewController.shouldResetDisplayedMenus = true
             }
             
-            self.navigationController?.popToRootViewController(animated: true)
+            self.navigationController?.popViewController(animated: true)
         }
         alert.addAction(orderCancelAction)
         alert.addAction(orderDidTapButton)
@@ -89,7 +89,7 @@ class OrderListViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         // MainViewController로 메뉴 데이터 보내기
-        if let mainViewController = self.navigationController?.viewControllers.first as? MainViewController {
+        if let mainViewController = self.navigationController?.viewControllers[1] as? MainViewController {
             mainViewController.selectedMenus = self.selectedMenu
         }
     }
