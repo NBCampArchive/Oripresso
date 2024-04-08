@@ -23,7 +23,7 @@
 					<key>UISceneDelegateClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
 					<key>UISceneStoryboardFile</key>
-					<string>MainView</string>
+					<string>Onboard</string>
 				</dict>
 			</array>
 		</dict>

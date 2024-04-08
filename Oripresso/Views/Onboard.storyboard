@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bc2-Nr-xlK">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Onboard View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="Onboard" id="Y6W-OH-hqX" customClass="OnboardViewController" customModule="Oripresso" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jGp-DH-rgu">
+                                <rect key="frame" x="0.0" y="123" width="393" height="150"/>
+                                <color key="backgroundColor" name="containerColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="fn2-6I-XPp"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yB1-SD-rR4">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CrewCollectionCell" id="UGE-Pb-CBq" customClass="CrewCollectionCell" customModule="Oripresso" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="WfE-2T-DWg">
+                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="w9u-dU-PGw">
+                                <rect key="frame" x="0.0" y="273" width="393" height="545"/>
+                                <color key="backgroundColor" name="backGroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QFq-r7-LSC">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="PostCollectionCell" reuseIdentifier="PostCollectionCell" id="hFd-HH-jA3" customClass="PostCollectionCell" customModule="Oripresso" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="fSc-YW-iQv">
+                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WW0-O7-Vhm">
+                                <rect key="frame" x="95" y="743" width="203" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="4tQ-QB-Gxb"/>
+                                </constraints>
+                                <color key="tintColor" name="backGroundColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="주문하러 가기">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" red="0.098039215690000001" green="0.25098039220000001" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="startButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="wUi-zo-nM0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" name="backGroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="WW0-O7-Vhm" secondAttribute="bottom" constant="25" id="1Q6-mz-WDb"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="jGp-DH-rgu" secondAttribute="trailing" id="GFO-br-SZH"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="WW0-O7-Vhm" secondAttribute="trailing" constant="95" id="Guu-Cj-AV3"/>
+                            <constraint firstItem="WW0-O7-Vhm" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="95" id="J7K-1D-cSd"/>
+                            <constraint firstItem="jGp-DH-rgu" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Odb-jQ-6eZ"/>
+                            <constraint firstItem="w9u-dU-PGw" firstAttribute="top" secondItem="jGp-DH-rgu" secondAttribute="bottom" id="Zdk-qj-FCZ"/>
+                            <constraint firstItem="w9u-dU-PGw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="fn2-1N-i61"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="w9u-dU-PGw" secondAttribute="trailing" id="hcZ-6G-Rv3"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="w9u-dU-PGw" secondAttribute="bottom" id="mjq-Hh-rGV"/>
+                            <constraint firstItem="jGp-DH-rgu" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="rm6-gh-Fwd"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Mgb-YM-0TQ"/>
+                    <connections>
+                        <outlet property="crewCollectionView" destination="jGp-DH-rgu" id="sgO-N3-0TF"/>
+                        <outlet property="postCollectionView" destination="w9u-dU-PGw" id="WFC-hI-hGA"/>
+                        <outlet property="startButton" destination="WW0-O7-Vhm" id="8Xd-JA-UFi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1066.4122137404579" y="-2.1126760563380285"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="FFu-du-Z57">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bc2-Nr-xlK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1br-mR-Jzx">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="wq4-Wc-YX8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H9z-G3-Rxg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139.69465648854961" y="-2.1126760563380285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="backGroundColor">
+            <color red="0.96078431372549022" green="0.97254901960784312" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="containerColor">
+            <color red="0.92549019607843142" green="0.83529411764705885" blue="0.5725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
