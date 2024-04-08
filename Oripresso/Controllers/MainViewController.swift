@@ -10,7 +10,7 @@ import SnapKit
 import Then
 
 class MainViewController: UIViewController {
-
+    
     @IBOutlet weak var menuBottom: UIImageView!
     @IBOutlet weak var uiTableView: UITableView!
     @IBOutlet weak var uiTitle: UIImageView!
@@ -19,9 +19,9 @@ class MainViewController: UIViewController {
     @IBOutlet weak var selectedLabel: UILabel!
     
     var activityIndicator: UIActivityIndicatorView!
-
+    
     var cafeMenu: CafeMenu?
-    var selectedCategory: String = "Coffee"
+    var selectedCategory: CafeMenu.CodingKeys = .coffee
     var selectedMenus: [SelectedMenu] = []
     var displayedMenus: [Menu] = []
     var isLoading: Bool = false
@@ -56,7 +56,7 @@ class MainViewController: UIViewController {
     func resetDisplayedMenus() {
         selectedMenus.removeAll()
         displayedMenus.removeAll()
-        selectedCategory = "Coffee"
+        selectedCategory = .coffee
         segment.selectedSegmentIndex = 0
         selectedLabel.text = "0"
         loadInitialData()
@@ -82,57 +82,55 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func segmentedControlSelected(_ sender: Any) {
-        selectedCategory = (sender as AnyObject).titleForSegment(at: (sender as AnyObject).selectedSegmentIndex) ?? "Coffee"
+        switch (sender as AnyObject).selectedSegmentIndex {
+        case 0:
+            selectedCategory = .coffee
+        case 1:
+            selectedCategory = .nonCoffee
+        case 2:
+            selectedCategory = .dessert
+        case 3:
+            selectedCategory = .bread
+        default:
+            break
+        }
+        
         print("selectedCategory: \(selectedCategory)")
+        
         displayedMenus.removeAll()
         uiTableView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
+        
         loadInitialData()
     }
     
     // MARK: - Infinite Scroll
     func loadInitialData() {
-        var category: Category?
-        
-        switch selectedCategory {
-        case "Coffee":
-            category = cafeMenu?.coffee
-        case "Non-Coffee":
-            category = cafeMenu?.nonCoffee
-        case "Dessert":
-            category = cafeMenu?.dessert
-        case "Bread":
-            category = cafeMenu?.bread
-        default:
-            break
+        guard let category = getCategoryByName(selectedCategory) else {
+            return
         }
         
-        if let category = category {
-            let initialMenus = Array(category.menus.prefix(4))
-            displayedMenus.append(contentsOf: initialMenus)
-            uiTableView.reloadData()
+        let initialMenus = Array(category.menus.prefix(4))
+        displayedMenus.append(contentsOf: initialMenus)
+        uiTableView.reloadData()
+    }
+    func getCategoryByName(_ name: CafeMenu.CodingKeys) -> Category? {
+        switch name {
+        case .coffee:
+            return cafeMenu?.coffee
+        case .nonCoffee:
+            return cafeMenu?.nonCoffee
+        case .dessert:
+            return cafeMenu?.dessert
+        case .bread:
+            return cafeMenu?.bread
         }
     }
     func loadMoreData() {
-        var category: Category?
-        
-        switch selectedCategory {
-        case "Coffee":
-            category = cafeMenu?.coffee
-        case "Non-Coffee":
-            category = cafeMenu?.nonCoffee
-        case "Dessert":
-            category = cafeMenu?.dessert
-        case "Bread":
-            category = cafeMenu?.bread
-        default:
-            break
-        }
-        
-        guard let category = category,
-              !isLoading,
+        guard let category = getCategoryByName(selectedCategory),!isLoading,
               displayedMenus.count < category.menus.count else {
             return
         }
+        
         
         isLoading = true
         activityIndicator.startAnimating() // 인디케이터 표시
@@ -153,9 +151,8 @@ class MainViewController: UIViewController {
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
         
-        if offsetY > contentHeight - scrollView.frame.height
-        {
-           print("Scroll")
+        if offsetY > contentHeight - scrollView.frame.height{
+            print("Scroll")
             loadMoreData()
         }
     }
@@ -186,7 +183,7 @@ extension UISegmentedControl {
         setTitleTextAttributes([.foregroundColor: UIColor(named: "segementSelectedTextColor") ?? .black, .font: UIFont.systemFont(ofSize: 17, weight: .bold)], for: .selected)
         setTitleTextAttributes([.foregroundColor: UIColor(named: "segementNoneTextColor") ?? .gray,.font: UIFont.systemFont(ofSize: 15, weight: .semibold)], for: .normal)
     }
-
+    
     private func imageWithColor(color: UIColor) -> UIImage {
         let rect = CGRect(x: 0.0, y: 0.0, width:  1.0, height: 22.0)
         UIGraphicsBeginImageContext(rect.size)
@@ -229,62 +226,49 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             bgColorView.backgroundColor = UIColor(red: 0.89, green: 0.702, blue: 0.204, alpha: 0.5)
             cell.selectedBackgroundView = bgColorView
         }
-        if let cafeMenu = cafeMenu {
-            var menu: Menu?
-            
-            switch selectedCategory {
-            case "Coffee":
-                menu = cafeMenu.coffee.menus[indexPath.row]
-            case "Non-Coffee":
-                menu = cafeMenu.nonCoffee.menus[indexPath.row]
-            case "Dessert":
-                menu = cafeMenu.dessert.menus[indexPath.row]
-            case "Bread":
-                menu = cafeMenu.bread.menus[indexPath.row]
-            default:
-                break
+        
+        guard let cafeMenu = cafeMenu else { return }
+        
+        let selectedMenu = getMenuByIndexPath(indexPath)
+        
+        if let selectedMenu = selectedMenu {
+            if let index = selectedMenus.firstIndex(where: { $0.name == selectedMenu.name }) {
+                // 이미 선택된 메뉴인 경우 배열에서 제거
+                selectedMenus.remove(at: index)
+                // 해당 셀만 갱신
+                tableView.reloadRows(at: [indexPath], with: .automatic)
+            } else {
+                let newSelectedMenu = SelectedMenu(name: selectedMenu.name, price: selectedMenu.price, quantity: 1)
+                selectedMenus.append(newSelectedMenu)
             }
-            
-            if let selectedMenu = menu {
-                if let index = selectedMenus.firstIndex(where: { $0.name == selectedMenu.name }) {
-                    // 이미 선택된 메뉴인 경우 배열에서 제거
-                    selectedMenus.remove(at: index)
-                    
-                    // 해당 셀만 갱신
-                    tableView.reloadRows(at: [indexPath], with: .automatic)
-                } else {
-                    let newSelectedMenu = SelectedMenu(name: selectedMenu.name, price: selectedMenu.price, quantity: 1)
-                    selectedMenus.append(newSelectedMenu)
-                }
-                
-                print("Selected Menus: \(selectedMenus)")
-                selectedLabel.text = String(selectedMenus.count)
-            }
+            print("Selected Menus: \(selectedMenus)")
+            selectedLabel.text = String(selectedMenus.count)
         }
     }
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        if let cafeMenu = cafeMenu {
-            var menu: Menu?
-
-            switch selectedCategory {
-            case "Coffee":
-                menu = cafeMenu.coffee.menus[indexPath.row]
-            case "Non-Coffee":
-                menu = cafeMenu.nonCoffee.menus[indexPath.row]
-            case "Dessert":
-                menu = cafeMenu.dessert.menus[indexPath.row]
-            case "Bread":
-                menu = cafeMenu.bread.menus[indexPath.row]
-            default:
-                break
-            }
-
-            if let deselectedMenu = menu {
-                selectedMenus = selectedMenus.filter { $0.name != deselectedMenu.name }
-                print("Deselected Menu: \(deselectedMenu.name)")
-            }
-            print("Selected Menu: \(selectedMenus)")
-            selectedLabel.text = String(selectedMenus.count)
+        guard let cafeMenu = cafeMenu else { return }
+        
+        let deselectedMenu = getMenuByIndexPath(indexPath)
+        
+        if let deselectedMenu = deselectedMenu {
+            selectedMenus = selectedMenus.filter { $0.name != deselectedMenu.name }
+            print("Deselected Menu: \(deselectedMenu.name)")
+        }
+        print("Selected Menu: \(selectedMenus)")
+        selectedLabel.text = String(selectedMenus.count)
+    }
+    func getMenuByIndexPath(_ indexPath: IndexPath) -> Menu? {
+        guard let cafeMenu = cafeMenu else { return nil }
+        
+        switch selectedCategory {
+        case .coffee:
+            return cafeMenu.coffee.menus[indexPath.row]
+        case .nonCoffee:
+            return cafeMenu.nonCoffee.menus[indexPath.row]
+        case .dessert:
+            return cafeMenu.dessert.menus[indexPath.row]
+        case .bread:
+            return cafeMenu.bread.menus[indexPath.row]
         }
     }
 }
