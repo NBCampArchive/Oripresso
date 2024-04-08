@@ -121,6 +121,7 @@ extension OrderListViewController: UITableViewDataSource {
     // swipe하여 버튼 클릭하면 delete
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         selectedMenu.remove(at: indexPath.row)
+        self.updateTotal()
         tableView.reloadData() // 모든 셀의 index label을 업데이트해야해서 reloadData 사용함
     }
 }
