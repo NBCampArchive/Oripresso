@@ -44,11 +44,11 @@ class OrderListViewController: UIViewController {
             self.updateTotal()                   // total bar 업데이트
             
             // 메인화면으로 돌아가기
-            if let mainViewController = self.navigationController?.viewControllers.first as? MainViewController {
+            if let mainViewController = self.navigationController?.viewControllers[1] as? MainViewController {
                 mainViewController.shouldResetDisplayedMenus = true
             }
             
-            self.navigationController?.popToRootViewController(animated: true)
+            self.navigationController?.popViewController(animated: true)
         }
         alert.addAction(orderCancelAction)
         alert.addAction(orderDidTapButton)
@@ -89,7 +89,7 @@ class OrderListViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         // MainViewController로 메뉴 데이터 보내기
-        if let mainViewController = self.navigationController?.viewControllers.first as? MainViewController {
+        if let mainViewController = self.navigationController?.viewControllers[1] as? MainViewController {
             mainViewController.selectedMenus = self.selectedMenu
         }
     }
@@ -121,6 +121,7 @@ extension OrderListViewController: UITableViewDataSource {
     // swipe하여 버튼 클릭하면 delete
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         selectedMenu.remove(at: indexPath.row)
+        self.updateTotal()
         tableView.reloadData() // 모든 셀의 index label을 업데이트해야해서 reloadData 사용함
     }
 }
